@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.2...v0.2.3) (2026-07-18)
+
+
+### Miscellaneous
+
+* adopt oss-project-template structure and harden CI ([#33](https://github.com/dreamingdog0529/DisplayForge/issues/33)) ([a069999](https://github.com/dreamingdog0529/DisplayForge/commit/a069999de28c224dee4172fe594f38a5b99f2555))
+
+
+### CI/CD
+
+* codify default-branch protection in settings.yml ([#31](https://github.com/dreamingdog0529/DisplayForge/issues/31)) ([3c885ca](https://github.com/dreamingdog0529/DisplayForge/commit/3c885ca4226ef7783c62d77c1fd8d6b0a570b4d9))
+
 ## [0.2.2](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.1...v0.2.2) (2026-07-18)
 
 
