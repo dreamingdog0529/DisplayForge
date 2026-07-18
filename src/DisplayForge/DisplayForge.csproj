@@ -26,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Window / tray pack URI: pack://application:,,,/Assets/app.ico -->
+    <!-- Runtime-packed icon (window / tray). SVG sources live under Assets/lucide/. -->
     <Resource Include="Assets\app.ico"/>
-    <None Include="Assets\monitor-cog.svg"/>
+    <None Include="Assets\lucide\*.svg"/>
     <None Include="Assets\LICENSES\lucide-LICENSE.txt"/>
   </ItemGroup>
 

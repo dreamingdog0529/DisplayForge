@@ -142,6 +142,7 @@ To exit on close even in a normal launch, pass `--exit-on-close`.
 
 ### Third-party
 
-- The app icon is based on the [Lucide](https://lucide.dev/) `monitor-cog` icon ([ISC License](https://lucide.dev/license)).
-  - Source SVG: `src/DisplayForge/Assets/monitor-cog.svg`
+- Icons are based on [Lucide](https://lucide.dev/) ([ISC License](https://lucide.dev/license)):
+  - App / tray indicator: `monitor-cog` (source SVG under `src/DisplayForge/Assets/lucide/`; packaged as `Assets/app.ico`)
+  - Tray menu: `monitor`, `check`, `settings`, `app-window`, `log-out` (same folder)
   - Full license text: `src/DisplayForge/Assets/LICENSES/lucide-LICENSE.txt`

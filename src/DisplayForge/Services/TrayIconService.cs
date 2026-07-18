@@ -249,7 +249,7 @@ public sealed class TrayIconService : IDisposable
 
     private static Icon CreateIcon()
     {
-        // Lucide monitor-cog (ISC). Multi-size ICO generated from Assets/monitor-cog.svg.
+        // Lucide monitor-cog (ISC). Multi-size ICO generated from Assets/lucide/monitor-cog.svg.
         var info = Application.GetResourceStream(new Uri("pack://application:,,,/Assets/app.ico"));
         if (info?.Stream is null)
             throw new InvalidOperationException("App icon resource Assets/app.ico was not found.");
@@ -265,30 +265,36 @@ public sealed class TrayIconService : IDisposable
         }
     }
 
-    /// <summary>16×16 stroke icons for tray menu items (no external assets).</summary>
+    /// <summary>
+    /// 16×16 tray menu icons from Lucide (ISC), drawn at the official 24×24 viewBox and scaled.
+    /// Sources: Assets/lucide/*.svg — see Assets/LICENSES/lucide-LICENSE.txt
+    /// </summary>
     private static FrameworkElement CreateMenuIcon(TrayGlyph glyph, Color color)
     {
         var brush = new SolidColorBrush(color);
         brush.Freeze();
 
+        // Lucide default stroke width is 2 on a 24×24 canvas.
+        const double stroke = 2;
+
         var canvas = new Canvas
         {
-            Width = 16,
-            Height = 16,
+            Width = 24,
+            Height = 24,
             SnapsToDevicePixels = true
         };
 
-        void AddPath(string data, double thickness = 1.5, bool fill = false)
+        void AddPath(string data)
         {
             var path = new System.Windows.Shapes.Path
             {
                 Data = Geometry.Parse(data),
                 Stroke = brush,
-                StrokeThickness = thickness,
+                StrokeThickness = stroke,
                 StrokeStartLineCap = PenLineCap.Round,
                 StrokeEndLineCap = PenLineCap.Round,
                 StrokeLineJoin = PenLineJoin.Round,
-                Fill = fill ? brush : Brushes.Transparent
+                Fill = Brushes.Transparent
             };
             canvas.Children.Add(path);
         }
@@ -296,33 +302,45 @@ public sealed class TrayIconService : IDisposable
         switch (glyph)
         {
             case TrayGlyph.Monitor:
-                // Rounded monitor body + stand (Lucide-inspired)
-                AddPath("M2,3.5 H14 A1.5,1.5 0 0 1 15.5,5 V10.5 A1.5,1.5 0 0 1 14,12 H2 A1.5,1.5 0 0 1 0.5,10.5 V5 A1.5,1.5 0 0 1 2,3.5 Z");
-                AddPath("M6,14 H10 M8,12 V14");
+                // Lucide: monitor — https://lucide.dev/icons/monitor
+                // <rect width="20" height="14" x="2" y="3" rx="2" /> + stand lines
+                AddPath("M4,3 H20 A2,2 0 0 1 22,5 V15 A2,2 0 0 1 20,17 H4 A2,2 0 0 1 2,15 V5 A2,2 0 0 1 4,3 Z");
+                AddPath("M8,21 H16 M12,17 V21");
                 break;
 
             case TrayGlyph.Check:
-                AddPath("M3,8.5 L6.5,12 L13,4.5", thickness: 1.8);
+                // Lucide: check — https://lucide.dev/icons/check
+                AddPath("M20,6 L9,17 L4,12");
                 break;
 
             case TrayGlyph.Settings:
-                // Simple gear: outer circle + hub + a few teeth as arcs
-                AddPath("M8,2.5 V4.2 M8,11.8 V13.5 M2.5,8 H4.2 M11.8,8 H13.5 M4.1,4.1 L5.3,5.3 M10.7,10.7 L11.9,11.9 M11.9,4.1 L10.7,5.3 M5.3,10.7 L4.1,11.9");
-                AddPath("M8,8 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0");
+                // Lucide: settings — https://lucide.dev/icons/settings
+                AddPath("M9.671,4.136 a2.34,2.34 0 0 1 4.659,0 a2.34,2.34 0 0 0 3.319,1.915 a2.34,2.34 0 0 1 2.33,4.033 a2.34,2.34 0 0 0 0,3.831 a2.34,2.34 0 0 1 -2.33,4.033 a2.34,2.34 0 0 0 -3.319,1.915 a2.34,2.34 0 0 1 -4.659,0 a2.34,2.34 0 0 0 -3.32,-1.915 a2.34,2.34 0 0 1 -2.33,-4.033 a2.34,2.34 0 0 0 0,-3.831 A2.34,2.34 0 0 1 6.35,6.051 a2.34,2.34 0 0 0 3.319,-1.915");
+                AddPath("M12,12 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0");
                 break;
 
             case TrayGlyph.Window:
-                AddPath("M2.5,3.5 H13.5 A1,1 0 0 1 14.5,4.5 V12.5 A1,1 0 0 1 13.5,13.5 H2.5 A1,1 0 0 1 1.5,12.5 V4.5 A1,1 0 0 1 2.5,3.5 Z");
-                AddPath("M1.5,6.5 H14.5");
+                // Lucide: app-window — https://lucide.dev/icons/app-window
+                // <rect x="2" y="4" width="20" height="16" rx="2" /> + title-bar marks
+                AddPath("M4,4 H20 A2,2 0 0 1 22,6 V18 A2,2 0 0 1 20,20 H4 A2,2 0 0 1 2,18 V6 A2,2 0 0 1 4,4 Z");
+                AddPath("M10,4 V8 M2,8 H22 M6,4 V8");
                 break;
 
             case TrayGlyph.Exit:
-                AddPath("M6,3.5 H3.5 A1,1 0 0 0 2.5,4.5 V11.5 A1,1 0 0 0 3.5,12.5 H6");
-                AddPath("M9,8 H14.5 M12,5.5 L14.5,8 L12,10.5", thickness: 1.6);
+                // Lucide: log-out — https://lucide.dev/icons/log-out
+                AddPath("M16,17 L21,12 L16,7");
+                AddPath("M21,12 H9");
+                AddPath("M9,21 H5 A2,2 0 0 1 3,19 V5 A2,2 0 0 1 5,3 H9");
                 break;
         }
 
-        return canvas;
+        return new Viewbox
+        {
+            Width = 16,
+            Height = 16,
+            Stretch = Stretch.Uniform,
+            Child = canvas
+        };
     }
 
     private enum TrayGlyph
