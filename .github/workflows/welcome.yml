@@ -14,15 +14,15 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/first-interaction@v3
+      - uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           issue_message: |
             Thanks for opening your first issue! 🎉
 
             A maintainer will review this soon. In the meantime:
-            - Check our [documentation](https://github.com/${{ github.repository }}/blob/main/docs/building.md) for common solutions
-            - Read [SUPPORT.md](https://github.com/${{ github.repository }}/blob/main/SUPPORT.md)
+            - Check our [documentation](https://github.com/${{ github.repository }}/blob/main/docs/development.md) for common solutions
+            - Read [SUPPORT.md](https://github.com/${{ github.repository }}/blob/main/.github/SUPPORT.md)
             - Search [existing issues](https://github.com/${{ github.repository }}/issues) for similar reports
 
             If this is a question rather than a bug report, consider posting in [GitHub Discussions](https://github.com/${{ github.repository }}/discussions) instead.
@@ -36,4 +36,4 @@ jobs:
             - [ ] Commits are signed off (DCO) — `git commit -s`
             - [ ] PR title follows [Conventional Commits](https://www.conventionalcommits.org/)
 
-            Check out our [Contributing Guide](https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md) for more details.
+            Check out our [Contributing Guide](https://github.com/${{ github.repository }}/blob/main/.github/CONTRIBUTING.md) for more details.

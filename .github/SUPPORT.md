@@ -4,7 +4,7 @@ Welcome! This document outlines how to get help.
 
 ## Documentation
 
-- **Official Docs**: https://github.com/dreamingdog0529/DisplayForge/blob/main/docs/building.md
+- **Official Docs**: https://github.com/dreamingdog0529/DisplayForge/blob/main/docs/development.md
 - **README**: https://github.com/dreamingdog0529/DisplayForge/blob/main/README.md
 - **README (日本語)**: https://github.com/dreamingdog0529/DisplayForge/blob/main/README_ja.md
 

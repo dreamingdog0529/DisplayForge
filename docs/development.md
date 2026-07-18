@@ -1,4 +1,4 @@
-# Building DisplayForge
+# Developing DisplayForge
 
 ## Prerequisites
 
@@ -103,7 +103,7 @@ Installer sources:
 
 ## CI and GitHub Releases
 
-Automation is aligned with [container-registry/oss-project-template](https://github.com/container-registry/oss-project-template) (see [CHECKLIST.md](../CHECKLIST.md) and [CONTRIBUTING.md](../CONTRIBUTING.md)).
+Automation is aligned with [container-registry/oss-project-template](https://github.com/container-registry/oss-project-template) (see [CHECKLIST.md](../CHECKLIST.md) and [CONTRIBUTING.md](../.github/CONTRIBUTING.md)).
 
 | Workflow | Trigger | Role |
 |----------|---------|------|

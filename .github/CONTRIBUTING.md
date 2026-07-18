@@ -19,7 +19,7 @@ Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Getting help
 
-See [SUPPORT.md](SUPPORT.md). Roadmap notes: [ROADMAP.md](ROADMAP.md).
+See [SUPPORT.md](SUPPORT.md). Roadmap notes: [ROADMAP.md](../ROADMAP.md).
 
 ## Development environment
 
@@ -63,7 +63,7 @@ dotnet run --project src/DisplayForge -- --tray-on-close
 .\build-msi.ps1 -SkipPublish
 ```
 
-Outputs under `artifacts/msi/` (gitignored). Details: [docs/building.md](docs/building.md).
+Outputs under `artifacts/msi/` (gitignored). Details: [docs/development.md](../docs/development.md).
 
 ### Project layout
 
@@ -188,4 +188,4 @@ Do not file public issues for vulnerabilities. See [SECURITY.md](SECURITY.md).
 
 ## License
 
-By contributing, you agree that your contributions are licensed under the project [MIT License](LICENSE) and that you have the right to submit them under the DCO.
+By contributing, you agree that your contributions are licensed under the project [MIT License](../LICENSE) and that you have the right to submit them under the DCO.

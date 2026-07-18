@@ -38,4 +38,4 @@ Ideas under consideration (not commitments):
 ## Release Cadence
 
 This project uses automated releases via Release Please (conventional commits on `main`).
-See [GitHub Releases](https://github.com/dreamingdog0529/DisplayForge/releases) for the latest versions and [CONTRIBUTING.md](CONTRIBUTING.md) for the process.
+See [GitHub Releases](https://github.com/dreamingdog0529/DisplayForge/releases) for the latest versions and [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the process.

@@ -14,7 +14,7 @@ English | [日本語](./README_ja.md)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dreamingdog0529/DisplayForge/badge)](https://securityscorecards.dev/viewer/?uri=github.com/dreamingdog0529/DisplayForge)
 
 <p>
-  <a href="docs/building.md"><strong>Explore the docs »</strong></a>
+  <a href="docs/development.md"><strong>Explore the docs »</strong></a>
   <br /><br />
   <a href="https://github.com/dreamingdog0529/DisplayForge/issues/new?template=bug_report.yml">Report Bug</a>
   ·
@@ -133,7 +133,7 @@ Releases include two kinds of installer. **They install the same app** — pick 
 
 - Prefer **ja-JP** or **en-US** in the file name for the *installer wizard* language (Japanese or English). The app itself supports [31 UI languages](#supported-languages) either way.
 - Run the installer as administrator when Windows asks.
-- If a release is not available yet, you can [build from source](docs/building.md).
+- If a release is not available yet, you can [build from source](docs/development.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,8 +212,8 @@ Build installers locally (Setup.exe + MSI):
 .\build-msi.ps1
 ```
 
-Full build, silent install, CI/release notes: **[docs/building.md](docs/building.md)**
-How to contribute: **[CONTRIBUTING.md](CONTRIBUTING.md)**
+Full build, silent install, CI/release notes: **[docs/development.md](docs/development.md)**
+How to contribute: **[CONTRIBUTING.md](.github/CONTRIBUTING.md)**
 
 <a id="architecture"></a>
 
@@ -260,9 +260,9 @@ See the [open issues](https://github.com/dreamingdog0529/DisplayForge/issues) an
 
 ## Contributing
 
-Contributions are welcome. Please read **[CONTRIBUTING.md](CONTRIBUTING.md)** for the
+Contributions are welcome. Please read **[CONTRIBUTING.md](.github/CONTRIBUTING.md)** for the
 workflow (Conventional Commits, DCO sign-off, PR process) and our
-[Code of Conduct](CODE_OF_CONDUCT.md).
+[Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 Thanks to everyone who has contributed to DisplayForge. This list is updated automatically from git history.
 
@@ -294,11 +294,11 @@ Repository automation and community files follow
 
 | Document | Purpose |
 |----------|---------|
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Develop, test, PRs, DCO, CI/CD, releases |
-| [SUPPORT.md](SUPPORT.md) | How to get help |
+| [CONTRIBUTING.md](.github/CONTRIBUTING.md) | Develop, test, PRs, DCO, CI/CD, releases |
+| [SUPPORT.md](.github/SUPPORT.md) | How to get help |
 | [ROADMAP.md](ROADMAP.md) | Direction and how to propose work |
-| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
-| [SECURITY.md](SECURITY.md) | Private vulnerability reporting |
+| [CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md) | Community standards |
+| [SECURITY.md](.github/SECURITY.md) | Private vulnerability reporting |
 | [CODEOWNERS](CODEOWNERS) | Default code review owners |
 | [CHANGELOG.md](CHANGELOG.md) | Release history |
 | [LICENSE](LICENSE) | MIT license text |
@@ -324,8 +324,5 @@ MIT © 2026 DisplayForge contributors
   - App / tray indicator: `monitor-cog` (source SVG under `src/DisplayForge/Assets/lucide/`; packaged as `Assets/app.ico`)
   - Tray menu: `monitor`, `check`, `settings`, `app-window`, `log-out` (same folder)
   - Full license text: `src/DisplayForge/Assets/LICENSES/lucide-LICENSE.txt`
-- [container-registry/oss-project-template](https://github.com/container-registry/oss-project-template) — automation and community files
-- [Best-README-Template](https://github.com/othneildrew/Best-README-Template) — README structure
-- [Shields.io](https://shields.io/) — badges
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
