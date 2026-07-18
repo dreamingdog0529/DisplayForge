@@ -26,8 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # Limit to human-written docs/config. Source/locale strings and shell
-      # character classes (e.g. [Rr]elease) produce false positives.
+      # Limit to human-written docs/config. Source/locale strings and regex
+      # character classes in shell scripts produce false positives.
       - name: Check spelling
         uses: crate-ci/typos@v1.48.0
         with:
@@ -41,7 +41,4 @@ jobs:
             SUPPORT.md
             ROADMAP.md
             CHECKLIST.md
-            CHANGELOG.md
             docs
-            .github
-            .typos.toml
