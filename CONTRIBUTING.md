@@ -14,7 +14,7 @@ Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
 | SDK | [.NET 10 SDK](https://dotnet.microsoft.com/download) |
 | IDE (optional) | Visual Studio 2022+ or VS Code / Cursor with C# support |
 
-WiX Toolset packages are restored via NuGet when you build the installer project; no separate WiX install is required for MSI builds.
+WiX Toolset packages are restored via NuGet when you build the installer projects; no separate WiX install is required.
 
 ## Build, run, test
 
@@ -31,7 +31,7 @@ Tray-style close behavior while developing:
 dotnet run --project src/DisplayForge -- --tray-on-close
 ```
 
-## MSI installer (local)
+## Installers (local)
 
 ```powershell
 .\build-msi.ps1
@@ -42,18 +42,20 @@ dotnet run --project src/DisplayForge -- --tray-on-close
 
 Outputs land under `artifacts/msi/` (gitignored). Naming:
 
-`DisplayForge-{version}-win-x64-{culture}.msi`
+- `DisplayForge-{version}-win-x64-{culture}-Setup.exe` (recommended; installs .NET 10 Desktop Runtime if missing)
+- `DisplayForge-{version}-win-x64-{culture}.msi` (app only)
 
 More detail: [docs/building.md](docs/building.md).
 
 ## Project layout
 
 ```
-src/DisplayForge          WPF UI, tray, hotkeys
-src/DisplayForge.Core     Display API, profiles, matching
+src/DisplayForge                  WPF UI, tray, hotkeys
+src/DisplayForge.Core             Display API, profiles, matching
 tests/DisplayForge.Core.Tests
-installer/DisplayForge.Installer   WiX MSI
-tools/                    Dev utilities (icons, locales)
+installer/DisplayForge.Installer  WiX MSI
+installer/DisplayForge.Bootstrapper  WiX Bundle (Setup.exe + runtime)
+tools/                            Dev utilities (icons, locales)
 ```
 
 ## Pull requests

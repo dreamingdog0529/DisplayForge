@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal"
+     xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
+
+  <!--
+    Bootstrapper: install .NET 10 Desktop Runtime (x64) if missing, then the app MSI.
+    Uses WixInternalUIBootstrapperApplication so permanent prereqs install first, then the MSI wizard
+    (install dir + start-with-Windows) is shown.
+    Bundle UpgradeCode is stable and distinct from the MSI Package UpgradeCode.
+  -->
+  <Bundle Name="DisplayForge"
+          Manufacturer="$(Publisher)"
+          Version="$(ProductVersion)"
+          UpgradeCode="C8E2A1F0-4B6D-4E9A-9C3F-7D1B5A8E2F40"
+          IconSourceFile="$(AppIcon)"
+          Compressed="yes">
+
+    <BootstrapperApplication>
+      <bal:WixInternalUIBootstrapperApplication Theme="standard" />
+    </BootstrapperApplication>
+
+    <!-- Latest installed Microsoft.WindowsDesktop.App major 10 (empty if none). -->
+    <netfx:DotNetCoreSearch
+      RuntimeType="desktop"
+      Platform="x64"
+      MajorVersion="10"
+      Variable="DOTNETDESKTOPRUNTIME" />
+
+    <Chain DisableRollback="no">
+      <!-- Shared runtime: permanent so uninstalling DisplayForge does not remove it. -->
+      <ExePackage Id="DotNetDesktopRuntime10"
+                  DisplayName="Microsoft .NET 10 Desktop Runtime (x64)"
+                  Description="Required to run DisplayForge"
+                  Permanent="yes"
+                  Vital="yes"
+                  PerMachine="yes"
+                  DetectCondition="DOTNETDESKTOPRUNTIME &gt;= v10.0.0"
+                  InstallArguments="/install /quiet /norestart"
+                  RepairArguments="/repair /quiet /norestart"
+                  UninstallArguments="/uninstall /quiet /norestart"
+                  Protocol="burn">
+        <ExePackagePayload
+          Name="$(DotNetRuntimeFileName)"
+          SourceFile="!(bindpath.DotNetRuntime)$(DotNetRuntimeFileName)" />
+        <ExitCode Value="0" Behavior="success" />
+        <ExitCode Value="1638" Behavior="success" />
+        <ExitCode Value="3010" Behavior="forceReboot" />
+      </ExePackage>
+
+      <!-- Primary package: MSI UI (InstallDir + Options). Must be the only non-permanent package. -->
+      <MsiPackage Id="DisplayForge"
+                  SourceFile="!(bindpath.Msi)$(MsiFileName)"
+                  Vital="yes"
+                  Visible="yes" />
+    </Chain>
+  </Bundle>
+
+</Wix>

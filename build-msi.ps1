@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-  Publish DisplayForge (self-contained win-x64) and build multi-language MSI installers.
+  Publish DisplayForge (framework-dependent win-x64 by default) and build MSI + Setup bootstrapper.
 
 .PARAMETER Configuration
   Build configuration. Default: Release
@@ -10,14 +10,21 @@
   RID for publish. Default: win-x64
 
 .PARAMETER Version
-  Product version for the MSI (must be N.N.N or N.N.N.N). Default: from csproj Version, or 1.0.0
+  Product version for the MSI/bundle (must be N.N.N or N.N.N.N). Default: from csproj Version, or 1.0.0
 
 .PARAMETER SkipPublish
   Skip dotnet publish and reuse existing artifacts/publish output.
 
-.PARAMETER FrameworkDependent
-  Publish framework-dependent (requires .NET 10 Desktop Runtime on target machines).
-  Default is self-contained.
+.PARAMETER SelfContained
+  Publish self-contained (embeds .NET runtime in the app folder). Skips the bootstrapper
+  and .NET Desktop Runtime prerequisite download. Default is framework-dependent + Setup.exe.
+
+.PARAMETER SkipBundle
+  Build MSI only (no Setup.exe). Framework-dependent MSIs still require .NET 10 Desktop Runtime.
+
+.PARAMETER DotNetDesktopRuntimeVersion
+  Version of the Windows Desktop Runtime redistributable to download and embed in Setup.exe.
+  Default: 10.0.10
 
 .PARAMETER Cultures
   Semicolon-delimited WiX culture list (e.g. "ja-JP;en-US").
@@ -29,6 +36,7 @@
   .\build-msi.ps1 -Version 1.2.0
   .\build-msi.ps1 -Cultures "ja-JP;en-US"
   .\build-msi.ps1 -SkipPublish
+  .\build-msi.ps1 -SelfContained
 #>
 [CmdletBinding()]
 param(
@@ -36,7 +44,9 @@ param(
     [string] $Runtime = "win-x64",
     [string] $Version = "",
     [switch] $SkipPublish,
-    [switch] $FrameworkDependent,
+    [switch] $SelfContained,
+    [switch] $SkipBundle,
+    [string] $DotNetDesktopRuntimeVersion = "10.0.10",
     [string] $Cultures = ""
 )
 
@@ -44,9 +54,12 @@ $ErrorActionPreference = "Stop"
 $Root = $PSScriptRoot
 $AppProject = Join-Path $Root "src\DisplayForge\DisplayForge.csproj"
 $InstallerProject = Join-Path $Root "installer\DisplayForge.Installer\DisplayForge.Installer.wixproj"
+$BootstrapperProject = Join-Path $Root "installer\DisplayForge.Bootstrapper\DisplayForge.Bootstrapper.wixproj"
 $LocDir = Join-Path $Root "installer\DisplayForge.Installer\Loc"
 $PublishDir = Join-Path $Root "artifacts\publish\$Runtime"
 $MsiOutDir = Join-Path $Root "artifacts\msi"
+$PrereqDir = Join-Path $Root "artifacts\prereqs"
+$FrameworkDependent = -not $SelfContained
 
 function Get-AppVersion {
     if ($Version) { return $Version }
@@ -60,6 +73,41 @@ function Get-AvailableCultures {
     Get-ChildItem -LiteralPath $LocDir -Filter "*.wxl" -File |
         ForEach-Object { [System.IO.Path]::GetFileNameWithoutExtension($_.Name) } |
         Sort-Object
+}
+
+function Get-DotNetDesktopRuntime {
+    param(
+        [string] $Version,
+        [string] $OutDir
+    )
+
+    if ($Version -notmatch '^\d+\.\d+\.\d+$') {
+        throw "DotNetDesktopRuntimeVersion '$Version' must be N.N.N (e.g. 10.0.10)."
+    }
+
+    $fileName = "windowsdesktop-runtime-$Version-win-x64.exe"
+    $dest = Join-Path $OutDir $fileName
+    if (Test-Path -LiteralPath $dest) {
+        Write-Host "    Reusing $dest" -ForegroundColor DarkGray
+        return @{ Path = $dest; FileName = $fileName }
+    }
+
+    New-Item -ItemType Directory -Path $OutDir -Force | Out-Null
+    $url = "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/$Version/$fileName"
+    Write-Host "    Downloading $url" -ForegroundColor Cyan
+    try {
+        Invoke-WebRequest -Uri $url -OutFile $dest -UseBasicParsing
+    }
+    catch {
+        if (Test-Path -LiteralPath $dest) { Remove-Item -LiteralPath $dest -Force }
+        throw "Failed to download .NET Desktop Runtime $Version from $url. $($_.Exception.Message)"
+    }
+
+    if (-not (Test-Path -LiteralPath $dest) -or ((Get-Item -LiteralPath $dest).Length -lt 1MB)) {
+        throw "Downloaded runtime looks invalid: $dest"
+    }
+
+    return @{ Path = $dest; FileName = $fileName }
 }
 
 $ProductVersion = Get-AppVersion
@@ -89,14 +137,14 @@ else {
     }
 }
 
-# WiX Cultures property: semicolon-delimited culture groups
-$culturesProperty = ($cultureList -join ';')
+$buildBundle = $FrameworkDependent -and -not $SkipBundle
 
-Write-Host "==> DisplayForge MSI build" -ForegroundColor Cyan
+Write-Host "==> DisplayForge installer build" -ForegroundColor Cyan
 Write-Host "    Version:       $ProductVersion"
 Write-Host "    Configuration: $Configuration"
 Write-Host "    Runtime:       $Runtime"
-Write-Host "    SelfContained: $(-not $FrameworkDependent)"
+Write-Host "    SelfContained: $SelfContained"
+Write-Host "    Bundle:        $buildBundle"
 Write-Host "    Cultures:      $($cultureList -join ', ') ($($cultureList.Count))"
 Write-Host "    PublishDir:    $PublishDir"
 
@@ -111,7 +159,7 @@ if (-not $SkipPublish) {
         "-c", $Configuration,
         "-r", $Runtime,
         "-o", $PublishDir,
-        "--self-contained", ($(if ($FrameworkDependent) { "false" } else { "true" })),
+        "--self-contained", ($(if ($SelfContained) { "true" } else { "false" })),
         "-p:PublishSingleFile=false",
         "-p:DebugType=none",
         "-p:DebugSymbols=false",
@@ -129,9 +177,15 @@ else {
     Write-Host "==> Skipping publish (reusing $PublishDir)" -ForegroundColor Yellow
 }
 
+$runtimePayload = $null
+if ($buildBundle) {
+    Write-Host "==> .NET 10 Desktop Runtime redistributable ($DotNetDesktopRuntimeVersion)" -ForegroundColor Cyan
+    $runtimePayload = Get-DotNetDesktopRuntime -Version $DotNetDesktopRuntimeVersion -OutDir $PrereqDir
+}
+
 if (Test-Path -LiteralPath $MsiOutDir) {
-    # Remove previous MSIs only; keep directory
-    Get-ChildItem -LiteralPath $MsiOutDir -Filter "*.msi" -File -Recurse | Remove-Item -Force
+    Get-ChildItem -LiteralPath $MsiOutDir -Include "*.msi", "*.exe", "*.wixpdb" -File -Recurse |
+        Remove-Item -Force -ErrorAction SilentlyContinue
 }
 New-Item -ItemType Directory -Path $MsiOutDir -Force | Out-Null
 
@@ -145,6 +199,10 @@ $buildArgs = @(
     "-p:OutputPath=$MsiOutDir\",
     "-p:BaseIntermediateOutputPath=$objDir\"
 )
+if ($FrameworkDependent) {
+    # Enables Package.wxs <?ifdef FrameworkDependent ?> runtime Launch check (appended in wixproj).
+    $buildArgs += "-p:FrameworkDependent=true"
+}
 # When building a subset, pass Cultures. MSBuild splits on ';', so encode as %3B.
 # When building all Loc/*.wxl cultures, omit Cultures and let WiX discover them.
 $buildingAll = ($cultureList.Count -eq $available.Count) -and
@@ -156,7 +214,7 @@ if (-not $buildingAll) {
 if ($LASTEXITCODE -ne 0) { throw "MSI build failed with exit code $LASTEXITCODE" }
 
 # Collect MSIs: WiX writes culture subfolders when multiple cultures are built
-$produced = @()
+$producedMsi = @()
 foreach ($c in $cultureList) {
     $candidates = @(
         (Join-Path $MsiOutDir "$c\DisplayForge.msi"),
@@ -164,7 +222,6 @@ foreach ($c in $cultureList) {
     )
     $src = $candidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
     if (-not $src) {
-        # Fallback: search
         $src = Get-ChildItem -LiteralPath $MsiOutDir -Filter "DisplayForge.msi" -Recurse -File -ErrorAction SilentlyContinue |
             Where-Object { $_.Directory.Name -eq $c -or $cultureList.Count -eq 1 } |
             Select-Object -ExpandProperty FullName -First 1
@@ -175,21 +232,87 @@ foreach ($c in $cultureList) {
     }
     $named = Join-Path $MsiOutDir "DisplayForge-$ProductVersion-$Runtime-$c.msi"
     Copy-Item -LiteralPath $src -Destination $named -Force
-    $produced += $named
+    $producedMsi += [pscustomobject]@{ Culture = $c; Path = $named; Source = $src }
 }
 
-if ($produced.Count -eq 0) {
+if ($producedMsi.Count -eq 0) {
     throw "No MSI was produced under $MsiOutDir"
 }
 
-Write-Host ""
-Write-Host "MSI ready ($($produced.Count)):" -ForegroundColor Green
-foreach ($p in $produced) {
-    Write-Host "  $p"
+$producedSetup = @()
+if ($buildBundle) {
+    $bundleObjDir = Join-Path $Root "artifacts\obj\bootstrapper"
+    $bundleOutDir = Join-Path $Root "artifacts\obj\bootstrapper\out"
+    $runtimeDir = Split-Path -Parent $runtimePayload.Path
+    if (-not $runtimeDir.EndsWith('\') -and -not $runtimeDir.EndsWith('/')) {
+        $runtimeDir = "$runtimeDir\"
+    }
+
+    Write-Host "==> Building Setup bootstrapper (WiX Bundle)" -ForegroundColor Cyan
+    foreach ($item in $producedMsi) {
+        $msiDir = Split-Path -Parent $item.Source
+        if (-not $msiDir.EndsWith('\') -and -not $msiDir.EndsWith('/')) {
+            $msiDir = "$msiDir\"
+        }
+        $msiFileName = [System.IO.Path]::GetFileName($item.Source)
+
+        if (Test-Path -LiteralPath $bundleOutDir) {
+            Remove-Item -LiteralPath $bundleOutDir -Recurse -Force
+        }
+        New-Item -ItemType Directory -Path $bundleOutDir -Force | Out-Null
+
+        $bundleArgs = @(
+            "build", $BootstrapperProject,
+            "-c", $Configuration,
+            "-p:ProductVersion=$ProductVersion",
+            "-p:MsiDir=$msiDir",
+            "-p:MsiFileName=$msiFileName",
+            "-p:DotNetRuntimeDir=$runtimeDir",
+            "-p:DotNetRuntimeFileName=$($runtimePayload.FileName)",
+            "-p:OutputPath=$bundleOutDir\",
+            "-p:BaseIntermediateOutputPath=$bundleObjDir\$($item.Culture)\"
+        )
+        & dotnet @bundleArgs
+        if ($LASTEXITCODE -ne 0) {
+            throw "Bootstrapper build failed for culture $($item.Culture) with exit code $LASTEXITCODE"
+        }
+
+        $setupSrc = Get-ChildItem -LiteralPath $bundleOutDir -Filter "DisplayForge-Setup.exe" -Recurse -File |
+            Select-Object -First 1
+        if (-not $setupSrc) {
+            $setupSrc = Get-ChildItem -LiteralPath $bundleOutDir -Filter "*.exe" -Recurse -File |
+                Where-Object { $_.Name -notlike "*wix*" } |
+                Select-Object -First 1
+        }
+        if (-not $setupSrc) {
+            throw "Setup.exe not found under $bundleOutDir for culture $($item.Culture)"
+        }
+
+        $setupNamed = Join-Path $MsiOutDir "DisplayForge-$ProductVersion-$Runtime-$($item.Culture)-Setup.exe"
+        Copy-Item -LiteralPath $setupSrc.FullName -Destination $setupNamed -Force
+        $producedSetup += $setupNamed
+    }
 }
+
 Write-Host ""
-Write-Host "Install (elevated):  msiexec /i `"$($produced[0])`""
-Write-Host "Quiet install:       msiexec /i `"$($produced[0])`" /qn"
-Write-Host "Uninstall:           msiexec /x `"$($produced[0])`""
+Write-Host "MSI ready ($($producedMsi.Count)):" -ForegroundColor Green
+foreach ($item in $producedMsi) {
+    Write-Host "  $($item.Path)"
+}
+if ($producedSetup.Count -gt 0) {
+    Write-Host "Setup ready ($($producedSetup.Count)):" -ForegroundColor Green
+    foreach ($p in $producedSetup) {
+        Write-Host "  $p"
+    }
+    Write-Host ""
+    Write-Host "Recommended install:  `"$($producedSetup[0])`""
+    Write-Host "  (installs .NET 10 Desktop Runtime if missing, then DisplayForge)"
+}
+else {
+    Write-Host ""
+    Write-Host "Install (elevated):  msiexec /i `"$($producedMsi[0].Path)`""
+    Write-Host "Quiet install:       msiexec /i `"$($producedMsi[0].Path)`" /qn"
+}
+Write-Host "Uninstall:           msiexec /x `"$($producedMsi[0].Path)`"   (or Apps & features → DisplayForge)"
 Write-Host ""
 Write-Host "Tip: faster rebuild for one language:  .\build-msi.ps1 -SkipPublish -Cultures ja-JP"

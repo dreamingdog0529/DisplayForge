@@ -19,13 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * build en-US and ja-JP MSIs for GitHub Releases ([#12](https://github.com/dreamingdog0529/DisplayForge/issues/12)) ([ed84894](https://github.com/dreamingdog0529/DisplayForge/commit/ed848946762029bcb03ad2d730bfb3d3b1893be1))
 
-## [Unreleased]
-
-### Added
-
-- Release Please automation: Conventional Commits drive SemVer, CHANGELOG, tags, and MSI attachment on GitHub Releases
-- CI enforcement of Conventional Commits for PR titles and commit messages
-
 ## [0.1.0] - 2026-07-18
 
 ### Added
@@ -38,6 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Settings and profiles stored under `%AppData%\DisplayForge\`
 - GitHub community health files, CI, and release automation for public distribution
 - Bilingual README (English / Japanese)
+- Release Please automation: Conventional Commits drive SemVer, CHANGELOG, tags, and MSI attachment on GitHub Releases
+- CI enforcement of Conventional Commits for PR titles and commit messages
 
-[Unreleased]: https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.0...HEAD
+[0.1.2]: https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/dreamingdog0529/DisplayForge/releases/tag/v0.1.0
