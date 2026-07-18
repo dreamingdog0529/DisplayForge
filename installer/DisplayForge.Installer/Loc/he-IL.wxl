@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="he-IL" Language="1037">
+  <String Id="PackageLanguage" Value="1037" />
+  <String Id="DowngradeError" Value="גרסה חדשה יותר של [ProductName] כבר מותקנת." />
+  <String Id="SummaryDescription" Value="מחליף פרופילי ריבוי צגים עם קיצורי דרך גלובליים" />
+  <String Id="ShortcutDescription" Value="מחליף פרופילי ריבוי צגים" />
+  <String Id="OptionsDlgWindowTitle" Value="התקנת [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="אפשרויות התקנה" />
+  <String Id="OptionsDlgDescription" Value="בחר תכונות אופציונליות עבור DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="הפעל את DisplayForge אוטומטית בכניסה ל-Windows" />
+  <String Id="OptionsDlgStartupHint" Value="מומלץ לשימוש במגש המערכת. ניתן גם להפעיל &quot;הפעלה ממוזערת למגש&quot; מאוחר יותר בהגדרות." />
+</WixLocalization>

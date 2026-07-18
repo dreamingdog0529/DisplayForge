@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>儲存螢幕配置與解析度，一鍵切換。</value></data>
+  <data name="Profiles" xml:space="preserve"><value>設定檔</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>目前選取的設定檔</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>目前的螢幕</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>設定檔中的螢幕</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>按一下儲存格即可直接編輯數值。</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>從目前設定新增</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>將目前螢幕設定儲存為新設定檔。</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>以目前設定覆寫</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>以目前螢幕設定覆寫所選設定檔。</value></data>
+  <data name="Apply" xml:space="preserve"><value>套用</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>依已儲存的設定切換螢幕。</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>複製</value></data>
+  <data name="Delete" xml:space="preserve"><value>刪除</value></data>
+  <data name="Rename" xml:space="preserve"><value>重新命名</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>請輸入新名稱</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>快速鍵</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>清除</value></data>
+  <data name="Settings" xml:space="preserve"><value>設定</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>開啟 DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>結束</value></data>
+  <data name="Language" xml:space="preserve"><value>語言</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>系統預設</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>一般</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>啟動時最小化到系統匣</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>切換時顯示通知</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>啟用全域快速鍵</value></data>
+  <data name="Save" xml:space="preserve"><value>儲存</value></data>
+  <data name="Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>就緒</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>已套用設定檔: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>失敗: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>已儲存設定檔: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>已刪除設定檔</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>刪除設定檔「{0}」？</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>確認刪除</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>快速鍵 {0} 已被其他設定檔使用。</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>無法註冊快速鍵 {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>按一下後按下快速鍵（Ctrl/Alt/Shift/Win + 鍵）。Esc 清除。</value></data>
+  <data name="Name" xml:space="preserve"><value>名稱</value></data>
+  <data name="Primary" xml:space="preserve"><value>主</value></data>
+  <data name="Enabled" xml:space="preserve"><value>開</value></data>
+  <data name="Resolution" xml:space="preserve"><value>解析度</value></data>
+  <data name="Width" xml:space="preserve"><value>寬度</value></data>
+  <data name="Height" xml:space="preserve"><value>高度</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>重新整理</value></data>
+  <data name="Position" xml:space="preserve"><value>位置</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>方向</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>橫向</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>直向</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>橫向（翻轉）</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>直向（翻轉）</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>請選取或建立設定檔。</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>尚無設定檔。&#10;&#10;按一下左上角「從目前設定新增」，即可儲存目前螢幕設定，隨時切換使用。</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ 使用中</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — 多螢幕設定檔</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge 已在執行。</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>設定檔 {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>未連線: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>關閉後會隱藏到系統匣。請從系統匣選單結束。</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>顯示設定</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>保留這些顯示設定？</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>{0} 秒後還原…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>保留變更</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>還原</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>已還原顯示設定。</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>還原失敗: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>確認顯示變更</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>切換後顯示確認畫面；若在時限內未操作，會自動還原先前設定（避免畫面無法顯示）。</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>套用後確認（按鈕 / 系統匣）</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>套用後確認（快速鍵）</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>逾時（秒）</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>排列</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>拖曳矩形以移動螢幕。邊緣會貼齊相鄰螢幕。</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>選取設定檔以排列螢幕。</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>識別</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>在每台實體螢幕上顯示大型編號。</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>正在顯示螢幕編號…</value></data>
+</root>

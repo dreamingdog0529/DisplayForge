@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Сохраняйте раскладки мониторов и переключайте одним касанием.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Профили</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Выбранный профиль</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Текущие мониторы</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Мониторы профиля</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Щёлкните ячейку, чтобы изменить значения.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Новый из текущей конфигурации</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Сохранить текущую конфигурацию мониторов как новый профиль.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Перезаписать текущей</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Заменить этот профиль текущей конфигурацией мониторов.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Применить</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Переключить мониторы на эту сохранённую раскладку.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Дублировать</value></data>
+  <data name="Delete" xml:space="preserve"><value>Удалить</value></data>
+  <data name="Rename" xml:space="preserve"><value>Переименовать</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Введите новое имя</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Горячая клавиша</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Очистить</value></data>
+  <data name="Settings" xml:space="preserve"><value>Параметры</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Открыть DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Выход</value></data>
+  <data name="Language" xml:space="preserve"><value>Язык</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Системный</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Общие</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Запускать свёрнутым в трей</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Уведомление при переключении</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Включить глобальные горячие клавиши</value></data>
+  <data name="Save" xml:space="preserve"><value>Сохранить</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Готово</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Профиль применён: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Ошибка: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Профиль сохранён: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Профиль удалён</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Удалить профиль «{0}»?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Подтверждение удаления</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Горячая клавиша {0} уже используется другим профилем.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Не удалось зарегистрировать {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Нажмите и введите сочетание (Ctrl/Alt/Shift/Win + клавиша). Esc очищает.</value></data>
+  <data name="Name" xml:space="preserve"><value>Имя</value></data>
+  <data name="Primary" xml:space="preserve"><value>Основной</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Вкл.</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Разрешение</value></data>
+  <data name="Width" xml:space="preserve"><value>Ширина</value></data>
+  <data name="Height" xml:space="preserve"><value>Высота</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Гц</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Обновить</value></data>
+  <data name="Position" xml:space="preserve"><value>Позиция</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Ориентация</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Альбомная</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Книжная</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Альбомная (перевёрнутая)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Книжная (перевёрнутая)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Выберите или создайте профиль.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Профилей пока нет.&#10;&#10;Используйте кнопку слева сверху, чтобы сохранить текущую конфигурацию мониторов как профиль.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Активен</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — профили нескольких мониторов</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge уже запущен.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Профиль {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Нет: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Закрытие скрывает в трей. Выход — из меню трея.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Параметры экрана</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Сохранить эти параметры экрана?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Отмена через {0} с…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Сохранить</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Отменить</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Параметры экрана отменены.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Не удалось отменить: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Подтверждение изменений экрана</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>После переключения показывает подтверждение; если нет ответа вовремя, предыдущая раскладка восстанавливается автоматически (защита при чёрном экране).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Подтверждать после применения (кнопка / трей)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Подтверждать после применения (горячая клавиша)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Тайм-аут (секунды)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Расположение</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Перетаскивайте прямоугольники, чтобы перемещать мониторы. Края прилипают к соседним.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Выберите профиль, чтобы расположить мониторы.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Определить</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Показать крупные номера на каждом физическом мониторе.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Показ номеров мониторов…</value></data>
+</root>

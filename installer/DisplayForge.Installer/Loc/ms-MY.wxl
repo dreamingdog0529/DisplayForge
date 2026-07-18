@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="ms-MY" Language="1086">
+  <String Id="PackageLanguage" Value="1086" />
+  <String Id="DowngradeError" Value="Versi [ProductName] yang lebih baharu sudah dipasang." />
+  <String Id="SummaryDescription" Value="Penukar profil berbilang monitor dengan pintasan global" />
+  <String Id="ShortcutDescription" Value="Penukar profil berbilang monitor" />
+  <String Id="OptionsDlgWindowTitle" Value="Persediaan [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Pilihan pemasangan" />
+  <String Id="OptionsDlgDescription" Value="Pilih ciri pilihan DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Mulakan DisplayForge secara automatik apabila log masuk ke Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Disyorkan untuk penggunaan dalam dulang sistem. Anda juga boleh dayakan &quot;Mula diminimumkan ke dulang&quot; kemudian dalam Tetapan." />
+</WixLocalization>

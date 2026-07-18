@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a problem with DisplayForge
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. For security issues, see [SECURITY.md](../../SECURITY.md) instead of filing a public issue.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: App or MSI version (e.g. 1.0.0), or commit hash if built from source
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Windows version
+      description: e.g. Windows 11 24H2, Windows 10 22H2
+      placeholder: "Windows 11 24H2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: Display setup
+      description: Number of monitors, extend vs clone, docking / laptop lid, etc.
+      placeholder: "2 monitors, extend, laptop + external HDMI"
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps that trigger the issue
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Optional error messages, relevant settings, or images
+    validations:
+      required: false

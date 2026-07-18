@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Monitör düzenlerini kaydedin ve tek dokunuşla geçiş yapın.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profiller</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Seçili profil</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Geçerli monitörler</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Profil monitörleri</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Değerleri doğrudan düzenlemek için bir hücreye tıklayın.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Geçerli yapılandırmadan yeni</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Geçerli monitör yapılandırmasını yeni profil olarak kaydet.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Geçerli ile üzerine yaz</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Bu profili geçerli monitör yapılandırmasıyla değiştir.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Uygula</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Monitörleri bu kayıtlı düzene geçir.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Çoğalt</value></data>
+  <data name="Delete" xml:space="preserve"><value>Sil</value></data>
+  <data name="Rename" xml:space="preserve"><value>Yeniden adlandır</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Yeni bir ad girin</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Kısayol</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Temizle</value></data>
+  <data name="Settings" xml:space="preserve"><value>Ayarlar</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>DisplayForge’u aç</value></data>
+  <data name="Exit" xml:space="preserve"><value>Çıkış</value></data>
+  <data name="Language" xml:space="preserve"><value>Dil</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Sistem varsayılanı</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Genel</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Tepsiye küçültülmüş başlat</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Geçişte bildirim göster</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Genel kısayolları etkinleştir</value></data>
+  <data name="Save" xml:space="preserve"><value>Kaydet</value></data>
+  <data name="Cancel" xml:space="preserve"><value>İptal</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Hazır</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profil uygulandı: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Başarısız: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profil kaydedildi: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profil silindi</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>"{0}" profili silinsin mi?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Silmeyi onayla</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>{0} kısayolu başka bir profil tarafından kullanılıyor.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>{0} kısayolu kaydedilemedi: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Tıklayın ve kısayola basın (Ctrl/Alt/Shift/Win + tuş). Esc temizler.</value></data>
+  <data name="Name" xml:space="preserve"><value>Ad</value></data>
+  <data name="Primary" xml:space="preserve"><value>Birincil</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Açık</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Çözünürlük</value></data>
+  <data name="Width" xml:space="preserve"><value>Genişlik</value></data>
+  <data name="Height" xml:space="preserve"><value>Yükseklik</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Yenile</value></data>
+  <data name="Position" xml:space="preserve"><value>Konum</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Yönlendirme</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Yatay</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Dikey</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Yatay (ters)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Dikey (ters)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Bir profil seçin veya oluşturun.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Henüz profil yok.&#10;&#10;Geçerli monitör yapılandırmasını profil olarak kaydetmek için sol üstteki düğmeyi kullanın.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Kullanımda</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — çoklu monitör profilleri</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge zaten çalışıyor.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profil {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Eksik: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Kapatmak tepsiye gizler. Çıkmak için tepsi menüsünü kullanın.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Görüntü ayarları</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Bu görüntü ayarları korunsun mu?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>{0} sn içinde geri alınacak…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Değişiklikleri koru</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Geri al</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Görüntü ayarları geri alındı.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Geri alınamadı: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Ekran değişikliklerini onayla</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Geçişten sonra onay gösterir; süre içinde yanıt yoksa önceki düzen otomatik geri yüklenir (ekran kararırsa güvenlik ağı).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Uyguladıktan sonra onayla (düğme / tepsi)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Uyguladıktan sonra onayla (kısayol)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Zaman aşımı (saniye)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Düzen</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Monitörleri taşımak için dikdörtgenleri sürükleyin. Kenarlar komşulara yapışır.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Monitörleri düzenlemek için bir profil seçin.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Tanımla</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Her fiziksel monitörde büyük numaralar göster.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Monitör numaraları gösteriliyor…</value></data>
+</root>

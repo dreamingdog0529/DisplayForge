@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="de-DE" Language="1031">
+  <String Id="PackageLanguage" Value="1031" />
+  <String Id="DowngradeError" Value="Eine neuere Version von [ProductName] ist bereits installiert." />
+  <String Id="SummaryDescription" Value="Multi-Monitor-Profilumschalter mit globalen Hotkeys" />
+  <String Id="ShortcutDescription" Value="Multi-Monitor-Profilumschalter" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName]-Setup" />
+  <String Id="OptionsDlgBannerTitle" Value="Installationsoptionen" />
+  <String Id="OptionsDlgDescription" Value="Optionale Funktionen für DisplayForge auswählen." />
+  <String Id="OptionsDlgStartupCheck" Value="DisplayForge beim Anmelden an Windows automatisch starten" />
+  <String Id="OptionsDlgStartupHint" Value="Empfohlen für die Nutzung im Infobereich. &quot;Beim Start in den Infobereich minimieren&quot; können Sie später in den Einstellungen aktivieren." />
+</WixLocalization>

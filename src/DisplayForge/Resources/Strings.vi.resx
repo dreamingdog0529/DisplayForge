@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Lưu bố cục màn hình và chuyển bằng một chạm.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Hồ sơ</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Hồ sơ đã chọn</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Màn hình hiện tại</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Màn hình trong hồ sơ</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Nhấp vào ô để chỉnh sửa giá trị trực tiếp.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Mới từ cấu hình hiện tại</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Lưu cấu hình màn hình hiện tại thành hồ sơ mới.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Ghi đè bằng hiện tại</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Ghi đè hồ sơ này bằng cấu hình màn hình hiện tại.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Áp dụng</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Chuyển màn hình sang bố cục đã lưu này.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Nhân bản</value></data>
+  <data name="Delete" xml:space="preserve"><value>Xóa</value></data>
+  <data name="Rename" xml:space="preserve"><value>Đổi tên</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Nhập tên mới</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Phím tắt</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Xóa</value></data>
+  <data name="Settings" xml:space="preserve"><value>Cài đặt</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Mở DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Thoát</value></data>
+  <data name="Language" xml:space="preserve"><value>Ngôn ngữ</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Mặc định hệ thống</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Chung</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Khởi động thu nhỏ khay hệ thống</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Hiện thông báo khi chuyển</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Bật phím tắt toàn cục</value></data>
+  <data name="Save" xml:space="preserve"><value>Lưu</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Hủy</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Sẵn sàng</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Đã áp dụng hồ sơ: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Thất bại: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Đã lưu hồ sơ: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Đã xóa hồ sơ</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Xóa hồ sơ "{0}"?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Xác nhận xóa</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Phím tắt {0} đã được hồ sơ khác dùng.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Không thể đăng ký phím tắt {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Nhấp rồi nhấn phím tắt (Ctrl/Alt/Shift/Win + phím). Esc để xóa.</value></data>
+  <data name="Name" xml:space="preserve"><value>Tên</value></data>
+  <data name="Primary" xml:space="preserve"><value>Chính</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Bật</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Độ phân giải</value></data>
+  <data name="Width" xml:space="preserve"><value>Rộng</value></data>
+  <data name="Height" xml:space="preserve"><value>Cao</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Làm mới</value></data>
+  <data name="Position" xml:space="preserve"><value>Vị trí</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Hướng</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Ngang</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Dọc</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Ngang (lật)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Dọc (lật)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Chọn hoặc tạo hồ sơ.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Chưa có hồ sơ nào.&#10;&#10;Dùng nút góc trên bên trái để lưu cấu hình màn hình hiện tại thành hồ sơ.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Đang dùng</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — hồ sơ đa màn hình</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge đang chạy.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Hồ sơ {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Thiếu: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Đóng sẽ ẩn vào khay. Dùng Thoát trong menu khay để thoát.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Cài đặt hiển thị</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Giữ các cài đặt hiển thị này?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Hoàn nguyên sau {0} giây…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Giữ thay đổi</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Hoàn nguyên</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Đã hoàn nguyên cài đặt hiển thị.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Không thể hoàn nguyên: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Xác nhận thay đổi màn hình</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Hiển thị xác nhận sau khi chuyển; nếu không phản hồi kịp, bố cục trước đó được khôi phục tự động (an toàn khi màn hình đen).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Xác nhận sau khi áp dụng (nút / khay)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Xác nhận sau khi áp dụng (phím tắt)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Thời gian chờ (giây)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Sắp xếp</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Kéo hình chữ nhật để di chuyển màn hình. Cạnh sẽ dính vào màn hình lân cận.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Chọn hồ sơ để sắp xếp màn hình.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Nhận dạng</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Hiển thị số lớn trên mỗi màn hình vật lý.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Đang hiển thị số màn hình…</value></data>
+</root>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Gem skærmlayouts og skift med ét tryk.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profiler</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Valgt profil</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Aktuelle skærme</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Profilskærme</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Klik på en celle for at redigere værdier direkte.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Ny fra aktuel konfiguration</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Gem den aktuelle skærmkonfiguration som en ny profil.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Overskriv med aktuel</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Erstat denne profil med den aktuelle skærmkonfiguration.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Anvend</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Skift skærme til dette gemte layout.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Dupliker</value></data>
+  <data name="Delete" xml:space="preserve"><value>Slet</value></data>
+  <data name="Rename" xml:space="preserve"><value>Omdøb</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Indtast et nyt navn</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Genvej</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Ryd</value></data>
+  <data name="Settings" xml:space="preserve"><value>Indstillinger</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Åbn DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Afslut</value></data>
+  <data name="Language" xml:space="preserve"><value>Sprog</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Systemstandard</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Generelt</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Start minimeret i systembakken</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Vis meddelelse ved skift</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Aktivér globale genveje</value></data>
+  <data name="Save" xml:space="preserve"><value>Gem</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Annuller</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Klar</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profil anvendt: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Mislykkedes: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profil gemt: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profil slettet</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Slet profilen "{0}"?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Bekræft sletning</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Genvejen {0} bruges allerede af en anden profil.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Kunne ikke registrere {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Klik, og tryk på en genvej (Ctrl/Alt/Shift/Win + tast). Esc rydder.</value></data>
+  <data name="Name" xml:space="preserve"><value>Navn</value></data>
+  <data name="Primary" xml:space="preserve"><value>Primær</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Til</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Opløsning</value></data>
+  <data name="Width" xml:space="preserve"><value>Bredde</value></data>
+  <data name="Height" xml:space="preserve"><value>Højde</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Opdater</value></data>
+  <data name="Position" xml:space="preserve"><value>Position</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Retning</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Liggende</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Stående</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Liggende (vendt)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Stående (vendt)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Vælg eller opret en profil.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Ingen profiler endnu.&#10;&#10;Brug knappen øverst til venstre for at gemme den aktuelle skærmkonfiguration som profil.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Aktiv</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — multi-skærmsprofiler</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge kører allerede.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profil {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Mangler: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Luk skjuler til systembakken. Afslut via bakkemenuen.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Skærmindstillinger</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Behold disse skærmindstillinger?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Fortryder om {0} s…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Behold</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Fortryd</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Skærmindstillinger fortrudt.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Kunne ikke fortryde: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Bekræft skærmændringer</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Viser en bekræftelse efter skift; uden svar i tide gendannes det forrige layout automatisk (sikkerhed ved sort skærm).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Bekræft efter anvendelse (knap / systembakke)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Bekræft efter anvendelse (genvej)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Timeout (sekunder)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Arrangement</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Træk rektangler for at flytte skærme. Kanter fastgøres til naboer.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Vælg en profil for at arrangere skærme.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Identificer</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Vis store numre på hver fysisk skærm.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Viser skærmnumre…</value></data>
+</root>

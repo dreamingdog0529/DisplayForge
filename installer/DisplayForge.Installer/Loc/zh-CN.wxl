@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="zh-CN" Language="2052">
+  <String Id="PackageLanguage" Value="2052" />
+  <String Id="DowngradeError" Value="已安装更新版本的 [ProductName]。" />
+  <String Id="SummaryDescription" Value="支持全局快捷键的多显示器配置切换工具" />
+  <String Id="ShortcutDescription" Value="多显示器配置切换" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName] 安装" />
+  <String Id="OptionsDlgBannerTitle" Value="安装选项" />
+  <String Id="OptionsDlgDescription" Value="选择 DisplayForge 的可选功能。" />
+  <String Id="OptionsDlgStartupCheck" Value="登录 Windows 时自动启动 DisplayForge" />
+  <String Id="OptionsDlgStartupHint" Value="适合托盘常驻使用。稍后也可在设置中启用“启动时最小化到托盘”。" />
+</WixLocalization>

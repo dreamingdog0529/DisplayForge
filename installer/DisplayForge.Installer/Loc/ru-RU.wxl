@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="ru-RU" Language="1049">
+  <String Id="PackageLanguage" Value="1049" />
+  <String Id="DowngradeError" Value="Уже установлена более новая версия [ProductName]." />
+  <String Id="SummaryDescription" Value="Переключатель профилей нескольких мониторов с глобальными горячими клавишами" />
+  <String Id="ShortcutDescription" Value="Переключатель профилей мониторов" />
+  <String Id="OptionsDlgWindowTitle" Value="Установка [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Параметры установки" />
+  <String Id="OptionsDlgDescription" Value="Выберите дополнительные параметры DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Запускать DisplayForge автоматически при входе в Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Рекомендуется для работы в области уведомлений. Позже в параметрах можно включить «Запускать свёрнутым в область уведомлений»." />
+</WixLocalization>

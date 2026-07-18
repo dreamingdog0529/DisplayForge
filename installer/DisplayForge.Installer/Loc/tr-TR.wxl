@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="tr-TR" Language="1055">
+  <String Id="PackageLanguage" Value="1055" />
+  <String Id="DowngradeError" Value="[ProductName] uygulamasının daha yeni bir sürümü zaten yüklü." />
+  <String Id="SummaryDescription" Value="Genel kısayol tuşlarıyla çoklu monitör profili değiştirici" />
+  <String Id="ShortcutDescription" Value="Çoklu monitör profili değiştirici" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName] Kurulumu" />
+  <String Id="OptionsDlgBannerTitle" Value="Kurulum seçenekleri" />
+  <String Id="OptionsDlgDescription" Value="DisplayForge için isteğe bağlı özellikleri seçin." />
+  <String Id="OptionsDlgStartupCheck" Value="Windows oturumu açıldığında DisplayForge'u otomatik başlat" />
+  <String Id="OptionsDlgStartupHint" Value="Sistem tepsisinde kullanım için önerilir. Ayarlar'da daha sonra &quot;Başlangıçta tepsiye küçült&quot; seçeneğini de açabilirsiniz." />
+</WixLocalization>

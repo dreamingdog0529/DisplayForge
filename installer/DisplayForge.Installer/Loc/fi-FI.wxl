@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="fi-FI" Language="1035">
+  <String Id="PackageLanguage" Value="1035" />
+  <String Id="DowngradeError" Value="Uudempi versio tuotteesta [ProductName] on jo asennettu." />
+  <String Id="SummaryDescription" Value="Moninäyttöprofiilien vaihtaja globaaleilla pikanäppäimillä" />
+  <String Id="ShortcutDescription" Value="Moninäyttöprofiilien vaihtaja" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName]-asennus" />
+  <String Id="OptionsDlgBannerTitle" Value="Asennusasetukset" />
+  <String Id="OptionsDlgDescription" Value="Valitse DisplayForgen valinnaiset ominaisuudet." />
+  <String Id="OptionsDlgStartupCheck" Value="Käynnistä DisplayForge automaattisesti Windowsiin kirjautuessa" />
+  <String Id="OptionsDlgStartupHint" Value="Suositellaan ilmoitusalueella käytettäväksi. Voit myöhemmin ottaa asetuksissa käyttöön &quot;Käynnistä pienennettynä ilmoitusalueelle&quot;." />
+</WixLocalization>

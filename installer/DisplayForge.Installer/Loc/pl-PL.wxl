@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="pl-PL" Language="1045">
+  <String Id="PackageLanguage" Value="1045" />
+  <String Id="DowngradeError" Value="Nowsza wersja [ProductName] jest już zainstalowana." />
+  <String Id="SummaryDescription" Value="Przełącznik profili wielu monitorów z globalnymi skrótami" />
+  <String Id="ShortcutDescription" Value="Przełącznik profili wielu monitorów" />
+  <String Id="OptionsDlgWindowTitle" Value="Instalacja [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Opcje instalacji" />
+  <String Id="OptionsDlgDescription" Value="Wybierz opcjonalne funkcje DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Uruchamiaj DisplayForge automatycznie po zalogowaniu do Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Zalecane przy pracy w zasobniku. Później w Ustawieniach możesz też włączyć „Uruchom zminimalizowane do zasobnika”." />
+</WixLocalization>

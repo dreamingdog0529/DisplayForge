@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="pt-PT" Language="2070">
+  <String Id="PackageLanguage" Value="2070" />
+  <String Id="DowngradeError" Value="Já está instalada uma versão mais recente do [ProductName]." />
+  <String Id="SummaryDescription" Value="Comutador de perfis multi-monitor com atalhos globais" />
+  <String Id="ShortcutDescription" Value="Comutador de perfis multi-monitor" />
+  <String Id="OptionsDlgWindowTitle" Value="Instalação do [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Opções de instalação" />
+  <String Id="OptionsDlgDescription" Value="Escolha as funcionalidades opcionais do DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Iniciar o DisplayForge automaticamente ao iniciar sessão no Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Recomendado para utilização na bandeja. Também pode ativar &quot;Iniciar minimizado na bandeja&quot; mais tarde em Definições." />
+</WixLocalization>

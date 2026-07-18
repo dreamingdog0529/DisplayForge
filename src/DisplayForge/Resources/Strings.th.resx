@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>บันทึกการจัดวางจอภาพแล้วสลับได้ในครั้งเดียว</value></data>
+  <data name="Profiles" xml:space="preserve"><value>โปรไฟล์</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>โปรไฟล์ที่เลือก</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>จอภาพปัจจุบัน</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>จอภาพในโปรไฟล์</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>คลิกเซลล์เพื่อแก้ไขค่าได้โดยตรง</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>สร้างใหม่จากค่าปัจจุบัน</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>บันทึกการตั้งค่าจอปัจจุบันเป็นโปรไฟล์ใหม่</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>เขียนทับด้วยค่าปัจจุบัน</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>แทนที่โปรไฟล์นี้ด้วยการตั้งค่าจอปัจจุบัน</value></data>
+  <data name="Apply" xml:space="preserve"><value>ใช้</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>สลับจอภาพตามเค้าโครงที่บันทึกไว้</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>ทำซ้ำ</value></data>
+  <data name="Delete" xml:space="preserve"><value>ลบ</value></data>
+  <data name="Rename" xml:space="preserve"><value>เปลี่ยนชื่อ</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>ป้อนชื่อใหม่</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>คีย์ลัด</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>ล้าง</value></data>
+  <data name="Settings" xml:space="preserve"><value>การตั้งค่า</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>เปิด DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>ออก</value></data>
+  <data name="Language" xml:space="preserve"><value>ภาษา</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>ตามระบบ</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>ทั่วไป</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>เริ่มแบบย่อไปที่ถาดระบบ</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>แสดงการแจ้งเตือนเมื่อสลับ</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>เปิดใช้คีย์ลัดส่วนกลาง</value></data>
+  <data name="Save" xml:space="preserve"><value>บันทึก</value></data>
+  <data name="Cancel" xml:space="preserve"><value>ยกเลิก</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>พร้อม</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>ใช้โปรไฟล์แล้ว: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>ล้มเหลว: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>บันทึกโปรไฟล์แล้ว: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>ลบโปรไฟล์แล้ว</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>ลบโปรไฟล์ "{0}" หรือไม่?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>ยืนยันการลบ</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>คีย์ลัด {0} ถูกโปรไฟล์อื่นใช้แล้ว</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>ลงทะเบียนคีย์ลัด {0} ไม่ได้: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>คลิกแล้วกดคีย์ลัด (Ctrl/Alt/Shift/Win + ปุ่ม) Esc เพื่อล้าง</value></data>
+  <data name="Name" xml:space="preserve"><value>ชื่อ</value></data>
+  <data name="Primary" xml:space="preserve"><value>หลัก</value></data>
+  <data name="Enabled" xml:space="preserve"><value>เปิด</value></data>
+  <data name="Resolution" xml:space="preserve"><value>ความละเอียด</value></data>
+  <data name="Width" xml:space="preserve"><value>กว้าง</value></data>
+  <data name="Height" xml:space="preserve"><value>สูง</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>รีเฟรช</value></data>
+  <data name="Position" xml:space="preserve"><value>ตำแหน่ง</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>การวางแนว</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>แนวนอน</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>แนวตั้ง</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>แนวนอน (กลับด้าน)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>แนวตั้ง (กลับด้าน)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>เลือกหรือสร้างโปรไฟล์</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>ยังไม่มีโปรไฟล์&#10;&#10;ใช้ปุ่มมุมซ้ายบนเพื่อบันทึกการตั้งค่าจอปัจจุบันเป็นโปรไฟล์</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ กำลังใช้</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — โปรไฟล์หลายจอ</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge กำลังทำงานอยู่แล้ว</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>โปรไฟล์ {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>ไม่พบ: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>ปิดแล้วจะซ่อนไปที่ถาด ใช้ ออก จากเมนูถาดเพื่อปิดโปรแกรม</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>การตั้งค่าจอแสดงผล</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>เก็บการตั้งค่าจอแสดงผลเหล่านี้หรือไม่?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>จะคืนค่าใน {0} วินาที…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>เก็บการเปลี่ยนแปลง</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>คืนค่า</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>คืนค่าการตั้งค่าจอแสดงผลแล้ว</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>คืนค่าไม่สำเร็จ: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>ยืนยันการเปลี่ยนจอแสดงผล</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>แสดงหน้ายืนยันหลังสลับ หากไม่ตอบภายในเวลาที่กำหนด จะคืนค่าเค้าโครงเดิมโดยอัตโนมัติ (กันจอดับ)</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>ยืนยันหลังใช้ (ปุ่ม / ถาด)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>ยืนยันหลังใช้ (คีย์ลัด)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>หมดเวลา (วินาที)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>การจัดวาง</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>ลากสี่เหลี่ยมเพื่อย้ายจอ ขอบจะยึดกับจอข้างเคียง</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>เลือกโปรไฟล์เพื่อจัดวางจอ</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>ระบุ</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>แสดงหมายเลขขนาดใหญ่บนจอจริงแต่ละจอ</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>กำลังแสดงหมายเลขจอ…</value></data>
+</root>

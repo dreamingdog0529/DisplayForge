@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Tallenna näyttöasettelut ja vaihda yhdellä painalluksella.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profiilit</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Valittu profiili</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Nykyiset näytöt</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Profiilin näytöt</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Napsauta solua muokataksesi arvoja suoraan.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Uusi nykyisestä kokoonpanosta</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Tallenna nykyinen näyttöasetus uudeksi profiiliksi.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Korvaa nykyisellä</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Korvaa tämä profiili nykyisellä näyttöasetuksella.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Käytä</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Vaihda näytöt tähän tallennettuun asetteluun.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Monista</value></data>
+  <data name="Delete" xml:space="preserve"><value>Poista</value></data>
+  <data name="Rename" xml:space="preserve"><value>Nimeä uudelleen</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Anna uusi nimi</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Pikanäppäin</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Tyhjennä</value></data>
+  <data name="Settings" xml:space="preserve"><value>Asetukset</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Avaa DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Lopeta</value></data>
+  <data name="Language" xml:space="preserve"><value>Kieli</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Järjestelmän oletus</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Yleiset</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Käynnistä pienennettynä ilmoitusalueelle</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Näytä ilmoitus vaihdettaessa</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Ota yleiset pikanäppäimet käyttöön</value></data>
+  <data name="Save" xml:space="preserve"><value>Tallenna</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Peruuta</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Valmis</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profiili käytössä: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Epäonnistui: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profiili tallennettu: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profiili poistettu</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Poistetaanko profiili "{0}"?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Vahvista poisto</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Pikanäppäin {0} on jo toisen profiilin käytössä.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Pikanäppäintä {0} ei voitu rekisteröidä: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Napsauta ja paina pikanäppäintä (Ctrl/Alt/Shift/Win + näppäin). Esc tyhjentää.</value></data>
+  <data name="Name" xml:space="preserve"><value>Nimi</value></data>
+  <data name="Primary" xml:space="preserve"><value>Ensisijainen</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Päällä</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Tarkkuus</value></data>
+  <data name="Width" xml:space="preserve"><value>Leveys</value></data>
+  <data name="Height" xml:space="preserve"><value>Korkeus</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Päivitä</value></data>
+  <data name="Position" xml:space="preserve"><value>Sijainti</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Suunta</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Vaaka</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Pysty</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Vaaka (käännetty)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Pysty (käännetty)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Valitse tai luo profiili.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Ei vielä profiileja.&#10;&#10;Tallenna nykyinen näyttöasetus profiiliksi vasemman yläkulman painikkeella.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Käytössä</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — moninäyttöprofiilit</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge on jo käynnissä.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profiili {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Puuttuu: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Sulkeminen piilottaa ilmoitusalueelle. Lopeta ilmoitusalueen valikosta.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Näyttöasetukset</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Säilytetäänkö nämä näyttöasetukset?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Palautetaan {0} s kuluttua…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Säilytä</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Palauta</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Näyttöasetukset palautettu.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Palautus epäonnistui: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Vahvista näyttömuutokset</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Näyttää vahvistuksen vaihdon jälkeen; jos et vastaa ajoissa, edellinen asettelu palautetaan automaattisesti (turva mustan näytön varalta).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Vahvista käytön jälkeen (painike / ilmoitusalue)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Vahvista käytön jälkeen (pikanäppäin)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Aikakatkaisu (sekuntia)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Sijoittelu</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Siirrä näyttöjä vetämällä suorakulmioita. Reunat tarttuvat naapureihin.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Valitse profiili näyttöjen sijoitteluun.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Tunnista</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Näytä suuret numerot jokaisella fyysisellä näytöllä.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Näytetään näyttönumeroita…</value></data>
+</root>

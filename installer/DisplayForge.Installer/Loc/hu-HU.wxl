@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="hu-HU" Language="1038">
+  <String Id="PackageLanguage" Value="1038" />
+  <String Id="DowngradeError" Value="A [ProductName] újabb verziója már telepítve van." />
+  <String Id="SummaryDescription" Value="Többmonitoros profilváltó globális billentyűparancsokkal" />
+  <String Id="ShortcutDescription" Value="Többmonitoros profilváltó" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName] telepítése" />
+  <String Id="OptionsDlgBannerTitle" Value="Telepítési beállítások" />
+  <String Id="OptionsDlgDescription" Value="Válassza ki a DisplayForge választható funkcióit." />
+  <String Id="OptionsDlgStartupCheck" Value="DisplayForge automatikus indítása Windows-bejelentkezéskor" />
+  <String Id="OptionsDlgStartupHint" Value="Ajánlott tálcán futó használathoz. Később a Beállításokban bekapcsolhatja a „Indítás minimalizálva a tálcára” lehetőséget is." />
+</WixLocalization>

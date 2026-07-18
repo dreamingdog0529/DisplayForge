@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Αποθηκεύστε διατάξεις οθονών και αλλάξτε με ένα πάτημα.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Προφίλ</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Επιλεγμένο προφίλ</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Τρέχουσες οθόνες</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Οθόνες προφίλ</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Κάντε κλικ σε ένα κελί για άμεση επεξεργασία τιμών.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Νέο από την τρέχουσα διαμόρφωση</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Αποθήκευση της τρέχουσας διαμόρφωσης ως νέο προφίλ.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Αντικατάσταση με την τρέχουσα</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Αντικατάσταση αυτού του προφίλ με την τρέχουσα διαμόρφωση.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Εφαρμογή</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Εναλλαγή οθονών σε αυτή την αποθηκευμένη διάταξη.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Αντιγραφή</value></data>
+  <data name="Delete" xml:space="preserve"><value>Διαγραφή</value></data>
+  <data name="Rename" xml:space="preserve"><value>Μετονομασία</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Εισαγάγετε νέο όνομα</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Συντόμευση</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Διαγραφή</value></data>
+  <data name="Settings" xml:space="preserve"><value>Ρυθμίσεις</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Άνοιγμα DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Έξοδος</value></data>
+  <data name="Language" xml:space="preserve"><value>Γλώσσα</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Προεπιλογή συστήματος</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Γενικά</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Έναρξη ελαχιστοποιημένο στη γραμμή ειδοποιήσεων</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Ειδοποίηση κατά την εναλλαγή</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Ενεργοποίηση καθολικών συντομεύσεων</value></data>
+  <data name="Save" xml:space="preserve"><value>Αποθήκευση</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Ακύρωση</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Έτοιμο</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Εφαρμόστηκε το προφίλ: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Αποτυχία: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Αποθηκεύτηκε το προφίλ: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Το προφίλ διαγράφηκε</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Διαγραφή του προφίλ «{0}»;</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Επιβεβαίωση διαγραφής</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Η συντόμευση {0} χρησιμοποιείται ήδη από άλλο προφίλ.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Αδυναμία καταχώρισης {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Κάντε κλικ και πατήστε συντόμευση (Ctrl/Alt/Shift/Win + πλήκτρο). Esc διαγράφει.</value></data>
+  <data name="Name" xml:space="preserve"><value>Όνομα</value></data>
+  <data name="Primary" xml:space="preserve"><value>Κύρια</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Ναι</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Ανάλυση</value></data>
+  <data name="Width" xml:space="preserve"><value>Πλάτος</value></data>
+  <data name="Height" xml:space="preserve"><value>Ύψος</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Ανανέωση</value></data>
+  <data name="Position" xml:space="preserve"><value>Θέση</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Προσανατολισμός</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Οριζόντιος</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Κατακόρυφος</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Οριζόντιος (ανεστραμμένος)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Κατακόρυφος (ανεστραμμένος)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Επιλέξτε ή δημιουργήστε προφίλ.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Δεν υπάρχουν ακόμη προφίλ.&#10;&#10;Χρησιμοποιήστε το κουμπί πάνω αριστερά για να αποθηκεύσετε την τρέχουσα διαμόρφωση ως προφίλ.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Σε χρήση</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — προφίλ πολλαπλών οθονών</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>Το DisplayForge εκτελείται ήδη.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Προφίλ {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Λείπουν: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Το κλείσιμο αποκρύπτει στη γραμμή ειδοποιήσεων. Έξοδος από το μενού εκεί.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Ρυθμίσεις οθόνης</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Διατήρηση αυτών των ρυθμίσεων οθόνης;</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Επαναφορά σε {0} δ…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Διατήρηση</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Επαναφορά</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Οι ρυθμίσεις οθόνης επαναφέρθηκαν.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Αποτυχία επαναφοράς: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Επιβεβαίωση αλλαγών οθόνης</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Εμφανίζει επιβεβαίωση μετά την αλλαγή· αν δεν απαντήσετε εγκαίρως, η προηγούμενη διάταξη επανέρχεται αυτόματα (ασφάλεια αν η οθόνη μείνει μαύρη).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Επιβεβαίωση μετά την εφαρμογή (κουμπί / γραμμή ειδοποιήσεων)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Επιβεβαίωση μετά την εφαρμογή (συντόμευση)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Χρονικό όριο (δευτερόλεπτα)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Διάταξη</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Σύρετε τα ορθογώνια για μετακίνηση οθονών. Οι άκρες κουμπώνουν στους γείτονες.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Επιλέξτε προφίλ για διάταξη οθονών.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Αναγνώριση</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Εμφάνιση μεγάλων αριθμών σε κάθε φυσική οθόνη.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Εμφάνιση αριθμών οθόνης…</value></data>
+</root>

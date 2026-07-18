@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="ro-RO" Language="1048">
+  <String Id="PackageLanguage" Value="1048" />
+  <String Id="DowngradeError" Value="Este deja instalată o versiune mai nouă de [ProductName]." />
+  <String Id="SummaryDescription" Value="Comutator de profiluri multi-monitor cu comenzi rapide globale" />
+  <String Id="ShortcutDescription" Value="Comutator de profiluri multi-monitor" />
+  <String Id="OptionsDlgWindowTitle" Value="Instalare [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Opțiuni de instalare" />
+  <String Id="OptionsDlgDescription" Value="Alegeți funcțiile opționale pentru DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Pornește DisplayForge automat la conectarea în Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Recomandat pentru utilizare în zona de notificare. Puteți activa ulterior „Pornește minimizat în zona de notificare” din Setări." />
+</WixLocalization>

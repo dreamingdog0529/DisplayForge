@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="sv-SE" Language="1053">
+  <String Id="PackageLanguage" Value="1053" />
+  <String Id="DowngradeError" Value="En nyare version av [ProductName] är redan installerad." />
+  <String Id="SummaryDescription" Value="Profilväxlare för flera skärmar med globala snabbkommandon" />
+  <String Id="ShortcutDescription" Value="Profilväxlare för flera skärmar" />
+  <String Id="OptionsDlgWindowTitle" Value="Installation av [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Installationsalternativ" />
+  <String Id="OptionsDlgDescription" Value="Välj tillval för DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Starta DisplayForge automatiskt när jag loggar in i Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Rekommenderas för användning i meddelandefältet. Du kan senare aktivera &quot;Starta minimerad till meddelandefältet&quot; i Inställningar." />
+</WixLocalization>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Simpan tata letak monitor dan beralih dengan satu sentuhan.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profil</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Profil terpilih</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Monitor saat ini</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Monitor profil</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Klik sel untuk mengedit nilai secara langsung.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Baru dari konfigurasi saat ini</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Simpan konfigurasi monitor saat ini sebagai profil baru.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Timpa dengan saat ini</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Ganti profil ini dengan konfigurasi monitor saat ini.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Terapkan</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Alihkan monitor ke tata letak tersimpan ini.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Duplikat</value></data>
+  <data name="Delete" xml:space="preserve"><value>Hapus</value></data>
+  <data name="Rename" xml:space="preserve"><value>Ganti nama</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Masukkan nama baru</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Pintasan</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Hapus</value></data>
+  <data name="Settings" xml:space="preserve"><value>Pengaturan</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Buka DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Keluar</value></data>
+  <data name="Language" xml:space="preserve"><value>Bahasa</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Bawaan sistem</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Umum</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Mulai diminimalkan ke baki</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Tampilkan notifikasi saat beralih</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Aktifkan pintasan global</value></data>
+  <data name="Save" xml:space="preserve"><value>Simpan</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Batal</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Siap</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profil diterapkan: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Gagal: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profil disimpan: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profil dihapus</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Hapus profil "{0}"?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Konfirmasi hapus</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Pintasan {0} sudah digunakan profil lain.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Tidak dapat mendaftarkan {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Klik lalu tekan pintasan (Ctrl/Alt/Shift/Win + tombol). Esc menghapus.</value></data>
+  <data name="Name" xml:space="preserve"><value>Nama</value></data>
+  <data name="Primary" xml:space="preserve"><value>Utama</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Aktif</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Resolusi</value></data>
+  <data name="Width" xml:space="preserve"><value>Lebar</value></data>
+  <data name="Height" xml:space="preserve"><value>Tinggi</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Segarkan</value></data>
+  <data name="Position" xml:space="preserve"><value>Posisi</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Orientasi</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Lanskap</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Potret</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Lanskap (terbalik)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Potret (terbalik)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Pilih atau buat profil.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Belum ada profil.&#10;&#10;Gunakan tombol kiri atas untuk menyimpan konfigurasi monitor saat ini sebagai profil.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Digunakan</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — profil multi-monitor</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge sudah berjalan.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profil {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Hilang: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Menutup menyembunyikan ke baki. Gunakan Keluar dari menu baki.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Pengaturan tampilan</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Pertahankan pengaturan tampilan ini?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Mengembalikan dalam {0} d…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Pertahankan</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Kembalikan</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Pengaturan tampilan dikembalikan.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Gagal mengembalikan: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Konfirmasi perubahan tampilan</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Menampilkan konfirmasi setelah beralih; jika tidak direspons tepat waktu, tata letak sebelumnya dipulihkan otomatis (pengaman jika layar hitam).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Konfirmasi setelah menerapkan (tombol / baki)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Konfirmasi setelah menerapkan (pintasan)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Batas waktu (detik)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Tata letak</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Seret persegi panjang untuk memindahkan monitor. Tepi menempel ke tetangga.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Pilih profil untuk menata monitor.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Identifikasi</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Tampilkan nomor besar di setiap monitor fisik.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Menampilkan nomor monitor…</value></data>
+</root>

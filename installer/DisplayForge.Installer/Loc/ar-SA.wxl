@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="ar-SA" Language="1025">
+  <String Id="PackageLanguage" Value="1025" />
+  <String Id="DowngradeError" Value="هناك إصدار أحدث من [ProductName] مثبت بالفعل." />
+  <String Id="SummaryDescription" Value="مبدّل ملفات شخصية لشاشات متعددة مع اختصارات عامة" />
+  <String Id="ShortcutDescription" Value="مبدّل ملفات شخصية لشاشات متعددة" />
+  <String Id="OptionsDlgWindowTitle" Value="إعداد [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="خيارات التثبيت" />
+  <String Id="OptionsDlgDescription" Value="اختر الميزات الاختيارية لـ DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="بدء DisplayForge تلقائيًا عند تسجيل الدخول إلى Windows" />
+  <String Id="OptionsDlgStartupHint" Value="يُنصح به للاستخدام في علبة النظام. يمكنك أيضًا تمكين «البدء مصغّرًا في علبة النظام» لاحقًا من الإعدادات." />
+</WixLocalization>

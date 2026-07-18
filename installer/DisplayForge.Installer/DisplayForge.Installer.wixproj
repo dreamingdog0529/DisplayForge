@@ -1,0 +1,30 @@
+<Project Sdk="WixToolset.Sdk/7.0.0">
+
+  <PropertyGroup>
+    <!-- WiX v7 OSMF EULA: free under $10k revenue; see https://docs.firegiant.com/wix/osmf/ -->
+    <AcceptEula>wix7</AcceptEula>
+    <OutputType>Package</OutputType>
+    <InstallerPlatform>x64</InstallerPlatform>
+    <Platform>x64</Platform>
+    <OutputName>DisplayForge</OutputName>
+    <DefaultCompressionLevel>high</DefaultCompressionLevel>
+    <!-- Publish output harvested by Package.wxs via bind path "Publish". -->
+    <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\..\artifacts\publish\win-x64\</PublishDir>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">1.0.0</ProductVersion>
+    <Publisher Condition="'$(Publisher)' == ''">DisplayForge</Publisher>
+    <AppIcon Condition="'$(AppIcon)' == ''">$(MSBuildThisFileDirectory)..\..\src\DisplayForge\Assets\app.ico</AppIcon>
+  </PropertyGroup>
+
+  <!-- DefineConstants after defaults so preprocessor vars are non-empty. -->
+  <PropertyGroup>
+    <DefineConstants>ProductVersion=$(ProductVersion);Publisher=$(Publisher);AppIcon=$(AppIcon)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <BindPath Include="$(PublishDir)" BindName="Publish" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
+    <!-- Loc/*.wxl auto-included as EmbeddedResource; one MSI per culture. -->
+    <!-- Regenerate: dotnet run --project tools/GenInstallerLocales -->
+  </ItemGroup>
+
+</Project>

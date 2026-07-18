@@ -1,0 +1,352 @@
+<Window x:Class="DisplayForge.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:DisplayForge.Views"
+        Title="{Binding WindowTitle}"
+        Height="740" Width="1020"
+        MinHeight="600" MinWidth="920"
+        WindowStartupLocation="CenterScreen"
+        Icon="pack://application:,,,/Assets/app.ico">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding StatusText}"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- Top bar: app tagline + global settings only -->
+        <DockPanel DockPanel.Dock="Top" Margin="12,10,12,0">
+            <Button x:Name="BtnSettings" DockPanel.Dock="Right" Padding="12,4"
+                    Command="{Binding OpenSettingsCommand}"/>
+            <TextBlock x:Name="LblAppTagline"
+                       VerticalAlignment="Center"
+                       Foreground="Gray"
+                       TextTrimming="CharacterEllipsis"/>
+        </DockPanel>
+
+        <Grid Margin="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left: profile list + all list-scoped actions in one footer toolbar -->
+            <DockPanel Grid.Column="0">
+                <TextBlock x:Name="LblProfiles" DockPanel.Dock="Top" FontWeight="SemiBold" Margin="0,0,0,6"/>
+
+                <!-- Profile list actions: create + manage in one cluster -->
+                <Border DockPanel.Dock="Bottom"
+                        Margin="0,8,0,0"
+                        Padding="6"
+                        Background="#F3F4F6"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <StackPanel>
+                        <Button x:Name="BtnNewProfile"
+                                Command="{Binding CreateFromCurrentCommand}"
+                                Padding="0,7"
+                                FontWeight="SemiBold"/>
+                        <Grid Margin="0,6,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="4"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="4"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="BtnDuplicate" Grid.Column="0" Padding="0,4"
+                                    Command="{Binding DuplicateSelectedCommand}"/>
+                            <Button x:Name="BtnRename" Grid.Column="2" Padding="0,4"
+                                    Command="{Binding RenameSelectedCommand}"/>
+                            <Button x:Name="BtnDelete" Grid.Column="4" Padding="0,4"
+                                    Command="{Binding DeleteSelectedCommand}"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <ListBox ItemsSource="{Binding Profiles}"
+                         SelectedItem="{Binding SelectedProfile}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="2,4">
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                    <TextBlock Text="{Binding HotkeyDisplay, Mode=OneWay}"
+                                               FontSize="11" Foreground="Gray"/>
+                                    <TextBlock Text="{Binding IsLastApplied, Mode=OneWay, Converter={x:Static views:BoolToMarkConverter.Instance}}"
+                                               FontSize="11" Foreground="#2F855A" FontWeight="SemiBold"
+                                               Margin="6,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+
+            <!-- Right: selected profile details -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" MinHeight="120"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="*" MinHeight="100"/>
+                </Grid.RowDefinitions>
+
+                <!-- Selected profile name -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,8">
+                    <TextBlock x:Name="LblSelectedSection" FontSize="11" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedProfile.Name}"
+                               FontSize="17" FontWeight="SemiBold"
+                               TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+
+                <!-- Command bar: primary actions left, monitor tools right -->
+                <Border Grid.Row="1"
+                        Margin="0,0,0,12"
+                        Padding="8,6"
+                        Background="#F3F4F6"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <DockPanel LastChildFill="False">
+                        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                            <Button x:Name="BtnApply"
+                                    Command="{Binding ApplySelectedCommand}"
+                                    Padding="18,7"
+                                    MinWidth="160"
+                                    FontWeight="SemiBold"/>
+                            <Button x:Name="BtnOverwrite"
+                                    Command="{Binding OverwriteFromCurrentCommand}"
+                                    Padding="12,7"
+                                    Margin="8,0,0,0"/>
+                        </StackPanel>
+                        <Rectangle DockPanel.Dock="Left"
+                                   Width="1"
+                                   Margin="12,2"
+                                   Fill="#D1D5DB"/>
+                        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                            <Button x:Name="BtnIdentify"
+                                    Padding="10,7"
+                                    Command="{Binding IdentifyMonitorsCommand}"/>
+                            <Button x:Name="BtnRefresh"
+                                    Padding="10,7"
+                                    Margin="8,0,0,0"
+                                    Command="{Binding RefreshCurrentMonitorsCommand}"/>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+
+                <!-- Hotkey editor (clear stays contextual to the field) -->
+                <StackPanel Grid.Row="2" Margin="0,0,0,12">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" MaxWidth="260"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="LblHotkey" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <views:HotkeyCaptureBox x:Name="HotkeyBox" Grid.Column="1" Height="28" Padding="4"/>
+                        <Button x:Name="BtnClearHotkey" Grid.Column="2" Margin="8,0,0,0" Padding="10,2"
+                                Command="{Binding ClearHotkeyCommand}"/>
+                    </Grid>
+                    <TextBlock x:Name="LblHotkeyHint"
+                               Margin="0,4,0,0"
+                               Foreground="Gray"
+                               FontSize="11"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <!-- Drag-to-arrange layout for the selected profile -->
+                <DockPanel Grid.Row="3" Margin="0,0,0,12">
+                    <StackPanel DockPanel.Dock="Top" Margin="0,0,0,6">
+                        <TextBlock x:Name="LblLayoutEditor" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="LblLayoutEditorHint"
+                                   Margin="0,2,0,0"
+                                   Foreground="Gray"
+                                   FontSize="11"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <views:MonitorLayoutEditor x:Name="ProfileLayoutEditor"
+                                               Height="168"
+                                               ItemsSource="{Binding SelectedProfileMonitors}"
+                                               IsReadOnly="False"/>
+                </DockPanel>
+
+                <!-- Editable per-monitor details -->
+                <DockPanel Grid.Row="4">
+                    <StackPanel DockPanel.Dock="Top" Margin="0,0,0,6">
+                        <TextBlock x:Name="LblProfileMonitors" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="LblProfileMonitorsHint"
+                                   Margin="0,2,0,0"
+                                   Foreground="Gray"
+                                   FontSize="11"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                    <DataGrid x:Name="ProfileMonitorsGrid"
+                              ItemsSource="{Binding SelectedProfileMonitors}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="False"
+                              HeadersVisibility="Column"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              SelectionUnit="Cell"
+                              GridLinesVisibility="Horizontal"
+                              PreparingCellForEdit="ProfileMonitorsGrid_OnPreparingCellForEdit">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="ColPName"
+                                                Binding="{Binding Name, UpdateSourceTrigger=LostFocus}"
+                                                Width="*"/>
+                            <DataGridTemplateColumn x:Name="ColPPrimary" Width="56">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsPrimary, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn x:Name="ColPEnabled" Width="48">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="ColPWidth"
+                                                Binding="{Binding Width, UpdateSourceTrigger=LostFocus}"
+                                                Width="64"/>
+                            <DataGridTextColumn x:Name="ColPHeight"
+                                                Binding="{Binding Height, UpdateSourceTrigger=LostFocus}"
+                                                Width="64"/>
+                            <DataGridTextColumn x:Name="ColPHz"
+                                                Binding="{Binding RefreshRate, UpdateSourceTrigger=LostFocus}"
+                                                Width="46"/>
+                            <DataGridTextColumn x:Name="ColPPosX"
+                                                Binding="{Binding PositionX, UpdateSourceTrigger=LostFocus}"
+                                                Width="60"/>
+                            <DataGridTextColumn x:Name="ColPPosY"
+                                                Binding="{Binding PositionY, UpdateSourceTrigger=LostFocus}"
+                                                Width="60"/>
+                            <DataGridTemplateColumn x:Name="ColPOri" Width="110">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{x:Static views:MonitorOrientationOptions.Values}"
+                                                  SelectedItem="{Binding OrientationDegrees, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Center"
+                                                  BorderThickness="0"
+                                                  Background="Transparent">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Converter={x:Static views:OrientationToLabelConverter.Instance}}"/>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+
+                <!-- Live monitors (read-only reference) -->
+                <DockPanel Grid.Row="6">
+                    <TextBlock x:Name="LblCurrentMonitors"
+                               DockPanel.Dock="Top"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,6"/>
+                    <!-- Read-only reference: muted so it does not look editable like the profile grid above -->
+                    <DataGrid ItemsSource="{Binding CurrentMonitors}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              IsHitTestVisible="False"
+                              Focusable="False"
+                              HeadersVisibility="Column"
+                              CanUserAddRows="False"
+                              CanUserResizeRows="False"
+                              CanUserSortColumns="False"
+                              SelectionMode="Single"
+                              SelectionUnit="FullRow"
+                              GridLinesVisibility="Horizontal"
+                              Opacity="0.72"
+                              Background="#F3F4F6"
+                              RowBackground="#F3F4F6"
+                              AlternatingRowBackground="#EEF0F2"
+                              BorderBrush="#E5E7EB"
+                              BorderThickness="1"
+                              HorizontalGridLinesBrush="#E5E7EB"
+                              Foreground="#6B7280"
+                              RowHeaderWidth="0">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="#E5E7EB"/>
+                                <Setter Property="Foreground" Value="#6B7280"/>
+                                <Setter Property="BorderBrush" Value="#D1D5DB"/>
+                                <Setter Property="Padding" Value="6,4"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Focusable" Value="False"/>
+                                <Setter Property="Foreground" Value="#6B7280"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Setter Property="Foreground" Value="#6B7280"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="ColCName" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
+                            <DataGridCheckBoxColumn x:Name="ColCPrimary" Binding="{Binding IsPrimary}" Width="56" IsReadOnly="True"/>
+                            <DataGridCheckBoxColumn x:Name="ColCEnabled" Binding="{Binding IsEnabled}" Width="48" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCWidth" Binding="{Binding Width}" Width="64" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCHeight" Binding="{Binding Height}" Width="64" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCHz" Binding="{Binding RefreshRate}" Width="46" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCPosX" Binding="{Binding PositionX}" Width="60" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCPosY" Binding="{Binding PositionY}" Width="60" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="ColCOri"
+                                                Binding="{Binding OrientationDegrees, Converter={x:Static views:OrientationToLabelConverter.Instance}}"
+                                                Width="110"
+                                                IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+
+                <!-- Empty state: no profile selected / no profiles yet -->
+                <Border Grid.Row="0" Grid.RowSpan="7"
+                        Panel.ZIndex="10"
+                        Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedProfile}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <TextBlock x:Name="LblEmptyState"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               MaxWidth="400"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               LineHeight="22"
+                               FontSize="13"
+                               Foreground="Gray"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>मॉनिटर लेआउट सहेजें और एक स्पर्श से बदलें।</value></data>
+  <data name="Profiles" xml:space="preserve"><value>प्रोफ़ाइल</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>चयनित प्रोफ़ाइल</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>वर्तमान मॉनिटर</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>प्रोफ़ाइल मॉनिटर</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>मान सीधे संपादित करने के लिए सेल पर क्लिक करें।</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>वर्तमान कॉन्फ़िग से नई</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>वर्तमान मॉनिटर सेटअप को नई प्रोफ़ाइल के रूप में सहेजें।</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>वर्तमान से अधिलेखित करें</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>इस प्रोफ़ाइल को वर्तमान मॉनिटर सेटअप से बदलें।</value></data>
+  <data name="Apply" xml:space="preserve"><value>लागू करें</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>मॉनिटर को इस सहेजे गए लेआउट पर स्विच करें।</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>डुप्लिकेट</value></data>
+  <data name="Delete" xml:space="preserve"><value>हटाएँ</value></data>
+  <data name="Rename" xml:space="preserve"><value>नाम बदलें</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>नया नाम दर्ज करें</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>हॉटकी</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>साफ़ करें</value></data>
+  <data name="Settings" xml:space="preserve"><value>सेटिंग्स</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>DisplayForge खोलें</value></data>
+  <data name="Exit" xml:space="preserve"><value>बाहर निकलें</value></data>
+  <data name="Language" xml:space="preserve"><value>भाषा</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>सिस्टम डिफ़ॉल्ट</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>सामान्य</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>ट्रे में न्यूनतम करके शुरू करें</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>स्विच पर सूचना दिखाएँ</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>वैश्विक हॉटकी सक्षम करें</value></data>
+  <data name="Save" xml:space="preserve"><value>सहेजें</value></data>
+  <data name="Cancel" xml:space="preserve"><value>रद्द करें</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>तैयार</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>प्रोफ़ाइल लागू: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>विफल: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>प्रोफ़ाइल सहेजी: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>प्रोफ़ाइल हटाई गई</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>प्रोफ़ाइल "{0}" हटाएँ?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>हटाने की पुष्टि</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>हॉटकी {0} पहले से किसी अन्य प्रोफ़ाइल द्वारा उपयोग में है।</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>हॉटकी {0} पंजीकृत नहीं हो सकी: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>क्लिक करें और शॉर्टकट दबाएँ (Ctrl/Alt/Shift/Win + कुंजी)। Esc साफ़ करता है।</value></data>
+  <data name="Name" xml:space="preserve"><value>नाम</value></data>
+  <data name="Primary" xml:space="preserve"><value>प्राथमिक</value></data>
+  <data name="Enabled" xml:space="preserve"><value>चालू</value></data>
+  <data name="Resolution" xml:space="preserve"><value>रिज़ॉल्यूशन</value></data>
+  <data name="Width" xml:space="preserve"><value>चौड़ाई</value></data>
+  <data name="Height" xml:space="preserve"><value>ऊँचाई</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>रीफ़्रेश</value></data>
+  <data name="Position" xml:space="preserve"><value>स्थिति</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>अभिमुखता</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>लैंडस्केप</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>पोर्ट्रेट</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>लैंडस्केप (उल्टा)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>पोर्ट्रेट (उल्टा)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>प्रोफ़ाइल चुनें या बनाएँ।</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>अभी कोई प्रोफ़ाइल नहीं।&#10;&#10;वर्तमान मॉनिटर सेटअप को प्रोफ़ाइल के रूप में सहेजने के लिए ऊपर बाएँ बटन का उपयोग करें।</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ उपयोग में</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — मल्टी-मॉनिटर प्रोफ़ाइल</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge पहले से चल रहा है।</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>प्रोफ़ाइल {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>अनुपस्थित: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>बंद करने पर ट्रे में छिपता है। बाहर निकलने के लिए ट्रे मेनू का उपयोग करें।</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>डिस्प्ले सेटिंग्स</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>ये डिस्प्ले सेटिंग्स रखें?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>{0} सेकंड में वापस…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>परिवर्तन रखें</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>वापस लें</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>डिस्प्ले सेटिंग्स वापस की गईं।</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>वापस नहीं कर सके: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>डिस्प्ले परिवर्तन की पुष्टि</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>स्विच के बाद पुष्टि दिखाता है; समय पर जवाब न देने पर पिछला लेआउट स्वतः बहाल होता है (स्क्रीन काले पड़ने पर सुरक्षा)।</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>लागू करने के बाद पुष्टि (बटन / ट्रे)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>लागू करने के बाद पुष्टि (हॉटकी)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>समय सीमा (सेकंड)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>व्यवस्था</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>मॉनिटर स्थानांतरित करने के लिए आयत खींचें। किनारे पड़ोसियों से चिपकते हैं।</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>मॉनिटर व्यवस्थित करने के लिए प्रोफ़ाइल चुनें।</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>पहचानें</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>प्रत्येक भौतिक मॉनिटर पर बड़े नंबर दिखाएँ।</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>मॉनिटर नंबर दिखाए जा रहे हैं…</value></data>
+</root>

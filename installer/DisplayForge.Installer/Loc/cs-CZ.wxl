@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="cs-CZ" Language="1029">
+  <String Id="PackageLanguage" Value="1029" />
+  <String Id="DowngradeError" Value="Je již nainstalována novější verze [ProductName]." />
+  <String Id="SummaryDescription" Value="Přepínač profilů více monitorů s globálními klávesovými zkratkami" />
+  <String Id="ShortcutDescription" Value="Přepínač profilů více monitorů" />
+  <String Id="OptionsDlgWindowTitle" Value="Instalace [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Možnosti instalace" />
+  <String Id="OptionsDlgDescription" Value="Vyberte volitelné funkce DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Spouštět DisplayForge automaticky při přihlášení k Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Doporučeno pro běh v oznamovací oblasti. Později v Nastavení můžete zapnout „Spustit minimalizované do oznamovací oblasti“." />
+</WixLocalization>

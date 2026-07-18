@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="nl-NL" Language="1043">
+  <String Id="PackageLanguage" Value="1043" />
+  <String Id="DowngradeError" Value="Er is al een nieuwere versie van [ProductName] geïnstalleerd." />
+  <String Id="SummaryDescription" Value="Multi-monitorprofielwisselaar met globale sneltoetsen" />
+  <String Id="ShortcutDescription" Value="Multi-monitorprofielwisselaar" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName]-installatie" />
+  <String Id="OptionsDlgBannerTitle" Value="Installatieopties" />
+  <String Id="OptionsDlgDescription" Value="Kies optionele functies voor DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="DisplayForge automatisch starten bij aanmelden bij Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Aanbevolen voor gebruik in het systeemvak. U kunt later in Instellingen ook &quot;Starten geminimaliseerd naar systeemvak&quot; inschakelen." />
+</WixLocalization>

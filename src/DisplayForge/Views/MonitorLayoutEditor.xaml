@@ -1,0 +1,26 @@
+<UserControl x:Class="DisplayForge.Views.MonitorLayoutEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinHeight="120">
+    <Border Background="#F4F6F8"
+            BorderBrush="#C8CDD2"
+            BorderThickness="1"
+            CornerRadius="4"
+            ClipToBounds="True">
+        <Grid>
+            <TextBlock x:Name="EmptyHint"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="#889099"
+                       FontSize="12"
+                       TextWrapping="Wrap"
+                       Margin="16"
+                       TextAlignment="Center"
+                       Visibility="Collapsed"/>
+            <Canvas x:Name="LayoutCanvas"
+                    Background="Transparent"
+                    ClipToBounds="True"
+                    SizeChanged="LayoutCanvas_OnSizeChanged"/>
+        </Grid>
+    </Border>
+</UserControl>

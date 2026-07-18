@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="vi-VN" Language="1066">
+  <String Id="PackageLanguage" Value="1066" />
+  <String Id="DowngradeError" Value="Đã cài đặt phiên bản mới hơn của [ProductName]." />
+  <String Id="SummaryDescription" Value="Trình chuyển hồ sơ đa màn hình với phím tắt toàn cục" />
+  <String Id="ShortcutDescription" Value="Trình chuyển hồ sơ đa màn hình" />
+  <String Id="OptionsDlgWindowTitle" Value="Cài đặt [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Tùy chọn cài đặt" />
+  <String Id="OptionsDlgDescription" Value="Chọn các tính năng tùy chọn cho DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Tự động khởi động DisplayForge khi đăng nhập Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Khuyến nghị khi dùng trên khay hệ thống. Bạn cũng có thể bật &quot;Khởi động thu nhỏ xuống khay&quot; sau trong Cài đặt." />
+</WixLocalization>

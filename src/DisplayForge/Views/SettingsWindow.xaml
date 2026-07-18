@@ -1,0 +1,61 @@
+<Window x:Class="DisplayForge.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings"
+        Height="500" Width="480"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Icon="pack://application:,,,/Assets/app.ico">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <StackPanel Margin="0,0,0,12">
+                <TextBlock x:Name="LblLanguage" Margin="0,0,0,4"/>
+                <ComboBox ItemsSource="{Binding Languages}"
+                          SelectedItem="{Binding SelectedLanguage}"
+                          DisplayMemberPath="DisplayName"
+                          Height="28"/>
+            </StackPanel>
+
+            <TextBlock x:Name="LblGeneralSection" FontWeight="SemiBold" Margin="0,4,0,8"/>
+            <CheckBox x:Name="ChkStartMinimized" Margin="0,0,0,8"
+                      IsChecked="{Binding Settings.StartMinimizedToTray}"/>
+            <CheckBox x:Name="ChkNotify" Margin="0,0,0,8"
+                      IsChecked="{Binding Settings.ShowNotificationOnSwitch}"/>
+            <CheckBox x:Name="ChkHotkeys" Margin="0,0,0,16"
+                      IsChecked="{Binding Settings.HotkeysEnabled}"/>
+
+            <TextBlock x:Name="LblConfirmSection" FontWeight="SemiBold" Margin="0,0,0,4"/>
+            <TextBlock x:Name="LblConfirmHint"
+                       Foreground="Gray"
+                       FontSize="11"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,8"/>
+            <CheckBox x:Name="ChkConfirmUi" Margin="0,0,0,8"
+                      IsChecked="{Binding Settings.ConfirmApplyFromUi}"/>
+            <CheckBox x:Name="ChkConfirmHotkey" Margin="0,0,0,8"
+                      IsChecked="{Binding Settings.ConfirmApplyFromHotkey}"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,4,0,0" VerticalAlignment="Center">
+                <TextBlock x:Name="LblConfirmTimeout" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox x:Name="TxtConfirmTimeout"
+                         Width="56"
+                         Height="26"
+                         VerticalContentAlignment="Center"
+                         Padding="4,0"
+                         Text="{Binding Settings.ConfirmApplyTimeoutSeconds, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <Button x:Name="BtnSave" Width="90" IsDefault="True" Margin="0,0,8,0" Click="Save_Click"/>
+            <Button x:Name="BtnCancel" Width="90" IsCancel="True" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="ja-JP" Language="1041">
+  <String Id="PackageLanguage" Value="1041" />
+  <String Id="DowngradeError" Value="新しいバージョンの [ProductName] が既にインストールされています。" />
+  <String Id="SummaryDescription" Value="グローバルホットキー対応のマルチモニタープロファイル切替" />
+  <String Id="ShortcutDescription" Value="マルチモニタープロファイル切替" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName] セットアップ" />
+  <String Id="OptionsDlgBannerTitle" Value="インストールオプション" />
+  <String Id="OptionsDlgDescription" Value="DisplayForge のオプションを選択してください。" />
+  <String Id="OptionsDlgStartupCheck" Value="Windows にサインインしたときに DisplayForge を自動で起動する" />
+  <String Id="OptionsDlgStartupHint" Value="トレイ常駐で使う場合におすすめです。あとから設定の「起動時はトレイに最小化」も有効にできます。" />
+</WixLocalization>

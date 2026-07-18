@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="fr-FR" Language="1036">
+  <String Id="PackageLanguage" Value="1036" />
+  <String Id="DowngradeError" Value="Une version plus récente de [ProductName] est déjà installée." />
+  <String Id="SummaryDescription" Value="Commutateur de profils multi-écrans avec raccourcis globaux" />
+  <String Id="ShortcutDescription" Value="Commutateur de profils multi-écrans" />
+  <String Id="OptionsDlgWindowTitle" Value="Installation de [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Options d'installation" />
+  <String Id="OptionsDlgDescription" Value="Choisissez les options de DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Démarrer DisplayForge automatiquement à la connexion Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Recommandé pour une utilisation dans la zone de notification. Vous pourrez aussi activer « Démarrer réduit dans la zone de notification » dans les paramètres." />
+</WixLocalization>

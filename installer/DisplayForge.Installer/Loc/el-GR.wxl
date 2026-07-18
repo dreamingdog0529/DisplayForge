@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="el-GR" Language="1032">
+  <String Id="PackageLanguage" Value="1032" />
+  <String Id="DowngradeError" Value="Είναι ήδη εγκατεστημένη νεότερη έκδοση του [ProductName]." />
+  <String Id="SummaryDescription" Value="Εναλλαγή προφίλ πολλαπλών οθονών με καθολικές συντομεύσεις" />
+  <String Id="ShortcutDescription" Value="Εναλλαγή προφίλ πολλαπλών οθονών" />
+  <String Id="OptionsDlgWindowTitle" Value="Εγκατάσταση [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Επιλογές εγκατάστασης" />
+  <String Id="OptionsDlgDescription" Value="Επιλέξτε προαιρετικές δυνατότητες για το DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Αυτόματη εκκίνηση του DisplayForge κατά τη σύνδεση στα Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Συνιστάται για χρήση στην περιοχή ειδοποιήσεων. Μπορείτε αργότερα να ενεργοποιήσετε «Εκκίνηση ελαχιστοποιημένο στην περιοχή ειδοποιήσεων» στις Ρυθμίσεις." />
+</WixLocalization>

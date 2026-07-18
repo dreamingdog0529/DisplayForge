@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>モニターの配置・解像度を保存して、ワンタッチで切り替えできます。</value></data>
+  <data name="Profiles" xml:space="preserve"><value>保存したプロファイル</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>選択中のプロファイル</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>現在接続されているモニター</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>このプロファイルの詳細設定</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>セルをクリックすると数値を直接編集できます。</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>＋ 現在の構成を保存</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>現在のモニター構成を、新しいプロファイルとして保存します。</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>現在の構成で上書き保存</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>選択中のプロファイルの内容を、現在のモニター構成で置き換えます。</value></data>
+  <data name="Apply" xml:space="preserve"><value>このプロファイルに切り替え</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>保存した構成どおりに、モニターを切り替えます。</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>複製</value></data>
+  <data name="Delete" xml:space="preserve"><value>削除</value></data>
+  <data name="Rename" xml:space="preserve"><value>名前を変更</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>新しい名前を入力してください</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>切り替えショートカット</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>解除</value></data>
+  <data name="Settings" xml:space="preserve"><value>設定</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>DisplayForge を開く</value></data>
+  <data name="Exit" xml:space="preserve"><value>終了</value></data>
+  <data name="Language" xml:space="preserve"><value>言語</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>システムの言語に合わせる（自動）</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>基本</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>起動時はウィンドウを開かず、トレイ（通知領域）に常駐する</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>プロファイル切り替え時に通知を表示する</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>ショートカットキーでの切り替えを有効にする</value></data>
+  <data name="Save" xml:space="preserve"><value>保存</value></data>
+  <data name="Cancel" xml:space="preserve"><value>キャンセル</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>準備完了</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>切り替えました: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>失敗しました: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>保存しました: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>プロファイルを削除しました</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>プロファイル「{0}」を削除しますか？&#10;この操作は元に戻せません。</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>削除の確認</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>ショートカット {0} は、別のプロファイルで既に使われています。</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>ショートカット {0} を登録できませんでした: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>枠をクリックしてから、割り当てたいキーを押してください（例: Ctrl+Alt+1）。Esc キーで解除できます。</value></data>
+  <data name="Name" xml:space="preserve"><value>名前</value></data>
+  <data name="Primary" xml:space="preserve"><value>メイン</value></data>
+  <data name="Enabled" xml:space="preserve"><value>使用</value></data>
+  <data name="Resolution" xml:space="preserve"><value>解像度</value></data>
+  <data name="Width" xml:space="preserve"><value>幅</value></data>
+  <data name="Height" xml:space="preserve"><value>高さ</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>最新の状態に更新</value></data>
+  <data name="Position" xml:space="preserve"><value>位置</value></data>
+  <data name="PosX" xml:space="preserve"><value>位置X</value></data>
+  <data name="PosY" xml:space="preserve"><value>位置Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>向き</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>横向き</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>縦向き</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>横向き（反転）</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>縦向き（反転）</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>プロファイルが選択されていません。</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>まだプロファイルがありません。&#10;&#10;左上の「＋ 現在の構成を保存」を押すと、&#10;現在のモニター構成が保存され、いつでも呼び出せるようになります。</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ 適用中</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — モニター構成をワンタッチで切り替え</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge は既に起動しています。</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>プロファイル {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>（未接続のためスキップ: {0}）</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>ウィンドウを閉じても、アプリはトレイ（通知領域）で動き続けます。終了するにはトレイアイコンを右クリックして「終了」を選んでください。</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>ディスプレイ設定の確認</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>このディスプレイ設定のままでよいですか？</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>操作がない場合、{0} 秒後に自動で元の設定に戻ります</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>この設定のままにする</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>元に戻す</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>ディスプレイ設定を元に戻しました。</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>元に戻せませんでした: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>切り替え後の確認</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>切り替え後に確認画面を表示し、時間内に操作がなければ自動で元の構成に戻します。画面が映らなくなったときの保険になります。</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>ボタンやトレイから切り替えたとき、確認画面を表示する</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>ショートカットキーで切り替えたとき、確認画面を表示する</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>自動で元に戻すまでの時間（秒）</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>モニターの配置</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>四角をドラッグすると、モニターの並びを変更できます。</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>左の一覧からプロファイルを選ぶと、ここに配置が表示されます。</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>モニターに番号を表示</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>どのモニターが何番かを、実際の画面に大きく表示します。</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>モニターに番号を表示しています…</value></data>
+</root>

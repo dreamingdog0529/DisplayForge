@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Salva le disposizioni dei monitor e cambia con un tocco.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profili</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Profilo selezionato</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Monitor attuali</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Monitor del profilo</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Fai clic su una cella per modificare i valori.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Nuovo dalla config. attuale</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Salva la configurazione attuale come nuovo profilo.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Sovrascrivi con l’attuale</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Sostituisci questo profilo con la configurazione attuale.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Applica</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Passa i monitor a questa disposizione salvata.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Duplica</value></data>
+  <data name="Delete" xml:space="preserve"><value>Elimina</value></data>
+  <data name="Rename" xml:space="preserve"><value>Rinomina</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Inserisci un nuovo nome</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Scorciatoia</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Cancella</value></data>
+  <data name="Settings" xml:space="preserve"><value>Impostazioni</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Apri DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Esci</value></data>
+  <data name="Language" xml:space="preserve"><value>Lingua</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Predefinita di sistema</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>Generale</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Avvia ridotto nell’area di notifica</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Notifica al cambio</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Abilita scorciatoie globali</value></data>
+  <data name="Save" xml:space="preserve"><value>Salva</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Annulla</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Pronto</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profilo applicato: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Errore: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profilo salvato: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profilo eliminato</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Eliminare il profilo "{0}"?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Conferma eliminazione</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>La scorciatoia {0} è già usata da un altro profilo.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Impossibile registrare la scorciatoia {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Fai clic e premi una scorciatoia (Ctrl/Alt/Maiusc/Win + tasto). Esc cancella.</value></data>
+  <data name="Name" xml:space="preserve"><value>Nome</value></data>
+  <data name="Primary" xml:space="preserve"><value>Principale</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Sì</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Risoluzione</value></data>
+  <data name="Width" xml:space="preserve"><value>Larghezza</value></data>
+  <data name="Height" xml:space="preserve"><value>Altezza</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Aggiorna</value></data>
+  <data name="Position" xml:space="preserve"><value>Posizione</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Orientamento</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Orizzontale</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Verticale</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Orizzontale (capovolto)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Verticale (capovolto)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Seleziona o crea un profilo.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Nessun profilo ancora.&#10;&#10;Usa il pulsante in alto a sinistra per salvare la configurazione attuale come profilo.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ In uso</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — profili multi-monitor</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge è già in esecuzione.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profilo {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Mancanti: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Chiudere nasconde nell’area di notifica. Usa Esci dal menu per uscire.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Impostazioni schermo</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Mantenere queste impostazioni schermo?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Ripristino tra {0} s…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Mantieni</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Ripristina</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Impostazioni schermo ripristinate.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Ripristino non riuscito: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Conferma modifiche schermo</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Mostra una conferma dopo il cambio; se non rispondi in tempo, la disposizione precedente viene ripristinata automaticamente (protezione se lo schermo diventa nero).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Conferma dopo l’applicazione (pulsante / area di notifica)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Conferma dopo l’applicazione (scorciatoia)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Timeout (secondi)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Disposizione</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Trascina i rettangoli per spostare i monitor. I bordi si agganciano ai vicini.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Seleziona un profilo per disporre i monitor.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Identifica</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Mostra numeri grandi su ogni monitor fisico.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Visualizzazione numeri monitor…</value></data>
+</root>

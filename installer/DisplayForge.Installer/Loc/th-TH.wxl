@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="th-TH" Language="1054">
+  <String Id="PackageLanguage" Value="1054" />
+  <String Id="DowngradeError" Value="มีเวอร์ชันที่ใหม่กว่าของ [ProductName] ติดตั้งอยู่แล้ว" />
+  <String Id="SummaryDescription" Value="สลับโปรไฟล์หลายจอพร้อมปุ่มลัดสากล" />
+  <String Id="ShortcutDescription" Value="สลับโปรไฟล์หลายจอ" />
+  <String Id="OptionsDlgWindowTitle" Value="ติดตั้ง [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="ตัวเลือกการติดตั้ง" />
+  <String Id="OptionsDlgDescription" Value="เลือกคุณลักษณะเสริมของ DisplayForge" />
+  <String Id="OptionsDlgStartupCheck" Value="เริ่ม DisplayForge โดยอัตโนมัติเมื่อลงชื่อเข้าใช้ Windows" />
+  <String Id="OptionsDlgStartupHint" Value="แนะนำสำหรับการใช้งานในถาดระบบ คุณสามารถเปิด &quot;เริ่มแบบย่อในถาดระบบ&quot; ได้ในภายหลังในการตั้งค่า" />
+</WixLocalization>

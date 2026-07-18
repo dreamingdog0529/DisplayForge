@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="en-US" Language="1033">
+  <String Id="PackageLanguage" Value="1033" />
+  <String Id="DowngradeError" Value="A newer version of [ProductName] is already installed." />
+  <String Id="SummaryDescription" Value="Multi-monitor profile switcher with global hotkeys" />
+  <String Id="ShortcutDescription" Value="Multi-monitor profile switcher" />
+  <String Id="OptionsDlgWindowTitle" Value="[ProductName] Setup" />
+  <String Id="OptionsDlgBannerTitle" Value="Installation Options" />
+  <String Id="OptionsDlgDescription" Value="Choose optional features for DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Start DisplayForge automatically when I sign in to Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Recommended for tray-resident use. You can also enable &quot;Start minimized to tray&quot; later in Settings." />
+</WixLocalization>

@@ -1,0 +1,39 @@
+<Window x:Class="DisplayForge.Views.MonitorIdentifyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        Topmost="True"
+        ResizeMode="NoResize"
+        ShowActivated="False"
+        Focusable="False">
+    <Grid Background="#99000000">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="NumberText"
+                       FontSize="160"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="16" ShadowDepth="2" Opacity="0.6" Color="Black"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock x:Name="LabelText"
+                       FontSize="22"
+                       FontWeight="SemiBold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="24,8,24,0"
+                       TextWrapping="Wrap"
+                       Opacity="0.95">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="8" ShadowDepth="1" Opacity="0.5" Color="Black"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

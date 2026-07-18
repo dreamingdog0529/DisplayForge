@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>DisplayForge</value></data>
+  <data name="AppTagline" xml:space="preserve"><value>Salvați aranjamentele monitoarelor și comutați dintr-o atingere.</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profiluri</value></data>
+  <data name="SelectedProfileSection" xml:space="preserve"><value>Profil selectat</value></data>
+  <data name="CurrentMonitors" xml:space="preserve"><value>Monitoare curente</value></data>
+  <data name="ProfileMonitors" xml:space="preserve"><value>Monitoarele profilului</value></data>
+  <data name="ProfileMonitorsHint" xml:space="preserve"><value>Faceți clic pe o celulă pentru a edita valorile.</value></data>
+  <data name="NewProfile" xml:space="preserve"><value>Nou din configurația curentă</value></data>
+  <data name="NewProfileHint" xml:space="preserve"><value>Salvați configurația actuală ca profil nou.</value></data>
+  <data name="SaveToProfile" xml:space="preserve"><value>Suprascrie cu cea curentă</value></data>
+  <data name="SaveToProfileHint" xml:space="preserve"><value>Înlocuiți acest profil cu configurația actuală.</value></data>
+  <data name="Apply" xml:space="preserve"><value>Aplică</value></data>
+  <data name="ApplyHint" xml:space="preserve"><value>Comutați monitoarele la acest aranjament salvat.</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Duplică</value></data>
+  <data name="Delete" xml:space="preserve"><value>Șterge</value></data>
+  <data name="Rename" xml:space="preserve"><value>Redenumește</value></data>
+  <data name="RenamePrompt" xml:space="preserve"><value>Introduceți un nume nou</value></data>
+  <data name="Hotkey" xml:space="preserve"><value>Scurtătură</value></data>
+  <data name="ClearHotkey" xml:space="preserve"><value>Șterge</value></data>
+  <data name="Settings" xml:space="preserve"><value>Setări</value></data>
+  <data name="ShowMainWindow" xml:space="preserve"><value>Deschide DisplayForge</value></data>
+  <data name="Exit" xml:space="preserve"><value>Ieșire</value></data>
+  <data name="Language" xml:space="preserve"><value>Limbă</value></data>
+  <data name="LanguageAuto" xml:space="preserve"><value>Implicit sistem</value></data>
+  <data name="GeneralSection" xml:space="preserve"><value>General</value></data>
+  <data name="StartMinimized" xml:space="preserve"><value>Pornește minimizat în zona de notificare</value></data>
+  <data name="ShowNotifications" xml:space="preserve"><value>Notificare la comutare</value></data>
+  <data name="HotkeysEnabled" xml:space="preserve"><value>Activează scurtăturile globale</value></data>
+  <data name="Save" xml:space="preserve"><value>Salvează</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Anulează</value></data>
+  <data name="StatusReady" xml:space="preserve"><value>Gata</value></data>
+  <data name="StatusApplied" xml:space="preserve"><value>Profil aplicat: {0}</value></data>
+  <data name="StatusFailed" xml:space="preserve"><value>Eșec: {0}</value></data>
+  <data name="StatusSaved" xml:space="preserve"><value>Profil salvat: {0}</value></data>
+  <data name="StatusDeleted" xml:space="preserve"><value>Profil șters</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Ștergeți profilul „{0}”?</value></data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve"><value>Confirmare ștergere</value></data>
+  <data name="HotkeyConflict" xml:space="preserve"><value>Scurtătura {0} este deja folosită de alt profil.</value></data>
+  <data name="HotkeyRegisterFailed" xml:space="preserve"><value>Nu s-a putut înregistra {0}: {1}</value></data>
+  <data name="HotkeyHint" xml:space="preserve"><value>Faceți clic și apăsați o scurtătură (Ctrl/Alt/Shift/Win + tastă). Esc șterge.</value></data>
+  <data name="Name" xml:space="preserve"><value>Nume</value></data>
+  <data name="Primary" xml:space="preserve"><value>Principal</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Pornit</value></data>
+  <data name="Resolution" xml:space="preserve"><value>Rezoluție</value></data>
+  <data name="Width" xml:space="preserve"><value>Lățime</value></data>
+  <data name="Height" xml:space="preserve"><value>Înălțime</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Hz</value></data>
+  <data name="RefreshMonitors" xml:space="preserve"><value>Reîmprospătează</value></data>
+  <data name="Position" xml:space="preserve"><value>Poziție</value></data>
+  <data name="PosX" xml:space="preserve"><value>X</value></data>
+  <data name="PosY" xml:space="preserve"><value>Y</value></data>
+  <data name="Orientation" xml:space="preserve"><value>Orientare</value></data>
+  <data name="OrientationLandscape" xml:space="preserve"><value>Peisaj</value></data>
+  <data name="OrientationPortrait" xml:space="preserve"><value>Portret</value></data>
+  <data name="OrientationLandscapeFlipped" xml:space="preserve"><value>Peisaj (inversat)</value></data>
+  <data name="OrientationPortraitFlipped" xml:space="preserve"><value>Portret (inversat)</value></data>
+  <data name="NoProfileSelected" xml:space="preserve"><value>Selectați sau creați un profil.</value></data>
+  <data name="EmptyStateNoProfiles" xml:space="preserve"><value>Nu există încă profiluri.&#10;&#10;Folosiți butonul din stânga sus pentru a salva configurația actuală ca profil.</value></data>
+  <data name="AppliedBadge" xml:space="preserve"><value>✓ Activ</value></data>
+  <data name="TrayTooltip" xml:space="preserve"><value>DisplayForge — profiluri multi-monitor</value></data>
+  <data name="AlreadyRunning" xml:space="preserve"><value>DisplayForge rulează deja.</value></data>
+  <data name="NewProfileName" xml:space="preserve"><value>Profil {0}</value></data>
+  <data name="MissingMonitors" xml:space="preserve"><value>Lipsă: {0}</value></data>
+  <data name="CloseToTray" xml:space="preserve"><value>Închiderea ascunde în zona de notificare. Ieșiți din meniul zonei de notificare.</value></data>
+  <data name="ConfirmKeepSettingsTitle" xml:space="preserve"><value>Setări afișaj</value></data>
+  <data name="ConfirmKeepSettingsMessage" xml:space="preserve"><value>Păstrați aceste setări de afișaj?</value></data>
+  <data name="ConfirmKeepSettingsCountdown" xml:space="preserve"><value>Revenire în {0} s…</value></data>
+  <data name="KeepChanges" xml:space="preserve"><value>Păstrează</value></data>
+  <data name="RevertChanges" xml:space="preserve"><value>Revino</value></data>
+  <data name="StatusReverted" xml:space="preserve"><value>Setările de afișaj au fost restabilite.</value></data>
+  <data name="StatusRevertFailed" xml:space="preserve"><value>Nu s-a putut restabili: {0}</value></data>
+  <data name="ConfirmApplySection" xml:space="preserve"><value>Confirmare modificări afișaj</value></data>
+  <data name="ConfirmApplyHint" xml:space="preserve"><value>Afișează o confirmare după comutare; fără răspuns la timp, aranjamentul anterior este restaurat automat (siguranță dacă ecranul devine negru).</value></data>
+  <data name="ConfirmApplyFromUi" xml:space="preserve"><value>Confirmă după aplicare (buton / zonă de notificare)</value></data>
+  <data name="ConfirmApplyFromHotkey" xml:space="preserve"><value>Confirmă după aplicare (scurtătură)</value></data>
+  <data name="ConfirmApplyTimeoutSeconds" xml:space="preserve"><value>Timp limită (secunde)</value></data>
+  <data name="LayoutEditor" xml:space="preserve"><value>Aranjament</value></data>
+  <data name="LayoutEditorHint" xml:space="preserve"><value>Trageți dreptunghiurile pentru a muta monitoarele. Marginile se aliniază la vecini.</value></data>
+  <data name="LayoutEditorEmpty" xml:space="preserve"><value>Selectați un profil pentru a aranja monitoarele.</value></data>
+  <data name="IdentifyMonitors" xml:space="preserve"><value>Identificare</value></data>
+  <data name="IdentifyMonitorsHint" xml:space="preserve"><value>Afișați numere mari pe fiecare monitor fizic.</value></data>
+  <data name="StatusIdentifyShown" xml:space="preserve"><value>Se afișează numerele monitoarelor…</value></data>
+</root>

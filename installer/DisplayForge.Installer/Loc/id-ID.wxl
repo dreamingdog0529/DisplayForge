@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="id-ID" Language="1057">
+  <String Id="PackageLanguage" Value="1057" />
+  <String Id="DowngradeError" Value="Versi [ProductName] yang lebih baru sudah terpasang." />
+  <String Id="SummaryDescription" Value="Pengalih profil multi-monitor dengan pintasan global" />
+  <String Id="ShortcutDescription" Value="Pengalih profil multi-monitor" />
+  <String Id="OptionsDlgWindowTitle" Value="Penyiapan [ProductName]" />
+  <String Id="OptionsDlgBannerTitle" Value="Opsi instalasi" />
+  <String Id="OptionsDlgDescription" Value="Pilih fitur opsional DisplayForge." />
+  <String Id="OptionsDlgStartupCheck" Value="Mulai DisplayForge secara otomatis saat masuk ke Windows" />
+  <String Id="OptionsDlgStartupHint" Value="Disarankan untuk penggunaan di baki sistem. Anda juga dapat mengaktifkan &quot;Mulai diminimalkan ke baki&quot; nanti di Pengaturan." />
+</WixLocalization>
