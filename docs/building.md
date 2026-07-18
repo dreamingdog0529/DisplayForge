@@ -84,9 +84,9 @@ Tag version must match SemVer product version without the leading `v` (tag `v1.2
 
 ## Publishing checklist (maintainers)
 
-After creating the GitHub repository:
+After the repository is on GitHub:
 
-- [ ] Replace `dreamingdog0529` placeholders in README / CHANGELOG badges and compare links
+- [x] Owner/repo links point to `dreamingdog0529/DisplayForge`
 - [ ] Set repository description and topics (`windows`, `wpf`, `multi-monitor`, `dotnet`, `hotkeys`, …)
 - [ ] Enable Dependabot alerts, secret scanning, and push protection
 - [ ] Optional: protect `main` with required CI status checks
