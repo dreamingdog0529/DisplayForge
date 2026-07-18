@@ -10,7 +10,7 @@
     <DefaultCompressionLevel>high</DefaultCompressionLevel>
     <!-- Publish output harvested by Package.wxs via bind path "Publish". -->
     <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\..\artifacts\publish\win-x64\</PublishDir>
-    <ProductVersion Condition="'$(ProductVersion)' == ''">0.2.0</ProductVersion>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.2.1</ProductVersion>
     <Publisher Condition="'$(Publisher)' == ''">DisplayForge</Publisher>
     <AppIcon Condition="'$(AppIcon)' == ''">$(MSBuildThisFileDirectory)..\..\src\DisplayForge\Assets\app.ico</AppIcon>
   </PropertyGroup>
