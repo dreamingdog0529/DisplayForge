@@ -22,8 +22,10 @@ if [[ -z "${subject// }" ]]; then
   exit 1
 fi
 
-# Skip merge commits and GitHub merge/revert helpers (same as CI)
-if [[ "$subject" =~ ^Merge\  ]] || [[ "$subject" =~ ^Revert\  ]]; then
+# Skip merge / revert subjects (git defaults, GitHub, and common variants).
+# Case-insensitive; also "Merged …". CI additionally skips multi-parent commits.
+if [[ "$subject" =~ ^[Mm]erge[d]?[[:space:]] ]] ||
+   [[ "$subject" =~ ^[Rr]evert[[:space:]] ]]; then
   exit 0
 fi
 

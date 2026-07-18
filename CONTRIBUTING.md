@@ -133,6 +133,13 @@ Before `1.0.0`, `feat:` still bumps **minor** (`bump-minor-pre-major`).
 
 **Squash merge:** the **PR title** becomes the commit on `main` — keep it Conventional (CI: `pr-title.yml`).
 
+Rules of thumb:
+
+- Format: `type(optional-scope): description` (description required; prefer lowercase start).
+- **Bots exempt from PR title CI:** Dependabot (`chore(deps):` via `dependabot.yml`) and Release Please (`github-actions[bot]` / `release-please--*` branches; title is usually `chore(main): release X.Y.Z`).
+- Local hook also accepts release subjects such as `chore(main): release 1.2.3` and `Release 1.2.3` so release commits are not blocked by mistake.
+- **Merge commits are skipped** (e.g. `Merge branch 'main' into your-branch`): the local hook detects `MERGE_HEAD` / `CHERRY_PICK_HEAD` / `REVERT_HEAD`, and `validate-commit-subject.sh` also skips merge/revert subjects.
+
 ### Local hooks
 
 ```powershell

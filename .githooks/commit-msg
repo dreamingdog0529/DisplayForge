@@ -2,30 +2,47 @@
 # Fallback hooks when lefthook is not installed.
 # Prefer: task setup  (installs lefthook)
 # Or:     pwsh ./scripts/install-git-hooks.ps1
+#
+# Same Conventional Commits rules as scripts/validate-commit-subject.sh.
+# Merge / cherry-pick / revert commits are skipped (MERGE_HEAD, etc.).
 
 set -euo pipefail
 
 msg_file=$1
-subject=$(head -1 "$msg_file" | tr -d '\r')
+if [[ ! -f "$msg_file" ]]; then
+  echo "commit-msg: missing message file: $msg_file" >&2
+  exit 1
+fi
 
-# Skip merge commits (also when MERGE_HEAD exists)
-if [[ -n "${GIT_DIR:-}" && -f "${GIT_DIR}/MERGE_HEAD" ]] || [[ -f "$(git rev-parse --git-path MERGE_HEAD 2>/dev/null || true)" ]]; then
+# Merge / cherry-pick / revert commits are not subject to Conventional Commits.
+# Git sets these refs while the commit is being created.
+git_dir=$(git rev-parse --git-dir)
+if [[ -f "$git_dir/MERGE_HEAD" ]] ||
+   [[ -f "$git_dir/CHERRY_PICK_HEAD" ]] ||
+   [[ -f "$git_dir/REVERT_HEAD" ]]; then
   exit 0
 fi
-if [[ "$subject" =~ ^Merge\  ]]; then
-  exit 0
-fi
+
+# First non-comment, non-empty line is the subject
+subject=""
+while IFS= read -r line || [[ -n "$line" ]]; do
+  line=${line//$'\r'/}
+  # Git commit template comments
+  [[ "$line" =~ ^# ]] && continue
+  [[ -z "${line// }" ]] && continue
+  subject=$line
+  break
+done <"$msg_file"
 
 root=$(git rev-parse --show-toplevel)
-if [[ -x "$root/scripts/validate-commit-subject.sh" ]] || [[ -f "$root/scripts/validate-commit-subject.sh" ]]; then
-  bash "$root/scripts/validate-commit-subject.sh" "$subject"
-else
-  pattern='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-zA-Z0-9._/-]+\))?(!)?: .+'
-  if ! [[ "$subject" =~ $pattern ]]; then
-    echo "Commit message is not Conventional Commits: $subject" >&2
-    exit 1
-  fi
+validator="$root/scripts/validate-commit-subject.sh"
+
+if [[ ! -f "$validator" ]]; then
+  echo "commit-msg: validator not found: $validator" >&2
+  exit 1
 fi
+
+bash "$validator" "$subject"
 
 if ! grep -q "^Signed-off-by:" "$msg_file"; then
   echo "ERROR: Missing DCO sign-off. Use 'git commit -s'" >&2
