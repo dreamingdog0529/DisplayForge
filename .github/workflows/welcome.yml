@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/first-interaction@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: |
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: |
             Thanks for opening your first issue! 🎉
 
             A maintainer will review this soon. In the meantime:
@@ -27,7 +27,7 @@ jobs:
 
             If this is a question rather than a bug report, consider posting in [GitHub Discussions](https://github.com/${{ github.repository }}/discussions) instead.
 
-          pr-message: |
+          pr_message: |
             Thanks for your first pull request! 🎉
 
             A maintainer will review this soon. Please ensure:
