@@ -75,6 +75,12 @@ extend-exclude = [
     "tools/GenInstallerLocales/**",
     "src/DisplayForge/Resources/**",
     "installer/**/Loc/**",
+    # Source and hooks (identifiers / regex character classes)
+    "src/**",
+    "tests/**",
+    "scripts/**",
+    "lefthook.yml",
+    "Taskfile.yml",
 ]
 
 [type.md]

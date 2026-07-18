@@ -1,6 +1,7 @@
 name: License Check
 
 # Adapted from oss-project-template (Go go-licenses) for .NET / NuGet packages.
+# Scans app/test projects only (WiX installer projects lack a normal assets file on Linux).
 
 on:
   push:
@@ -35,7 +36,10 @@ jobs:
 
       - name: Restore
         # WPF projects need this when restoring on non-Windows runners.
-        run: dotnet restore DisplayForge.sln -p:EnableWindowsTargeting=true
+        run: |
+          dotnet restore src/DisplayForge/DisplayForge.csproj -p:EnableWindowsTargeting=true
+          dotnet restore src/DisplayForge.Core/DisplayForge.Core.csproj
+          dotnet restore tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -p:EnableWindowsTargeting=true
 
       - name: Install nuget-license
         run: dotnet tool install --global nuget-license
@@ -48,9 +52,11 @@ jobs:
           set -euo pipefail
           export PATH="$PATH:$HOME/.dotnet/tools"
 
-          # Allowed SPDX-ish / common NuGet license identifiers (OSS-friendly set).
-          # Fail the job if any package reports a disallowed license string.
-          nuget-license -i DisplayForge.sln -o JsonPretty > licenses.json
+          nuget-license \
+            -i src/DisplayForge/DisplayForge.csproj \
+            -i src/DisplayForge.Core/DisplayForge.Core.csproj \
+            -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj \
+            -o JsonPretty > licenses.json
 
           echo "## License Report" >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
@@ -62,11 +68,10 @@ jobs:
           import json, re, sys
           from pathlib import Path
 
-          data = json.loads(Path("licenses.json").read_text(encoding="utf-8"))
-          # nuget-license JSON shapes vary by version; normalize to a list of packages.
+          text = Path("licenses.json").read_text(encoding="utf-8")
+          data = json.loads(text)
           packages = data if isinstance(data, list) else data.get("packages") or data.get("Packages") or []
           if isinstance(data, dict) and not packages:
-              # flat map package -> info
               packages = [{"PackageId": k, **(v if isinstance(v, dict) else {"License": v})} for k, v in data.items()]
 
           denied = re.compile(r"\b(GPL-3\.0|AGPL-3\.0|SSPL|BUSL)\b", re.I)
