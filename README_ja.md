@@ -9,6 +9,16 @@
 Windows 向けマルチモニター **プロファイル切替** アプリです。  
 NirSoft MultiMonitorTool の「構成の保存・復元」をベースに、**プロファイルごとのグローバルホットキー** と **トレイ常駐** を第一級機能として備えています。
 
+## スクリーンショット
+
+**メインウィンドウ** — プロファイル、ホットキー、レイアウト編集、モニター詳細
+
+![DisplayForge メインウィンドウ](docs/images/main-window.png)
+
+**システムトレイ** — プロファイル適用・アプリ起動・終了をコンテキストメニューから
+
+![DisplayForge システムトレイメニュー](docs/images/tray-menu.png)
+
 ## ダウンロード
 
 **[最新リリースを開く](https://github.com/dreamingdog0529/DisplayForge/releases/latest)**
