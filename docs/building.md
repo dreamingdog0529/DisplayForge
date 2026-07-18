@@ -49,7 +49,7 @@ dotnet publish src/DisplayForge -c Release -r win-x64 --self-contained true -o a
 | `artifacts/msi/DisplayForge-{ver}-win-x64-{culture}.msi` | Named installers |
 | `artifacts/obj/installer/` | Intermediate WiX build files |
 
-Example asset name: `DisplayForge-1.0.0-win-x64-ja-JP.msi`.
+Example asset name: `DisplayForge-0.1.0-win-x64-ja-JP.msi`.
 
 ### Install / uninstall
 
@@ -62,15 +62,15 @@ Example asset name: `DisplayForge-1.0.0-win-x64-ja-JP.msi`.
 | User data | `%AppData%\DisplayForge\` (kept after uninstall) |
 
 ```powershell
-msiexec /i artifacts\msi\DisplayForge-1.0.0-win-x64-en-US.msi
+msiexec /i artifacts\msi\DisplayForge-0.1.0-win-x64-en-US.msi
 
 # Quiet: disable start-with-Windows
-msiexec /i artifacts\msi\DisplayForge-1.0.0-win-x64-en-US.msi /qn START_WITH_WINDOWS=0
+msiexec /i artifacts\msi\DisplayForge-0.1.0-win-x64-en-US.msi /qn START_WITH_WINDOWS=0
 
 # Quiet: enable start-with-Windows (default)
-msiexec /i artifacts\msi\DisplayForge-1.0.0-win-x64-en-US.msi /qn START_WITH_WINDOWS=1
+msiexec /i artifacts\msi\DisplayForge-0.1.0-win-x64-en-US.msi /qn START_WITH_WINDOWS=1
 
-msiexec /x artifacts\msi\DisplayForge-1.0.0-win-x64-en-US.msi
+msiexec /x artifacts\msi\DisplayForge-0.1.0-win-x64-en-US.msi
 ```
 
 Installer sources: `installer/DisplayForge.Installer/`.
@@ -78,7 +78,7 @@ Installer sources: `installer/DisplayForge.Installer/`.
 ## CI and GitHub Releases
 
 - **CI** (`.github/workflows/ci.yml`): on push/PR to `main` — restore, build, test on `windows-latest`.
-- **Release** (`.github/workflows/release.yml`): on tag `v*` (e.g. `v1.0.0`) — run `build-msi.ps1` and attach all `DisplayForge-*.msi` files to the GitHub Release.
+- **Release** (`.github/workflows/release.yml`): on tag `v*` (e.g. `v0.1.0`) — run `build-msi.ps1` and attach all `DisplayForge-*.msi` files to the GitHub Release.
 
 Tag version must match SemVer product version without the leading `v` (tag `v1.2.0` → MSI version `1.2.0`).
 
@@ -90,4 +90,4 @@ After the repository is on GitHub:
 - [ ] Set repository description and topics (`windows`, `wpf`, `multi-monitor`, `dotnet`, `hotkeys`, …)
 - [ ] Enable Dependabot alerts, secret scanning, and push protection
 - [ ] Optional: protect `main` with required CI status checks
-- [ ] Cut first release: update CHANGELOG, bump csproj `Version`, tag `v1.0.0`, push tags
+- [ ] Cut first release: update CHANGELOG, bump csproj `Version`, tag `v0.1.0`, push tags

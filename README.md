@@ -16,7 +16,7 @@ Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool
 |------|---------|
 | OS | Windows 10 / 11 (x64) |
 | Package | MSI installer (self-contained; .NET runtime included) |
-| Example file names | `DisplayForge-1.0.0-win-x64-en-US.msi`, `…-ja-JP.msi`, etc. (per UI culture) |
+| Example file names | `DisplayForge-0.1.0-win-x64-en-US.msi`, `…-ja-JP.msi`, etc. (per UI culture) |
 | Settings location | `%AppData%\DisplayForge\` (kept after uninstall) |
 
 Pick the MSI that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
