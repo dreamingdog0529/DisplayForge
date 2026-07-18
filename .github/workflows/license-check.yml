@@ -34,13 +34,16 @@ jobs:
           dotnet-version: "10.0.x"
 
       - name: Restore
-        run: dotnet restore DisplayForge.sln
+        # WPF projects need this when restoring on non-Windows runners.
+        run: dotnet restore DisplayForge.sln -p:EnableWindowsTargeting=true
 
       - name: Install nuget-license
         run: dotnet tool install --global nuget-license
 
       - name: Check licenses
         shell: bash
+        env:
+          EnableWindowsTargeting: true
         run: |
           set -euo pipefail
           export PATH="$PATH:$HOME/.dotnet/tools"

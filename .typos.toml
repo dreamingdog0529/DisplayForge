@@ -70,6 +70,11 @@ extend-exclude = [
     "**/Loc/*.wxl",
     "**/bin/**",
     "**/obj/**",
+    # Locale generators embed many non-English strings
+    "tools/GenLocales/**",
+    "tools/GenInstallerLocales/**",
+    "src/DisplayForge/Resources/**",
+    "installer/**/Loc/**",
 ]
 
 [type.md]
