@@ -36,10 +36,10 @@ jobs:
 
       - name: Restore
         # WPF projects need this when restoring on non-Windows runners.
+        # App project pulls Core via ProjectReference (skip WiX installer projects).
         run: |
           dotnet restore src/DisplayForge/DisplayForge.csproj -p:EnableWindowsTargeting=true
-          dotnet restore src/DisplayForge.Core/DisplayForge.Core.csproj
-          dotnet restore tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -p:EnableWindowsTargeting=true
+          dotnet restore tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj
 
       - name: Install nuget-license
         run: dotnet tool install --global nuget-license
@@ -52,11 +52,33 @@ jobs:
           set -euo pipefail
           export PATH="$PATH:$HOME/.dotnet/tools"
 
-          nuget-license \
-            -i src/DisplayForge/DisplayForge.csproj \
-            -i src/DisplayForge.Core/DisplayForge.Core.csproj \
-            -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj \
-            -o JsonPretty > licenses.json
+          # nuget-license accepts a single -i; scan app + tests (covers product NuGet deps).
+          {
+            nuget-license -i src/DisplayForge/DisplayForge.csproj -o JsonPretty
+            echo ","
+            nuget-license -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -o JsonPretty
+          } > /tmp/licenses-parts.txt
+
+          # Concatenate into one JSON array
+          python3 - <<'PY' > licenses.json
+          import json, re, pathlib
+          raw = pathlib.Path("/tmp/licenses-parts.txt").read_text(encoding="utf-8")
+          # Split on top-level JSON values separated by our comma line
+          chunks = [c.strip().rstrip(",") for c in re.split(r"\n,\n", raw) if c.strip()]
+          packages = []
+          for chunk in chunks:
+              data = json.loads(chunk)
+              if isinstance(data, list):
+                  packages.extend(data)
+              elif isinstance(data, dict):
+                  if "packages" in data:
+                      packages.extend(data["packages"])
+                  else:
+                      for k, v in data.items():
+                          packages.append({"PackageId": k, **(v if isinstance(v, dict) else {"License": v})})
+          json.dump(packages, open("licenses.json", "w", encoding="utf-8"), indent=2)
+          print(f"merged {len(packages)} entries from {len(chunks)} projects")
+          PY
 
           echo "## License Report" >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
