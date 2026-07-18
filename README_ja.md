@@ -143,6 +143,7 @@ dotnet run --project src/DisplayForge -- --tray-on-close
 
 ### サードパーティ
 
-- アプリアイコンは [Lucide](https://lucide.dev/) の `monitor-cog` アイコンに基づきます（[ISC License](https://lucide.dev/license)）。
-  - 出典 SVG: `src/DisplayForge/Assets/monitor-cog.svg`
+- アイコンは [Lucide](https://lucide.dev/) に基づきます（[ISC License](https://lucide.dev/license)）：
+  - アプリ / トレイ表示: `monitor-cog`（出典 SVG は `src/DisplayForge/Assets/lucide/`。配布バイナリは `Assets/app.ico`）
+  - トレイメニュー: `monitor`, `check`, `settings`, `app-window`, `log-out`（同フォルダ）
   - ライセンス全文: `src/DisplayForge/Assets/LICENSES/lucide-LICENSE.txt`
