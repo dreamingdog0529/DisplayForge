@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "package-name": "DisplayForge",
+      "include-component-in-tag": false,
+      "include-v-in-tag": true,
+      "bump-minor-pre-major": true,
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "type": "xml",
+          "path": "src/DisplayForge/DisplayForge.csproj",
+          "xpath": "//Project/PropertyGroup/Version"
+        },
+        {
+          "type": "xml",
+          "path": "installer/DisplayForge.Installer/DisplayForge.Installer.wixproj",
+          "xpath": "//Project/PropertyGroup/ProductVersion"
+        }
+      ]
+    }
+  }
+}

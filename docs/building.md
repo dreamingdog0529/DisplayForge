@@ -77,10 +77,36 @@ Installer sources: `installer/DisplayForge.Installer/`.
 
 ## CI and GitHub Releases
 
-- **CI** (`.github/workflows/ci.yml`): on push/PR to `main` — restore, build, test on `windows-latest`.
-- **Release** (`.github/workflows/release.yml`): on tag `v*` (e.g. `v0.1.0`) — run `build-msi.ps1` and attach all `DisplayForge-*.msi` files to the GitHub Release.
+| Workflow | Trigger | Role |
+|----------|---------|------|
+| **CI** (`.github/workflows/ci.yml`) | push/PR to `main` | restore, build, test on `windows-latest` |
+| **Release Please** (`.github/workflows/release-please.yml`) | push to `main` | open/update Release PR; on merge → tag + GitHub Release + call MSI build |
+| **Release** (`.github/workflows/release.yml`) | tag `v*`, `workflow_call`, or manual dispatch | `build-msi.ps1`, upload MSIs to the GitHub Release |
 
-Tag version must match SemVer product version without the leading `v` (tag `v1.2.0` → MSI version `1.2.0`).
+Tag version is SemVer without a process mismatch: tag `v1.2.0` → MSI `ProductVersion` `1.2.0`.
+
+### Automated versioning (Release Please)
+
+Config:
+
+- `release-please-config.json` — strategy (`simple`), extra files (csproj / WiX)
+- `.release-please-manifest.json` — last released version
+- `version.txt` — simple strategy version file (kept in sync with csproj)
+
+Maintainer flow:
+
+1. Land Conventional Commits on `main` (`fix:`, `feat:`, `feat!:`, …).
+2. Wait for the bot Release PR; merge it when ready to ship.
+3. MSIs appear on the GitHub Release for `vX.Y.Z`.
+
+If Release Please cannot open PRs, enable **Allow GitHub Actions to create and approve pull requests** under repository Actions settings.
+
+### Manual tag release
+
+```powershell
+git tag v1.2.0
+git push origin v1.2.0
+```
 
 ## Publishing checklist (maintainers)
 
@@ -90,4 +116,5 @@ After the repository is on GitHub:
 - [ ] Set repository description and topics (`windows`, `wpf`, `multi-monitor`, `dotnet`, `hotkeys`, …)
 - [ ] Enable Dependabot alerts, secret scanning, and push protection
 - [ ] Optional: protect `main` with required CI status checks
-- [ ] Cut first release: update CHANGELOG, bump csproj `Version`, tag `v0.1.0`, push tags
+- [ ] Enable **Allow GitHub Actions to create and approve pull requests** (for Release Please)
+- [x] Version automation: Release Please + MSI attach via `release-please.yml` / `release.yml`

@@ -66,22 +66,45 @@ tools/                    Dev utilities (icons, locales)
 
 ### Commit messages
 
-Use clear, imperative summaries (e.g. `Add monitor identify overlay`, `Fix hotkey unregister on exit`).
+Prefer [Conventional Commits](https://www.conventionalcommits.org/) so Release Please can choose the next SemVer automatically:
+
+| Prefix | Effect | Example |
+|--------|--------|---------|
+| `fix:` | patch | `fix: tray icon not restoring window` |
+| `feat:` | minor | `feat: add monitor identify overlay` |
+| `feat!:` / `fix!:` / `BREAKING CHANGE:` | major | `feat!: drop Windows 10 1809 support` |
+| `chore:`, `docs:`, `ci:`, `refactor:` | no version bump (unless breaking) | `docs: clarify MSI install steps` |
+
+PR titles should follow the same style when squashing.
 
 ## Release process (maintainers)
 
-1. Move `[Unreleased]` notes into a new version section in `CHANGELOG.md`.
-2. Bump `<Version>` in `src/DisplayForge/DisplayForge.csproj` (and related projects if needed).
-3. Commit on `main`, then tag and push:
+Releases are automated with **[Release Please](https://github.com/googleapis/release-please)** (GitHub Actions).
 
-   ```powershell
-   git tag v1.2.0
-   git push origin main --tags
-   ```
+1. Merge feature/fix PRs to `main` using Conventional Commits.
+2. Release Please opens or updates a **Release PR** (`chore(main): release X.Y.Z`) that:
+   - bumps `version.txt`, csproj `<Version>`, WiX default `ProductVersion`
+   - updates `CHANGELOG.md` and `.release-please-manifest.json`
+3. When you are ready to ship, **merge the Release PR**.
+4. Release Please creates tag `vX.Y.Z` and a GitHub Release; the same workflow then builds multi-culture MSIs and attaches them.
 
-4. The `release` GitHub Actions workflow builds multi-culture MSIs and publishes a GitHub Release with those assets.
+### Repository settings (one-time)
 
-Semantic versioning: `MAJOR.MINOR.PATCH` (breaking / features / fixes).
+- **Settings → Actions → General → Workflow permissions**: allow read/write, and enable **Allow GitHub Actions to create and approve pull requests**.
+
+### Manual / emergency release
+
+Still works without Release Please:
+
+```powershell
+# After bumping version files yourself
+git tag v1.2.0
+git push origin v1.2.0
+```
+
+Tag push runs `.github/workflows/release.yml` (MSI + GitHub Release assets).
+
+Semantic versioning: `MAJOR.MINOR.PATCH` (breaking / features / fixes). Before `1.0.0`, `feat:` bumps **minor** (`bump-minor-pre-major`).
 
 ## Security
 
