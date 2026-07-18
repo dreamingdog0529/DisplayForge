@@ -1,6 +1,6 @@
 # DisplayForge
 
-[English](./README.md) | [日本語](./README_ja.md)
+[English](./README.md) | 日本語
 
 [![GitHub release](https://img.shields.io/github/v/release/dreamingdog0529/DisplayForge?include_prereleases)](https://github.com/dreamingdog0529/DisplayForge/releases/latest)
 [![CI](https://github.com/dreamingdog0529/DisplayForge/actions/workflows/ci.yml/badge.svg)](https://github.com/dreamingdog0529/DisplayForge/actions/workflows/ci.yml)
