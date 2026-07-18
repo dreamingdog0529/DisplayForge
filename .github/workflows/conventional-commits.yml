@@ -19,8 +19,12 @@ concurrency:
 jobs:
   pr-title:
     name: PR title
-    # Dependabot titles are "Bump …"; they use chore(deps) commits via dependabot.yml instead.
-    if: github.actor != 'dependabot[bot]'
+    # Dependabot: "Bump …" titles; commits use chore(deps) via dependabot.yml.
+    # Release Please (github-actions[bot]): already emits chore(…): release X.Y.Z.
+    if: >
+      github.actor != 'dependabot[bot]' &&
+      github.actor != 'github-actions[bot]' &&
+      !startsWith(github.head_ref, 'release-please--')
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR title
@@ -44,7 +48,10 @@ jobs:
 
   commit-messages:
     name: Commit messages
-    if: github.actor != 'dependabot[bot]'
+    if: >
+      github.actor != 'dependabot[bot]' &&
+      github.actor != 'github-actions[bot]' &&
+      !startsWith(github.head_ref, 'release-please--')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -60,17 +67,10 @@ jobs:
         run: |
           set -euo pipefail
 
-          # type(scope)!: description — description required, non-empty
-          pattern='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-zA-Z0-9._/-]+\))?(!)?: .+'
-
+          # Shared rules with local hook: scripts/validate-commit-subject.sh
           failed=0
           while IFS= read -r subject; do
-            # Skip merge commits and GitHub merge/revert helpers
-            if [[ "$subject" =~ ^Merge\  ]] || [[ "$subject" =~ ^Revert\  ]]; then
-              echo "OK (skip): $subject"
-              continue
-            fi
-            if [[ "$subject" =~ $pattern ]]; then
+            if scripts/validate-commit-subject.sh "$subject"; then
               echo "OK: $subject"
             else
               echo "::error::Commit message is not Conventional Commits: $subject"
@@ -80,12 +80,7 @@ jobs:
 
           if [[ "$failed" -ne 0 ]]; then
             echo ""
-            echo "Use Conventional Commits, for example:"
-            echo "  fix: tray icon not restoring window"
-            echo "  feat: add monitor identify overlay"
-            echo "  chore: update WiX localization"
-            echo "  ci: tighten MSI release workflow"
-            echo ""
             echo "See CONTRIBUTING.md. With squash merge, the PR title must also match."
+            echo "Enable the same check locally: pwsh ./scripts/install-git-hooks.ps1"
             exit 1
           fi
