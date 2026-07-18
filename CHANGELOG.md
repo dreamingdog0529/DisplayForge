@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1](https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.0...v0.1.1) (2026-07-18)
+
+
+### Bug Fixes
+
+* build en-US and ja-JP MSIs for GitHub Releases ([#12](https://github.com/dreamingdog0529/DisplayForge/issues/12)) ([ed84894](https://github.com/dreamingdog0529/DisplayForge/commit/ed848946762029bcb03ad2d730bfb3d3b1893be1))
+
 ## [Unreleased]
 
 ### Added
