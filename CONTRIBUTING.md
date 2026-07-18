@@ -64,18 +64,22 @@ tools/                    Dev utilities (icons, locales)
 4. Update `CHANGELOG.md` under `[Unreleased]` when the change is user-visible.
 5. Fill in the PR template checklist.
 
-### Commit messages
+### Commit messages (required)
 
-Prefer [Conventional Commits](https://www.conventionalcommits.org/) so Release Please can choose the next SemVer automatically:
+Use [Conventional Commits](https://www.conventionalcommits.org/). CI rejects PRs whose **title** or **commit subjects** do not match (workflow: `.github/workflows/conventional-commits.yml`). Release Please uses the same prefixes to choose the next SemVer automatically.
 
 | Prefix | Effect | Example |
 |--------|--------|---------|
 | `fix:` | patch | `fix: tray icon not restoring window` |
 | `feat:` | minor | `feat: add monitor identify overlay` |
 | `feat!:` / `fix!:` / `BREAKING CHANGE:` | major | `feat!: drop Windows 10 1809 support` |
-| `chore:`, `docs:`, `ci:`, `refactor:` | no version bump (unless breaking) | `docs: clarify MSI install steps` |
+| `docs:`, `chore:`, `ci:`, `refactor:`, `test:`, `build:`, `perf:`, `style:`, `revert:` | no version bump (unless breaking) | `ci: require conventional PR titles` |
 
-PR titles should follow the same style when squashing.
+Rules of thumb:
+
+- Format: `type(optional-scope): description` (description required; prefer lowercase start).
+- **Squash merge:** the **PR title** becomes the commit on `main` — keep it Conventional.
+- Dependabot is exempt from the PR-title check; its commits use a `chore(deps):` prefix via `dependabot.yml`.
 
 ## Release process (maintainers)
 
