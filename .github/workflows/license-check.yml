@@ -52,49 +52,31 @@ jobs:
           set -euo pipefail
           export PATH="$PATH:$HOME/.dotnet/tools"
 
-          # nuget-license accepts a single -i; scan app + tests (covers product NuGet deps).
-          {
-            nuget-license -i src/DisplayForge/DisplayForge.csproj -o JsonPretty
-            echo ","
-            nuget-license -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -o JsonPretty
-          } > /tmp/licenses-parts.txt
-
-          # Concatenate into one JSON array
-          python3 - <<'PY' > licenses.json
-          import json, re, pathlib
-          raw = pathlib.Path("/tmp/licenses-parts.txt").read_text(encoding="utf-8")
-          # Split on top-level JSON values separated by our comma line
-          chunks = [c.strip().rstrip(",") for c in re.split(r"\n,\n", raw) if c.strip()]
-          packages = []
-          for chunk in chunks:
-              data = json.loads(chunk)
-              if isinstance(data, list):
-                  packages.extend(data)
-              elif isinstance(data, dict):
-                  if "packages" in data:
-                      packages.extend(data["packages"])
-                  else:
-                      for k, v in data.items():
-                          packages.append({"PackageId": k, **(v if isinstance(v, dict) else {"License": v})})
-          json.dump(packages, open("licenses.json", "w", encoding="utf-8"), indent=2)
-          print(f"merged {len(packages)} entries from {len(chunks)} projects")
-          PY
-
-          echo "## License Report" >> "$GITHUB_STEP_SUMMARY"
-          echo '```json' >> "$GITHUB_STEP_SUMMARY"
-          head -c 20000 licenses.json >> "$GITHUB_STEP_SUMMARY" || true
-          echo >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          # nuget-license accepts a single -i; app csproj covers Core via ProjectReference.
+          nuget-license -i src/DisplayForge/DisplayForge.csproj -o JsonPretty > licenses.json
+          nuget-license -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -o JsonPretty > licenses-tests.json
 
           python3 - <<'PY'
           import json, re, sys
           from pathlib import Path
 
-          text = Path("licenses.json").read_text(encoding="utf-8")
-          data = json.loads(text)
-          packages = data if isinstance(data, list) else data.get("packages") or data.get("Packages") or []
-          if isinstance(data, dict) and not packages:
-              packages = [{"PackageId": k, **(v if isinstance(v, dict) else {"License": v})} for k, v in data.items()]
+          def load_packages(path: Path):
+              data = json.loads(path.read_text(encoding="utf-8"))
+              if isinstance(data, list):
+                  return data
+              if isinstance(data, dict):
+                  if "packages" in data:
+                      return data["packages"]
+                  return [
+                      {"PackageId": k, **(v if isinstance(v, dict) else {"License": v})}
+                      for k, v in data.items()
+                  ]
+              return []
+
+          packages = load_packages(Path("licenses.json")) + load_packages(Path("licenses-tests.json"))
+          Path("licenses-merged.json").write_text(
+              json.dumps(packages, indent=2), encoding="utf-8"
+          )
 
           denied = re.compile(r"\b(GPL-3\.0|AGPL-3\.0|SSPL|BUSL)\b", re.I)
           problems = []
@@ -111,6 +93,14 @@ jobs:
               )
               if denied.search(lic):
                   problems.append(f"{name}: {lic}")
+
+          import os
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+              fh.write("## License Report\n\n")
+              fh.write(f"Scanned **{len(packages)}** package entries.\n\n")
+              fh.write("```json\n")
+              fh.write(json.dumps(packages, indent=2)[:20000])
+              fh.write("\n```\n")
 
           if problems:
               print("Disallowed licenses detected:")
