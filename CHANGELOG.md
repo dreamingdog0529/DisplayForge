@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.3...v0.2.4) (2026-07-18)
+
+
+### Documentation
+
+* fix dco2 app URL and clarify dco.yml config ([#34](https://github.com/dreamingdog0529/DisplayForge/issues/34)) ([e2c2ae5](https://github.com/dreamingdog0529/DisplayForge/commit/e2c2ae5d61989f9bb62012dd3dfae99459b29fb1))
+
+
+### CI/CD
+
+* harden workflows for OpenSSF Scorecard alerts ([#36](https://github.com/dreamingdog0529/DisplayForge/issues/36)) ([f76ec99](https://github.com/dreamingdog0529/DisplayForge/commit/f76ec997522128ecfeec21db408b348b225e8774))
+
 ## [0.2.3](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.2...v0.2.3) (2026-07-18)
 
 
