@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Kies optionele functies voor DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="DisplayForge automatisch starten bij aanmelden bij Windows" />
   <String Id="OptionsDlgStartupHint" Value="Aanbevolen voor gebruik in het systeemvak. U kunt later in Instellingen ook &quot;Starten geminimaliseerd naar systeemvak&quot; inschakelen." />
+  <String Id="ExitDialogLaunchCheck" Value="DisplayForge starten" />
 </WixLocalization>

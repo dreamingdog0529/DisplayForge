@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Pilih fitur opsional DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Mulai DisplayForge secara otomatis saat masuk ke Windows" />
   <String Id="OptionsDlgStartupHint" Value="Disarankan untuk penggunaan di baki sistem. Anda juga dapat mengaktifkan &quot;Mulai diminimalkan ke baki&quot; nanti di Pengaturan." />
+  <String Id="ExitDialogLaunchCheck" Value="Jalankan DisplayForge" />
 </WixLocalization>

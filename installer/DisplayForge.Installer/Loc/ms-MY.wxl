@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Pilih ciri pilihan DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Mulakan DisplayForge secara automatik apabila log masuk ke Windows" />
   <String Id="OptionsDlgStartupHint" Value="Disyorkan untuk penggunaan dalam dulang sistem. Anda juga boleh dayakan &quot;Mula diminimumkan ke dulang&quot; kemudian dalam Tetapan." />
+  <String Id="ExitDialogLaunchCheck" Value="Mulakan DisplayForge" />
 </WixLocalization>

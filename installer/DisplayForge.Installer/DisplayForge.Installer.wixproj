@@ -26,6 +26,7 @@
     <BindPath Include="$(PublishDir)" BindName="Publish"/>
     <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0"/>
     <PackageReference Include="WixToolset.Netfx.wixext" Version="7.0.0"/>
+    <PackageReference Include="WixToolset.Util.wixext" Version="7.0.0"/>
     <!-- Loc/*.wxl auto-included as EmbeddedResource; one MSI per culture. -->
     <!-- Regenerate with: tools/GenInstallerLocales -->
   </ItemGroup>

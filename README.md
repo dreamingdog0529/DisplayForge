@@ -75,14 +75,14 @@ GitHub Releases currently ship **en-US** and **ja-JP** Setup.exe (and MSI) packa
 
 ## Usage
 
-1. Start the app (by default it lives in the tray)
-2. Double-click the tray icon to open the main window
+1. Start the app (the main window opens by default)
+2. Optionally minimize to the tray; double-click the tray icon to open the window again
 3. Create a profile with **New from current layout**
 4. Click the hotkey field and press a chord such as `Ctrl+Alt+1`
 5. Change the Windows display layout, then save another profile the same way
 6. Switch with the hotkey or the tray menu
 
-In a normal launch, closing the window keeps the app in the tray. Use **Exit** on the tray menu to quit.
+In a normal launch, closing the window keeps the app in the tray. Use **Exit** on the tray menu to quit. Prefer tray-only startup via **Settings → Start minimized to tray**.
 
 ## Data locations
 

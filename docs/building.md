@@ -78,6 +78,7 @@ Example asset names:
 | Install directory | `C:\Program Files\DisplayForge\` |
 | Shortcuts | Start Menu / Desktop |
 | Start with Windows | Install UI option (default: on); registry `HKLM\...\Run` |
+| Launch after install | Exit dialog checkbox (default: on); starts DisplayForge.exe |
 | Upgrade | Same UpgradeCode → major upgrade |
 | User data | `%AppData%\DisplayForge\` (kept after uninstall) |
 | Runtime on uninstall | Desktop Runtime is **left installed** (shared with other apps) |

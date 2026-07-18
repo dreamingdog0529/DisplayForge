@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="DisplayForge için isteğe bağlı özellikleri seçin." />
   <String Id="OptionsDlgStartupCheck" Value="Windows oturumu açıldığında DisplayForge'u otomatik başlat" />
   <String Id="OptionsDlgStartupHint" Value="Sistem tepsisinde kullanım için önerilir. Ayarlar'da daha sonra &quot;Başlangıçta tepsiye küçült&quot; seçeneğini de açabilirsiniz." />
+  <String Id="ExitDialogLaunchCheck" Value="DisplayForge'u başlat" />
 </WixLocalization>

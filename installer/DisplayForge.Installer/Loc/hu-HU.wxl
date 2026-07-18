@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Válassza ki a DisplayForge választható funkcióit." />
   <String Id="OptionsDlgStartupCheck" Value="DisplayForge automatikus indítása Windows-bejelentkezéskor" />
   <String Id="OptionsDlgStartupHint" Value="Ajánlott tálcán futó használathoz. Később a Beállításokban bekapcsolhatja a „Indítás minimalizálva a tálcára” lehetőséget is." />
+  <String Id="ExitDialogLaunchCheck" Value="DisplayForge indítása" />
 </WixLocalization>

@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Elija las opciones de DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Iniciar DisplayForge automáticamente al iniciar sesión en Windows" />
   <String Id="OptionsDlgStartupHint" Value="Recomendado para uso en la bandeja. También puede activar «Iniciar minimizado en la bandeja» más tarde en Configuración." />
+  <String Id="ExitDialogLaunchCheck" Value="Iniciar DisplayForge" />
 </WixLocalization>

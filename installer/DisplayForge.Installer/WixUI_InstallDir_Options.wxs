@@ -13,6 +13,14 @@
       <Publish Dialog="InstallDirDlg" Control="Next" Event="CheckTargetPath" Value="[WIXUI_INSTALLDIR]" Order="1" />
       <!-- After path check, go to options (not VerifyReady). -->
       <Publish Dialog="InstallDirDlg" Control="Next" Event="NewDialog" Value="OptionsDlg" Order="4" />
+
+      <!-- Platform-specific DoAction (required for Util CA BinaryRef variants). -->
+      <Publish Dialog="ExitDialog"
+               Control="Finish"
+               Event="DoAction"
+               Value="LaunchApplication"
+               Order="1"
+               Condition="WIXUI_EXITDIALOGOPTIONALCHECKBOX = &quot;1&quot; AND NOT Installed" />
     </UI>
 
     <UIRef Id="WixUI_InstallDir_Options" />
@@ -20,7 +28,7 @@
   <?endforeach?>
 
   <Fragment>
-    <UI Id="file WixUI_InstallDir_Options">
+    <UI Id="WixUI_InstallDir_Options">
       <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
       <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
       <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />

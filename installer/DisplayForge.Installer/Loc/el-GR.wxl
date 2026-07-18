@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Επιλέξτε προαιρετικές δυνατότητες για το DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Αυτόματη εκκίνηση του DisplayForge κατά τη σύνδεση στα Windows" />
   <String Id="OptionsDlgStartupHint" Value="Συνιστάται για χρήση στην περιοχή ειδοποιήσεων. Μπορείτε αργότερα να ενεργοποιήσετε «Εκκίνηση ελαχιστοποιημένο στην περιοχή ειδοποιήσεων» στις Ρυθμίσεις." />
+  <String Id="ExitDialogLaunchCheck" Value="Εκκίνηση DisplayForge" />
 </WixLocalization>
