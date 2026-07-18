@@ -11,6 +11,15 @@ if [[ ! -f "$msg_file" ]]; then
   exit 1
 fi
 
+# Merge / cherry-pick / revert commits are not subject to Conventional Commits.
+# Git sets these refs while the commit is being created.
+git_dir=$(git rev-parse --git-dir)
+if [[ -f "$git_dir/MERGE_HEAD" ]] ||
+   [[ -f "$git_dir/CHERRY_PICK_HEAD" ]] ||
+   [[ -f "$git_dir/REVERT_HEAD" ]]; then
+  exit 0
+fi
+
 # First non-comment, non-empty line is the subject
 subject=""
 while IFS= read -r line || [[ -n "$line" ]]; do
