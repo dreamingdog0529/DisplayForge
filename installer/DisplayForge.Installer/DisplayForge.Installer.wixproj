@@ -18,11 +18,14 @@
   <!-- DefineConstants after defaults so preprocessor vars are non-empty. -->
   <PropertyGroup>
     <DefineConstants>ProductVersion=$(ProductVersion);Publisher=$(Publisher);AppIcon=$(AppIcon)</DefineConstants>
+    <!-- Set -p:FrameworkDependent=true from build-msi.ps1 for FDD packages (runtime Launch check). -->
+    <DefineConstants Condition="'$(FrameworkDependent)' == 'true'">$(DefineConstants);FrameworkDependent</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <BindPath Include="$(PublishDir)" BindName="Publish"/>
     <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0"/>
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="7.0.0"/>
     <!-- Loc/*.wxl auto-included as EmbeddedResource; one MSI per culture. -->
     <!-- Regenerate with: tools/GenInstallerLocales -->
   </ItemGroup>

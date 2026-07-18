@@ -25,11 +25,12 @@ Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool
 | Item | Details |
 |------|---------|
 | OS | Windows 10 / 11 (x64) |
-| Package | MSI installer (self-contained; .NET runtime included) |
-| Example file names | `DisplayForge-0.1.0-win-x64-en-US.msi`, `…-ja-JP.msi` (installer language; app UI has [31 languages](#supported-languages)) |
+| Package | **Setup.exe** bootstrapper (installs [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) if missing, then the app) |
+| Also available | MSI only (requires Desktop Runtime already installed) |
+| Example file names | `DisplayForge-0.1.1-win-x64-en-US-Setup.exe`, `…-ja-JP-Setup.exe` (installer language; app UI has [31 languages](#supported-languages)) |
 | Settings location | `%AppData%\DisplayForge\` (kept after uninstall) |
 
-Pick the MSI that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
+Pick the **Setup.exe** that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
 
 ## Features
 
@@ -68,9 +69,9 @@ Defaults to the Windows display language. Change anytime under **Settings → La
 | `hi` | हिन्दी | `ar` | العربية |
 | `he` | עברית | | |
 
-### Installer (MSI wizard)
+### Installer (Setup / MSI wizard)
 
-GitHub Releases currently ship **en-US** and **ja-JP** MSI packages (installer wizard language only). The app UI language set above is the same in both packages.
+GitHub Releases currently ship **en-US** and **ja-JP** Setup.exe (and MSI) packages (installer wizard language only). The app UI language set above is the same in both packages.
 
 ## Usage
 
@@ -100,7 +101,7 @@ dotnet test
 dotnet run --project src/DisplayForge
 ```
 
-Build an MSI locally:
+Build installers locally (Setup.exe + MSI):
 
 ```powershell
 .\build-msi.ps1
@@ -116,6 +117,7 @@ src/DisplayForge                 WPF UI / tray / hotkeys
 src/DisplayForge.Core            Display API, profiles, matching
 tests/DisplayForge.Core.Tests
 installer/DisplayForge.Installer WiX MSI
+installer/DisplayForge.Bootstrapper WiX Bundle (Setup.exe)
 ```
 
 Display changes use the Windows **CCD** API (`QueryDisplayConfig` / `SetDisplayConfig`).  

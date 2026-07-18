@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
-     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"
+     xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
 
   <!--
     UpgradeCode must stay stable across releases so newer MSIs can upgrade older ones.
@@ -24,6 +25,22 @@
 
     <Icon Id="AppIcon" SourceFile="$(AppIcon)" />
     <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+
+    <!--
+      Framework-dependent builds: block MSI install if .NET 10 Desktop Runtime is missing.
+      Prefer DisplayForge Setup.exe (bootstrapper), which installs the runtime first.
+      Self-contained builds omit FrameworkDependent from DefineConstants.
+    -->
+    <?ifdef FrameworkDependent ?>
+    <netfx:DotNetCompatibilityCheck
+      Property="DOTNETDESKTOPCHECK"
+      RollForward="latestMajor"
+      RuntimeType="desktop"
+      Platform="x64"
+      Version="10.0.0" />
+    <Launch Condition="Installed OR DOTNETDESKTOPCHECK = &quot;0&quot;"
+            Message="DisplayForge requires the .NET 10 Desktop Runtime (x64). Run DisplayForge Setup.exe, or install the runtime from https://dotnet.microsoft.com/download/dotnet/10.0" />
+    <?endif?>
 
     <!--
       Secure so the elevated execute sequence sees the UI checkbox value.
@@ -54,7 +71,7 @@
   </Package>
 
   <Fragment>
-    <!-- Harvest publish output (self-contained win-x64). -->
+    <!-- Harvest publish output (framework-dependent or self-contained win-x64). -->
     <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
       <Files Include="!(bindpath.Publish)**">
         <Exclude Files="!(bindpath.Publish)**\*.pdb" />

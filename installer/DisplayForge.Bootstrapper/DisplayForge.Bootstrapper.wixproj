@@ -1,0 +1,35 @@
+<Project Sdk="WixToolset.Sdk/7.0.0">
+
+  <PropertyGroup>
+    <!-- WiX v7 OSMF EULA: free under $10k revenue; see https://docs.firegiant.com/wix/osmf/ -->
+    <AcceptEula>wix7</AcceptEula>
+    <OutputType>Bundle</OutputType>
+    <InstallerPlatform>x64</InstallerPlatform>
+    <Platform>x64</Platform>
+    <OutputName>DisplayForge-Setup</OutputName>
+    <DefaultCompressionLevel>high</DefaultCompressionLevel>
+
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.1.1</ProductVersion>
+    <Publisher Condition="'$(Publisher)' == ''">DisplayForge</Publisher>
+    <AppIcon Condition="'$(AppIcon)' == ''">$(MSBuildThisFileDirectory)..\..\src\DisplayForge\Assets\app.ico</AppIcon>
+    <LicenseRtf Condition="'$(LicenseRtf)' == ''">$(MSBuildThisFileDirectory)..\DisplayForge.Installer\License.rtf</LicenseRtf>
+
+    <!-- Directories provided by build-msi.ps1 (trailing slash recommended). -->
+    <MsiDir Condition="'$(MsiDir)' == ''">$(MSBuildThisFileDirectory)..\..\artifacts\msi\</MsiDir>
+    <DotNetRuntimeDir Condition="'$(DotNetRuntimeDir)' == ''">$(MSBuildThisFileDirectory)..\..\artifacts\prereqs\</DotNetRuntimeDir>
+    <DotNetRuntimeFileName Condition="'$(DotNetRuntimeFileName)' == ''">windowsdesktop-runtime-win-x64.exe</DotNetRuntimeFileName>
+    <MsiFileName Condition="'$(MsiFileName)' == ''">DisplayForge.msi</MsiFileName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>ProductVersion=$(ProductVersion);Publisher=$(Publisher);AppIcon=$(AppIcon);LicenseRtf=$(LicenseRtf);DotNetRuntimeFileName=$(DotNetRuntimeFileName);MsiFileName=$(MsiFileName)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <BindPath Include="$(MsiDir)" BindName="Msi" />
+    <BindPath Include="$(DotNetRuntimeDir)" BindName="DotNetRuntime" />
+    <PackageReference Include="WixToolset.Bal.wixext" Version="7.0.0" />
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

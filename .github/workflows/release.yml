@@ -74,25 +74,28 @@ jobs:
         with:
           dotnet-version: "10.0.x"
 
-      - name: Build MSI installers
+      - name: Build installers (MSI + Setup bootstrapper)
         shell: pwsh
         run: |
           .\build-msi.ps1 -Version "${{ steps.ver.outputs.version }}" -Cultures "en-US;ja-JP"
 
-      - name: List MSI assets
+      - name: List installer assets
         shell: pwsh
         run: |
-          Get-ChildItem -LiteralPath artifacts\msi -Filter "DisplayForge-*.msi" -File |
+          Get-ChildItem -LiteralPath artifacts\msi -File |
+            Where-Object { $_.Name -like "DisplayForge-*.msi" -or $_.Name -like "DisplayForge-*-Setup.exe" } |
             ForEach-Object { Write-Host $_.FullName; "{0:N1} MB" -f ($_.Length / 1MB) }
 
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: msi-${{ steps.ver.outputs.version }}
-          path: artifacts/msi/DisplayForge-*.msi
+          name: installers-${{ steps.ver.outputs.version }}
+          path: |
+            artifacts/msi/DisplayForge-*.msi
+            artifacts/msi/DisplayForge-*-Setup.exe
           if-no-files-found: error
 
-      - name: Attach MSIs to GitHub Release
+      - name: Attach installers to GitHub Release
         if: github.event_name != 'workflow_dispatch'
         shell: pwsh
         env:
@@ -100,8 +103,11 @@ jobs:
         run: |
           $tag = "${{ steps.ver.outputs.tag_name }}"
           $version = "${{ steps.ver.outputs.version }}"
-          $msis = @(Get-ChildItem -LiteralPath artifacts\msi -Filter "DisplayForge-*.msi" -File)
-          if ($msis.Count -eq 0) { throw "No MSI files found under artifacts/msi" }
+          $assets = @(
+            Get-ChildItem -LiteralPath artifacts\msi -File |
+              Where-Object { $_.Name -like "DisplayForge-*.msi" -or $_.Name -like "DisplayForge-*-Setup.exe" }
+          )
+          if ($assets.Count -eq 0) { throw "No installer files found under artifacts/msi" }
 
           # Release Please may already have created the GitHub Release (notes only).
           # Manual tag push may not have a release yet. Support both.
@@ -110,15 +116,15 @@ jobs:
           if ($LASTEXITCODE -eq 0) { $exists = $true }
 
           if ($exists) {
-            Write-Host "Release $tag exists — uploading MSI assets."
-            & gh release upload $tag --clobber @($msis | ForEach-Object { $_.FullName })
+            Write-Host "Release $tag exists — uploading installer assets."
+            & gh release upload $tag --clobber @($assets | ForEach-Object { $_.FullName })
           } else {
-            Write-Host "Release $tag missing — creating with MSI assets."
+            Write-Host "Release $tag missing — creating with installer assets."
             $ghArgs = @(
               "release", "create", $tag,
               "--title", "DisplayForge $version",
               "--generate-notes"
-            ) + ($msis | ForEach-Object { $_.FullName })
+            ) + ($assets | ForEach-Object { $_.FullName })
             & gh @ghArgs
           }
           if ($LASTEXITCODE -ne 0) { throw "gh release failed with exit $LASTEXITCODE" }
@@ -127,5 +133,5 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         shell: pwsh
         run: |
-          Write-Host "Manual run: MSIs uploaded as workflow artifacts only."
+          Write-Host "Manual run: installers uploaded as workflow artifacts only."
           Write-Host "To publish a GitHub Release, merge a Release Please PR or push tag v${{ steps.ver.outputs.version }}."
