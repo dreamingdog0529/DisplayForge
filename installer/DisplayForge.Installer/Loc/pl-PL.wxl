@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Wybierz opcjonalne funkcje DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Uruchamiaj DisplayForge automatycznie po zalogowaniu do Windows" />
   <String Id="OptionsDlgStartupHint" Value="Zalecane przy pracy w zasobniku. Później w Ustawieniach możesz też włączyć „Uruchom zminimalizowane do zasobnika”." />
+  <String Id="ExitDialogLaunchCheck" Value="Uruchom DisplayForge" />
 </WixLocalization>

@@ -29,6 +29,7 @@ static class Program
             WriteString(sb, "OptionsDlgDescription", loc.OptionsDlgDescription);
             WriteString(sb, "OptionsDlgStartupCheck", loc.OptionsDlgStartupCheck);
             WriteString(sb, "OptionsDlgStartupHint", loc.OptionsDlgStartupHint);
+            WriteString(sb, "ExitDialogLaunchCheck", ExitDialogLaunchCheck(culture));
             sb.AppendLine("</WixLocalization>");
 
             var path = Path.Combine(outDir, $"{culture}.wxl");
@@ -48,6 +49,42 @@ static class Program
          .Replace("<", "&lt;", StringComparison.Ordinal)
          .Replace(">", "&gt;", StringComparison.Ordinal)
          .Replace("\"", "&quot;", StringComparison.Ordinal);
+
+    /// <summary>ExitDialog checkbox: launch the app after install (default checked in Package.wxs).</summary>
+    static string ExitDialogLaunchCheck(string culture) => culture switch
+    {
+        "ja-JP" => "DisplayForge を起動",
+        "zh-CN" => "启动 DisplayForge",
+        "zh-TW" => "啟動 DisplayForge",
+        "ko-KR" => "DisplayForge 시작",
+        "de-DE" => "DisplayForge starten",
+        "fr-FR" => "Lancer DisplayForge",
+        "es-ES" => "Iniciar DisplayForge",
+        "pt-BR" => "Iniciar o DisplayForge",
+        "pt-PT" => "Iniciar o DisplayForge",
+        "it-IT" => "Avvia DisplayForge",
+        "nl-NL" => "DisplayForge starten",
+        "pl-PL" => "Uruchom DisplayForge",
+        "ru-RU" => "Запустить DisplayForge",
+        "uk-UA" => "Запустити DisplayForge",
+        "tr-TR" => "DisplayForge'u başlat",
+        "cs-CZ" => "Spustit DisplayForge",
+        "sv-SE" => "Starta DisplayForge",
+        "da-DK" => "Start DisplayForge",
+        "nb-NO" => "Start DisplayForge",
+        "fi-FI" => "Käynnistä DisplayForge",
+        "hu-HU" => "DisplayForge indítása",
+        "ro-RO" => "Pornește DisplayForge",
+        "el-GR" => "Εκκίνηση DisplayForge",
+        "vi-VN" => "Khởi động DisplayForge",
+        "th-TH" => "เริ่ม DisplayForge",
+        "id-ID" => "Jalankan DisplayForge",
+        "ms-MY" => "Mulakan DisplayForge",
+        "hi-IN" => "DisplayForge शुरू करें",
+        "ar-SA" => "تشغيل DisplayForge",
+        "he-IL" => "הפעל את DisplayForge",
+        _ => "Launch DisplayForge",
+    };
 
     static string FindRepoRoot()
     {
@@ -83,7 +120,7 @@ static class Program
             "Installation Options",
             "Choose optional features for DisplayForge.",
             "Start DisplayForge automatically when I sign in to Windows",
-            "Recommended for tray-resident use. You can also enable \"Start minimized to tray\" later in Settings."),
+            "The main window opens on first launch by default. Enable \"Start minimized to tray\" later in Settings if you prefer."),
 
         ["ja-JP"] = new(
             1041,
@@ -94,7 +131,7 @@ static class Program
             "インストールオプション",
             "DisplayForge のオプションを選択してください。",
             "Windows にサインインしたときに DisplayForge を自動で起動する",
-            "トレイ常駐で使う場合におすすめです。あとから設定の「起動時はトレイに最小化」も有効にできます。"),
+            "初回起動ではメインウィンドウが表示されます。トレイのみで始めたい場合は、あとから設定の「起動時はトレイに最小化」を有効にできます。"),
 
         ["zh-CN"] = new(
             2052,

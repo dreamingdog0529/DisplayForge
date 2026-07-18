@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Valitse DisplayForgen valinnaiset ominaisuudet." />
   <String Id="OptionsDlgStartupCheck" Value="Käynnistä DisplayForge automaattisesti Windowsiin kirjautuessa" />
   <String Id="OptionsDlgStartupHint" Value="Suositellaan ilmoitusalueella käytettäväksi. Voit myöhemmin ottaa asetuksissa käyttöön &quot;Käynnistä pienennettynä ilmoitusalueelle&quot;." />
+  <String Id="ExitDialogLaunchCheck" Value="Käynnistä DisplayForge" />
 </WixLocalization>

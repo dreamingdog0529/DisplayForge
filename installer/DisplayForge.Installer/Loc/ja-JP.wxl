@@ -8,5 +8,6 @@
   <String Id="OptionsDlgBannerTitle" Value="インストールオプション" />
   <String Id="OptionsDlgDescription" Value="DisplayForge のオプションを選択してください。" />
   <String Id="OptionsDlgStartupCheck" Value="Windows にサインインしたときに DisplayForge を自動で起動する" />
-  <String Id="OptionsDlgStartupHint" Value="トレイ常駐で使う場合におすすめです。あとから設定の「起動時はトレイに最小化」も有効にできます。" />
+  <String Id="OptionsDlgStartupHint" Value="初回起動ではメインウィンドウが表示されます。トレイのみで始めたい場合は、あとから設定の「起動時はトレイに最小化」を有効にできます。" />
+  <String Id="ExitDialogLaunchCheck" Value="DisplayForge を起動" />
 </WixLocalization>

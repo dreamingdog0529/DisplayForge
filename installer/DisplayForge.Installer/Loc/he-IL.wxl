@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="בחר תכונות אופציונליות עבור DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="הפעל את DisplayForge אוטומטית בכניסה ל-Windows" />
   <String Id="OptionsDlgStartupHint" Value="מומלץ לשימוש במגש המערכת. ניתן גם להפעיל &quot;הפעלה ממוזערת למגש&quot; מאוחר יותר בהגדרות." />
+  <String Id="ExitDialogLaunchCheck" Value="הפעל את DisplayForge" />
 </WixLocalization>

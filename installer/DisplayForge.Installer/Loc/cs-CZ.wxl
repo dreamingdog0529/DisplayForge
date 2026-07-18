@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Vyberte volitelné funkce DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Spouštět DisplayForge automaticky při přihlášení k Windows" />
   <String Id="OptionsDlgStartupHint" Value="Doporučeno pro běh v oznamovací oblasti. Později v Nastavení můžete zapnout „Spustit minimalizované do oznamovací oblasti“." />
+  <String Id="ExitDialogLaunchCheck" Value="Spustit DisplayForge" />
 </WixLocalization>

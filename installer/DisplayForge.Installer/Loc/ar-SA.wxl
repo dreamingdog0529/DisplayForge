@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="اختر الميزات الاختيارية لـ DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="بدء DisplayForge تلقائيًا عند تسجيل الدخول إلى Windows" />
   <String Id="OptionsDlgStartupHint" Value="يُنصح به للاستخدام في علبة النظام. يمكنك أيضًا تمكين «البدء مصغّرًا في علبة النظام» لاحقًا من الإعدادات." />
+  <String Id="ExitDialogLaunchCheck" Value="تشغيل DisplayForge" />
 </WixLocalization>

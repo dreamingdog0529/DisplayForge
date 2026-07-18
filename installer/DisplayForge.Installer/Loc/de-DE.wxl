@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Optionale Funktionen für DisplayForge auswählen." />
   <String Id="OptionsDlgStartupCheck" Value="DisplayForge beim Anmelden an Windows automatisch starten" />
   <String Id="OptionsDlgStartupHint" Value="Empfohlen für die Nutzung im Infobereich. &quot;Beim Start in den Infobereich minimieren&quot; können Sie später in den Einstellungen aktivieren." />
+  <String Id="ExitDialogLaunchCheck" Value="DisplayForge starten" />
 </WixLocalization>

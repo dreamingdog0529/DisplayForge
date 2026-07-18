@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="เลือกคุณลักษณะเสริมของ DisplayForge" />
   <String Id="OptionsDlgStartupCheck" Value="เริ่ม DisplayForge โดยอัตโนมัติเมื่อลงชื่อเข้าใช้ Windows" />
   <String Id="OptionsDlgStartupHint" Value="แนะนำสำหรับการใช้งานในถาดระบบ คุณสามารถเปิด &quot;เริ่มแบบย่อในถาดระบบ&quot; ได้ในภายหลังในการตั้งค่า" />
+  <String Id="ExitDialogLaunchCheck" Value="เริ่ม DisplayForge" />
 </WixLocalization>

@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Scegli le opzioni di DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Avvia DisplayForge automaticamente all'accesso a Windows" />
   <String Id="OptionsDlgStartupHint" Value="Consigliato per l'uso nell'area di notifica. Puoi anche abilitare &quot;Avvia ridotto a icona nell'area di notifica&quot; in Impostazioni." />
+  <String Id="ExitDialogLaunchCheck" Value="Avvia DisplayForge" />
 </WixLocalization>

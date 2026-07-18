@@ -8,5 +8,6 @@
   <String Id="OptionsDlgBannerTitle" Value="Installation Options" />
   <String Id="OptionsDlgDescription" Value="Choose optional features for DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Start DisplayForge automatically when I sign in to Windows" />
-  <String Id="OptionsDlgStartupHint" Value="Recommended for tray-resident use. You can also enable &quot;Start minimized to tray&quot; later in Settings." />
+  <String Id="OptionsDlgStartupHint" Value="The main window opens on first launch by default. Enable &quot;Start minimized to tray&quot; later in Settings if you prefer." />
+  <String Id="ExitDialogLaunchCheck" Value="Launch DisplayForge" />
 </WixLocalization>

@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Choisissez les options de DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Démarrer DisplayForge automatiquement à la connexion Windows" />
   <String Id="OptionsDlgStartupHint" Value="Recommandé pour une utilisation dans la zone de notification. Vous pourrez aussi activer « Démarrer réduit dans la zone de notification » dans les paramètres." />
+  <String Id="ExitDialogLaunchCheck" Value="Lancer DisplayForge" />
 </WixLocalization>

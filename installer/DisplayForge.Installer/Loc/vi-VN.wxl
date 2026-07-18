@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Chọn các tính năng tùy chọn cho DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Tự động khởi động DisplayForge khi đăng nhập Windows" />
   <String Id="OptionsDlgStartupHint" Value="Khuyến nghị khi dùng trên khay hệ thống. Bạn cũng có thể bật &quot;Khởi động thu nhỏ xuống khay&quot; sau trong Cài đặt." />
+  <String Id="ExitDialogLaunchCheck" Value="Khởi động DisplayForge" />
 </WixLocalization>

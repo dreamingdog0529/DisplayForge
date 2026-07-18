@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Alegeți funcțiile opționale pentru DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Pornește DisplayForge automat la conectarea în Windows" />
   <String Id="OptionsDlgStartupHint" Value="Recomandat pentru utilizare în zona de notificare. Puteți activa ulterior „Pornește minimizat în zona de notificare” din Setări." />
+  <String Id="ExitDialogLaunchCheck" Value="Pornește DisplayForge" />
 </WixLocalization>

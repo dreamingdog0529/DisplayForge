@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Выберите дополнительные параметры DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Запускать DisplayForge автоматически при входе в Windows" />
   <String Id="OptionsDlgStartupHint" Value="Рекомендуется для работы в области уведомлений. Позже в параметрах можно включить «Запускать свёрнутым в область уведомлений»." />
+  <String Id="ExitDialogLaunchCheck" Value="Запустить DisplayForge" />
 </WixLocalization>

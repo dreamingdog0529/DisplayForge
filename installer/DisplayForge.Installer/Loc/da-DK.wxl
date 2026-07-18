@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="Vælg valgfrie funktioner til DisplayForge." />
   <String Id="OptionsDlgStartupCheck" Value="Start DisplayForge automatisk, når jeg logger på Windows" />
   <String Id="OptionsDlgStartupHint" Value="Anbefales til brug i meddelelsesområdet. Du kan senere aktivere &quot;Start minimeret til meddelelsesområdet&quot; under Indstillinger." />
+  <String Id="ExitDialogLaunchCheck" Value="Start DisplayForge" />
 </WixLocalization>

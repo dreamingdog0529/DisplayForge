@@ -9,4 +9,5 @@
   <String Id="OptionsDlgDescription" Value="選擇 DisplayForge 的選用功能。" />
   <String Id="OptionsDlgStartupCheck" Value="登入 Windows 時自動啟動 DisplayForge" />
   <String Id="OptionsDlgStartupHint" Value="適合系統匣常駐使用。之後也可在設定中啟用「啟動時最小化到系統匣」。" />
+  <String Id="ExitDialogLaunchCheck" Value="啟動 DisplayForge" />
 </WixLocalization>

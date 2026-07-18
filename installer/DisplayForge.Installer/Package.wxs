@@ -48,6 +48,16 @@
     -->
     <Property Id="START_WITH_WINDOWS" Secure="yes" Value="1" />
 
+    <!-- ExitDialog optional checkbox: launch app after install (checked by default). -->
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="!(loc.ExitDialogLaunchCheck)" />
+    <!-- Value is formatted at runtime by WixShellExec (WIX1077 is expected). -->
+    <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]DisplayForge.exe" />
+    <CustomAction Id="LaunchApplication"
+                  BinaryRef="Wix4UtilCA_$(sys.BUILDARCHSHORT)"
+                  DllEntry="WixShellExec"
+                  Impersonate="yes" />
+
     <Feature Id="ProductFeature" Title="DisplayForge" Level="1">
       <ComponentGroupRef Id="AppComponents" />
       <ComponentRef Id="StartMenuShortcut" />
@@ -55,7 +65,7 @@
       <ComponentRef Id="StartupRunKey" />
     </Feature>
 
-    <!-- Custom set: WixUI_InstallDir + OptionsDlg (startup checkbox). -->
+    <!-- Custom set: WixUI_InstallDir + OptionsDlg (startup checkbox) + ExitDialog launch. -->
     <ui:WixUI Id="WixUI_InstallDir_Options" InstallDirectory="INSTALLFOLDER" />
     <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
 
