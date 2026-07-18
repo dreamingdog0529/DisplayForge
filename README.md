@@ -8,6 +8,16 @@ English | [日本語](./README_ja.md)
 
 Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool’s save/restore workflow, with **per-profile global hotkeys** and **system tray residency** as first-class features.
 
+## Screenshots
+
+**Main window** — profiles, hotkeys, layout editor, and monitor details
+
+![DisplayForge main window](docs/images/main-window.png)
+
+**System tray** — apply a profile, open the app, or exit from the context menu
+
+![DisplayForge system tray menu](docs/images/tray-menu.png)
+
 ## Download
 
 **[Open the latest release](https://github.com/dreamingdog0529/DisplayForge/releases/latest)**
