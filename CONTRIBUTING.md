@@ -84,6 +84,7 @@ Rules of thumb:
 - **Squash merge:** the **PR title** becomes the commit on `main` — keep it Conventional.
 - **Bots exempt from this CI check:** Dependabot (`chore(deps):` via `dependabot.yml`) and Release Please (`github-actions[bot]` / `release-please--*` branches; title is usually `chore(main): release X.Y.Z`).
 - Local hook also accepts release subjects such as `chore(main): release 1.2.3` and `Release 1.2.3` so release commits are not blocked by mistake.
+- **Merge commits are skipped** (e.g. `Merge branch 'main' into your-branch`): the local hook detects `MERGE_HEAD`, and CI skips multi-parent commits.
 
 #### Local commit-msg hook (recommended)
 
