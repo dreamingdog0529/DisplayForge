@@ -26,7 +26,7 @@ Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool
 |------|---------|
 | OS | Windows 10 / 11 (x64) |
 | Package | MSI installer (self-contained; .NET runtime included) |
-| Example file names | `DisplayForge-0.1.0-win-x64-en-US.msi`, `…-ja-JP.msi`, etc. (per UI culture) |
+| Example file names | `DisplayForge-0.1.0-win-x64-en-US.msi`, `…-ja-JP.msi` (installer language; app UI has [31 languages](#supported-languages)) |
 | Settings location | `%AppData%\DisplayForge\` (kept after uninstall) |
 
 Pick the MSI that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
@@ -38,8 +38,37 @@ Pick the MSI that matches your preferred installer language and run it elevated.
 - Apply, duplicate, delete, and rename profiles
 - Assign a global hotkey per profile for instant switching
 - System tray residency (apply from the context menu)
-- UI localization (30+ languages including English, Japanese, Chinese, Korean, and many European languages; follows the system language by default)
+- UI localization in **31 languages** (follows the system language by default; override in **Settings**)
 - Settings and profiles stored as JSON under `%AppData%\DisplayForge\`
+
+## Supported languages
+
+### App UI (31)
+
+Defaults to the Windows display language. Change anytime under **Settings → Language**. Every installer package includes all of these UI languages.
+
+| Code | Language | Code | Language |
+|------|----------|------|----------|
+| `en` | English | `ja` | 日本語 |
+| `zh-Hans` | 简体中文 | `zh-Hant` | 繁體中文 |
+| `ko` | 한국어 | `de` | Deutsch |
+| `fr` | Français | `es` | Español |
+| `pt-BR` | Português (Brasil) | `pt-PT` | Português (Portugal) |
+| `it` | Italiano | `nl` | Nederlands |
+| `pl` | Polski | `ru` | Русский |
+| `uk` | Українська | `tr` | Türkçe |
+| `cs` | Čeština | `sv` | Svenska |
+| `da` | Dansk | `nb` | Norsk bokmål |
+| `fi` | Suomi | `hu` | Magyar |
+| `ro` | Română | `el` | Ελληνικά |
+| `vi` | Tiếng Việt | `th` | ไทย |
+| `id` | Bahasa Indonesia | `ms` | Bahasa Melayu |
+| `hi` | हिन्दी | `ar` | العربية |
+| `he` | עברית | | |
+
+### Installer (MSI wizard)
+
+GitHub Releases currently ship **en-US** and **ja-JP** MSI packages (installer wizard language only). The app UI language set above is the same in both packages.
 
 ## Usage
 
