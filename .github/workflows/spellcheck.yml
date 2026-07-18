@@ -1,0 +1,44 @@
+name: Spell Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.md"
+      - "**.txt"
+      - "**.yml"
+      - "**.yaml"
+      - ".typos.toml"
+  pull_request:
+    paths:
+      - "**.md"
+      - "**.txt"
+      - "**.yml"
+      - "**.yaml"
+      - ".typos.toml"
+
+permissions:
+  contents: read
+
+jobs:
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Limit to human-written docs/config. Source/locale strings and regex
+      # character classes in shell scripts produce false positives.
+      - name: Check spelling
+        uses: crate-ci/typos@v1.48.0
+        with:
+          config: .typos.toml
+          files: |
+            README.md
+            README_ja.md
+            CONTRIBUTING.md
+            CODE_OF_CONDUCT.md
+            SECURITY.md
+            SUPPORT.md
+            ROADMAP.md
+            CHECKLIST.md
+            docs

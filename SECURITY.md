@@ -1,22 +1,15 @@
 # Security Policy
 
-## Supported versions
-
-Security fixes are applied to the latest released version on the default branch. Older releases may not receive backports unless a fix is trivial and still relevant.
-
-| Version | Supported |
-|---------|-----------|
-| Latest release | Yes |
-| Older releases | Best effort |
-
 ## Reporting a vulnerability
 
 Please **do not** open a public issue for security vulnerabilities.
 
-Prefer one of the following:
+Report security issues as soon as they are discovered using one of the following:
 
-1. **GitHub Security Advisories** (recommended): use [Report a vulnerability](../../security/advisories/new) on this repository (available after the repo is published on GitHub).
+1. **GitHub Security Advisories** (recommended): use [Report a vulnerability](https://github.com/dreamingdog0529/DisplayForge/security/advisories/new) on this repository.
 2. If private reporting is unavailable, contact the maintainers through a private channel and reference this document.
+
+This project limits its runtime dependencies where practical in order to reduce the total cost of ownership, but all consumers should remain vigilant and have their security stakeholders review third-party products (3PP) like this one and their dependencies.
 
 ### What to include
 
@@ -30,5 +23,14 @@ Prefer one of the following:
 - Acknowledgement when maintainers see the report
 - A fix or mitigation plan when the issue is confirmed
 - Credit in the advisory or changelog if you want it (say so in the report)
+
+## Supported versions
+
+Security fixes are applied to the latest released version on the default branch. Older releases may not receive backports unless a fix is trivial and still relevant.
+
+| Version | Supported |
+|---------|-----------|
+| Latest release | Yes |
+| Older releases | Best effort |
 
 Thank you for helping keep DisplayForge and its users safe.

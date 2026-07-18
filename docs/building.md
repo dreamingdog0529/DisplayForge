@@ -103,11 +103,19 @@ Installer sources:
 
 ## CI and GitHub Releases
 
+Automation is aligned with [container-registry/oss-project-template](https://github.com/container-registry/oss-project-template) (see [CHECKLIST.md](../CHECKLIST.md) and [CONTRIBUTING.md](../CONTRIBUTING.md)).
+
 | Workflow | Trigger | Role |
 |----------|---------|------|
-| **CI** (`.github/workflows/ci.yml`) | push/PR to `main` | restore, build, test on `windows-latest` |
-| **Release Please** (`.github/workflows/release-please.yml`) | push to `main` | open/update Release PR; on merge → tag + GitHub Release + call MSI build |
-| **Release** (`.github/workflows/release.yml`) | tag `v*`, `workflow_call`, or manual dispatch | `build-msi.ps1`, upload Setup.exe + MSIs to the GitHub Release |
+| **CI** (`ci.yml`) | push/PR to `main` | restore, build, test on `windows-latest` |
+| **PR Title** (`pr-title.yml`) | PR open/edit/sync | Conventional Commits on PR title |
+| **Spell Check** (`spellcheck.yml`) | markdown/yaml changes | typos via `.typos.toml` |
+| **License Check** (`license-check.yml`) | csproj / lockfile changes | NuGet license scan |
+| **Dependency Review** (`dependency-review.yml`) | PR | dependency + license policy |
+| **Labeler / Size** | PR | path labels + size/XS–XL |
+| **Scorecard** (`scorecard.yml`) | schedule / main | OpenSSF Scorecard |
+| **Release Please** (`release-please.yml`) | push to `main` | release PR; on merge → tag + GitHub Release + assets job |
+| **Release Assets** (`release-assets.yml`) | `workflow_call`, tag `v*`, or manual | `build-msi.ps1`, upload Setup.exe + MSIs |
 
 Tag version is SemVer without a process mismatch: tag `v1.2.0` → MSI `ProductVersion` `1.2.0`.
 
@@ -115,13 +123,13 @@ Tag version is SemVer without a process mismatch: tag `v1.2.0` → MSI `ProductV
 
 Config:
 
-- `release-please-config.json` — strategy (`simple`), extra files (csproj / WiX)
+- `release-please-config.json` — strategy (`simple`), changelog sections, extra files (csproj / WiX)
 - `.release-please-manifest.json` — last released version
 - `version.txt` — simple strategy version file (kept in sync with csproj)
 
 Maintainer flow:
 
-1. Land Conventional Commits on `main` (`fix:`, `feat:`, `feat!:`, …).
+1. Land Conventional Commits on `main` (`fix:`, `feat:`, `feat!:`, …) via squash merge.
 2. Wait for the bot Release PR; merge it when ready to ship.
 3. Setup.exe and MSIs appear on the GitHub Release for `vX.Y.Z`.
 
@@ -139,8 +147,9 @@ git push origin v1.2.0
 After the repository is on GitHub:
 
 - [x] Owner/repo links point to `dreamingdog0529/DisplayForge`
-- [ ] Set repository description and topics (`windows`, `wpf`, `multi-monitor`, `dotnet`, `hotkeys`, …)
-- [ ] Enable Dependabot alerts, secret scanning, and push protection
-- [ ] Optional: protect `main` with required CI status checks
+- [ ] Apply `.github/settings.yml` (description, topics, squash-only, labels) — optional `SETTINGS_TOKEN`
+- [ ] Enable Dependabot alerts, secret scanning, and push protection (also in `settings.yml`)
+- [ ] Optional: protect `main` with required CI status checks; install [dco2](https://github.com/apps/dco2)
 - [ ] Enable **Allow GitHub Actions to create and approve pull requests** (for Release Please)
-- [x] Version automation: Release Please + MSI attach via `release-please.yml` / `release.yml`
+- [x] Version automation: Release Please + MSI attach via `release-please.yml` / `release-assets.yml`
+- [ ] See root [CHECKLIST.md](../CHECKLIST.md) for remaining template verification steps

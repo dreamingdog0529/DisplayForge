@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# Local Conventional Commits check (same rules as CI).
-# Enable once per clone:  git config core.hooksPath .githooks
-#   or:  pwsh ./scripts/install-git-hooks.ps1
+# Fallback hooks when lefthook is not installed.
+# Prefer: task setup  (installs lefthook)
+# Or:     pwsh ./scripts/install-git-hooks.ps1
+#
+# Same Conventional Commits rules as scripts/validate-commit-subject.sh.
+# Merge / cherry-pick / revert commits are skipped (MERGE_HEAD, etc.).
 
 set -euo pipefail
 
@@ -39,4 +42,9 @@ if [[ ! -f "$validator" ]]; then
   exit 1
 fi
 
-exec bash "$validator" "$subject"
+bash "$validator" "$subject"
+
+if ! grep -q "^Signed-off-by:" "$msg_file"; then
+  echo "ERROR: Missing DCO sign-off. Use 'git commit -s'" >&2
+  exit 1
+fi

@@ -152,11 +152,28 @@ dotnet run --project src/DisplayForge -- --tray-on-close
 - Windows 11 の一部環境では `SetDisplayConfig` が不安定なことがあります。失敗時は Windows のディスプレイ設定を一度触ってから再試行してください
 - DPI スケーリング / HDR / ウィンドウ位置の復元は今後の拡張候補
 
-## ライセンス
+## コミュニティ / プロジェクト文書
 
-[MIT License](LICENSE)
+リポジトリの自動化とコミュニティ文書は
+[container-registry/oss-project-template](https://github.com/container-registry/oss-project-template)
+に準拠（.NET / Windows インストーラ向けに調整）。
 
-### サードパーティ
+| 文書 | 内容 |
+|------|------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 開発・テスト・PR・DCO・CI/CD・リリース |
+| [SUPPORT.md](SUPPORT.md) | サポートの受け方 |
+| [ROADMAP.md](ROADMAP.md) | 方向性と提案の仕方 |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 行動規範 |
+| [SECURITY.md](SECURITY.md) | 脆弱性の非公開報告 |
+| [CODEOWNERS](CODEOWNERS) | デフォルトのレビュー担当 |
+| [CHANGELOG.md](CHANGELOG.md) | 変更履歴 |
+| [LICENSE](LICENSE) | MIT ライセンス本文 |
+
+## 貢献者
+
+貢献者一覧は英語 README の [Contributors](README.md#contributors) を参照してください（git 履歴から自動更新）。
+
+## サードパーティ
 
 - アイコンは [Lucide](https://lucide.dev/) に基づきます（[ISC License](https://lucide.dev/license)）：
   - アプリ / トレイ表示: `monitor-cog`（出典 SVG は `src/DisplayForge/Assets/lucide/`。配布バイナリは `Assets/app.ico`）

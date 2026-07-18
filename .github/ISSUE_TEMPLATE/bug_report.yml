@@ -1,70 +1,108 @@
-name: Bug report
-description: Report a problem with DisplayForge
+name: Bug Report
+description: Report a bug or unexpected behavior
 title: "[Bug]: "
-labels: ["bug"]
+labels: ["bug", "needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug. For security issues, see [SECURITY.md](../../SECURITY.md) instead of filing a public issue.
+        Thanks for taking the time to fill out this bug report!
 
-  - type: input
-    id: version
-    attributes:
-      label: Version
-      description: App or MSI version (e.g. 1.0.0), or commit hash if built from source
-      placeholder: "1.0.0"
-    validations:
-      required: true
+        **Before submitting**, please search [existing issues](https://github.com/dreamingdog0529/DisplayForge/issues) to avoid duplicates.
 
-  - type: input
-    id: os
-    attributes:
-      label: Windows version
-      description: e.g. Windows 11 24H2, Windows 10 22H2
-      placeholder: "Windows 11 24H2"
-    validations:
-      required: true
+        For security issues, see [SECURITY.md](https://github.com/dreamingdog0529/DisplayForge/blob/main/SECURITY.md) instead of filing a public issue.
 
   - type: textarea
-    id: setup
+    id: description
     attributes:
-      label: Display setup
-      description: Number of monitors, extend vs clone, docking / laptop lid, etc.
-      placeholder: "2 monitors, extend, laptop + external HDMI"
+      label: Description
+      description: A clear and concise description of the bug
+      placeholder: Describe what happened and what you expected to happen
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
-      description: Minimal steps that trigger the issue
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
       placeholder: |
-        1. ...
-        2. ...
-        3. ...
+        1. Open DisplayForge
+        2. Create/apply a profile
+        3. See error
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior
+      label: Expected Behavior
+      description: What did you expect to happen?
     validations:
       required: true
 
   - type: textarea
     id: actual
     attributes:
-      label: Actual behavior
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: App or installer version (e.g. v0.2.0), or commit hash if built from source
+      placeholder: "e.g., v0.2.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: How are you running DisplayForge?
+      options:
+        - Installed Setup.exe (bootstrapper)
+        - Installed MSI only
+        - Local development (dotnet run)
+        - Other
     validations:
       required: true
 
   - type: textarea
+    id: environment-details
+    attributes:
+      label: Environment Details
+      description: |
+        Provide relevant environment information:
+        - Windows version
+        - Number of monitors / layout (extend vs clone)
+        - Laptop lid / docking if relevant
+      placeholder: |
+        - OS: Windows 11 24H2
+        - Monitors: 2, extend, laptop + external HDMI
+
+  - type: textarea
     id: logs
     attributes:
-      label: Logs / screenshots
-      description: Optional error messages, relevant settings, or images
-    validations:
-      required: false
+      label: Relevant Logs
+      description: Please copy and paste any relevant log output or error messages
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or information about the problem
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for similar issues and this is not a duplicate
+          required: true
+        - label: I have provided all the requested information
+          required: true

@@ -1,0 +1,111 @@
+name: License Check
+
+# Adapted from oss-project-template (Go go-licenses) for .NET / NuGet packages.
+# Scans app/test projects only (WiX installer projects lack a normal assets file on Linux).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.csproj"
+      - "**/packages.lock.json"
+      - "Directory.Packages.props"
+      - "nuget.config"
+      - ".github/workflows/license-check.yml"
+  pull_request:
+    paths:
+      - "**/*.csproj"
+      - "**/packages.lock.json"
+      - "Directory.Packages.props"
+      - "nuget.config"
+      - ".github/workflows/license-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  license-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        # WPF projects need this when restoring on non-Windows runners.
+        # App project pulls Core via ProjectReference (skip WiX installer projects).
+        run: |
+          dotnet restore src/DisplayForge/DisplayForge.csproj -p:EnableWindowsTargeting=true
+          dotnet restore tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj
+
+      - name: Install nuget-license
+        run: dotnet tool install --global nuget-license
+
+      - name: Check licenses
+        shell: bash
+        env:
+          EnableWindowsTargeting: true
+        run: |
+          set -euo pipefail
+          export PATH="$PATH:$HOME/.dotnet/tools"
+
+          # nuget-license accepts a single -i; app csproj covers Core via ProjectReference.
+          nuget-license -i src/DisplayForge/DisplayForge.csproj -o JsonPretty > licenses.json
+          nuget-license -i tests/DisplayForge.Core.Tests/DisplayForge.Core.Tests.csproj -o JsonPretty > licenses-tests.json
+
+          python3 - <<'PY'
+          import json, re, sys
+          from pathlib import Path
+
+          def load_packages(path: Path):
+              data = json.loads(path.read_text(encoding="utf-8"))
+              if isinstance(data, list):
+                  return data
+              if isinstance(data, dict):
+                  if "packages" in data:
+                      return data["packages"]
+                  return [
+                      {"PackageId": k, **(v if isinstance(v, dict) else {"License": v})}
+                      for k, v in data.items()
+                  ]
+              return []
+
+          packages = load_packages(Path("licenses.json")) + load_packages(Path("licenses-tests.json"))
+          Path("licenses-merged.json").write_text(
+              json.dumps(packages, indent=2), encoding="utf-8"
+          )
+
+          denied = re.compile(r"\b(GPL-3\.0|AGPL-3\.0|SSPL|BUSL)\b", re.I)
+          problems = []
+          for p in packages:
+              if not isinstance(p, dict):
+                  continue
+              name = p.get("PackageId") or p.get("Package") or p.get("Id") or p.get("Name") or "?"
+              lic = str(
+                  p.get("License")
+                  or p.get("LicenseExpression")
+                  or p.get("license")
+                  or p.get("Licenses")
+                  or ""
+              )
+              if denied.search(lic):
+                  problems.append(f"{name}: {lic}")
+
+          import os
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+              fh.write("## License Report\n\n")
+              fh.write(f"Scanned **{len(packages)}** package entries.\n\n")
+              fh.write("```json\n")
+              fh.write(json.dumps(packages, indent=2)[:20000])
+              fh.write("\n```\n")
+
+          if problems:
+              print("Disallowed licenses detected:")
+              for line in problems:
+                  print(f"  - {line}")
+              sys.exit(1)
+          print(f"OK: scanned {len(packages)} package entries; no denied licenses.")
+          PY
