@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.0...v0.2.1) (2026-07-18)
+
+
+### Documentation
+
+* clarify Setup.exe vs MSI and AI translation note ([#24](https://github.com/dreamingdog0529/DisplayForge/issues/24)) ([efe31e2](https://github.com/dreamingdog0529/DisplayForge/commit/efe31e2fdda6b7714472423541b7a1a52b47c4c4))
+* explain Setup.exe vs MSI for end users in README ([#23](https://github.com/dreamingdog0529/DisplayForge/issues/23)) ([36ca19e](https://github.com/dreamingdog0529/DisplayForge/commit/36ca19e1a03a552d07c6a3987d16ac36de2bcc80))
+
+
+### CI/CD
+
+* add local commit-msg hook for Conventional Commits ([#22](https://github.com/dreamingdog0529/DisplayForge/issues/22)) ([c0e1fe6](https://github.com/dreamingdog0529/DisplayForge/commit/c0e1fe608273440bac703d8f99c74cc23316f0f0))
+* align repo with oss-project-template automation ([#26](https://github.com/dreamingdog0529/DisplayForge/issues/26)) ([c24b59b](https://github.com/dreamingdog0529/DisplayForge/commit/c24b59b861a810cc20991dfa5b87075d56fb9f5d))
+* skip merge commits in Conventional Commits checks ([#25](https://github.com/dreamingdog0529/DisplayForge/issues/25)) ([86840df](https://github.com/dreamingdog0529/DisplayForge/commit/86840dfd22cb5c8556335d2b8cdd5be9c7781bdf))
+
 ## [0.2.0](https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.2...v0.2.0) (2026-07-18)
 
 
