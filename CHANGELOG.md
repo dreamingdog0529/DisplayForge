@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0](https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.2...v0.2.0) (2026-07-18)
+
+
+### Features
+
+* launch app after install and document window-on-start default ([#21](https://github.com/dreamingdog0529/DisplayForge/issues/21)) ([015d3e4](https://github.com/dreamingdog0529/DisplayForge/commit/015d3e437d503a3a26ba98a554a4b2411dd7ca98))
+* ship Setup.exe bootstrapper that installs .NET 10 Desktop Runtime ([#19](https://github.com/dreamingdog0529/DisplayForge/issues/19)) ([d8576ab](https://github.com/dreamingdog0529/DisplayForge/commit/d8576ab7a2eae4e2e1b0d2e0f82149c7f3727cf6))
+
 ## [0.1.2](https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.1...v0.1.2) (2026-07-18)
 
 
