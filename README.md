@@ -61,7 +61,7 @@ Releases include two kinds of installer. **They install the same app** — pick 
 
 Defaults to the Windows display language. Change anytime under **Settings → Language**. Every installer package includes all of these UI languages.
 
-> **Note:** Non-English UI strings (and most installer localizations) were produced with AI assistance. Wording may be imperfect or unnatural in places — feedback and corrections are welcome.
+> **Note:** UI strings (and most installer localizations) were produced with AI assistance. Wording may be imperfect or unnatural in places — feedback and corrections are welcome.
 
 | Code | Language | Code | Language |
 |------|----------|------|----------|
