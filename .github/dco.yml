@@ -1,8 +1,19 @@
 # Configuration for the dco2 GitHub App
-# https://github.com/apps/dco2
+# https://github.com/apps/dco-2
 #
-# Install the app on this repository, then adjust options as needed.
+# Install the app on this repository (link above), then adjust as needed.
+# The schema is backwards-compatible with the original dcoapp/app config.
+# With no options set, every commit in a PR must carry a valid Signed-off-by.
 
-# Allow commits that are GPG-signed to skip Signed-off-by (optional).
+# Let contributors fix a missing sign-off with a follow-up remediation commit
+# instead of rewriting history. Off by default.
+# allowRemediationCommits:
+#   individual: true
+#   thirdParty: false
+
 # require:
+#   # false = skip the check for commits authored AND signed by org members.
+#   # Not relevant for a personal repository (no org members).
 #   members: true
+
+# allowOverrideAction: false  # hide the manual "Set DCO to pass" button

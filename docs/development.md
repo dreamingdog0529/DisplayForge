@@ -149,7 +149,7 @@ After the repository is on GitHub:
 - [x] Owner/repo links point to `dreamingdog0529/DisplayForge`
 - [ ] Apply `.github/settings.yml` (description, topics, squash-only, labels) — optional `SETTINGS_TOKEN`
 - [ ] Enable Dependabot alerts, secret scanning, and push protection (also in `settings.yml`)
-- [ ] Optional: protect `main` with required CI status checks; install [dco2](https://github.com/apps/dco2)
+- [ ] Optional: protect `main` with required CI status checks; install [dco2](https://github.com/apps/dco-2)
 - [ ] Enable **Allow GitHub Actions to create and approve pull requests** (for Release Please)
 - [x] Version automation: Release Please + MSI attach via `release-please.yml` / `release-assets.yml`
 - [ ] See root [CHECKLIST.md](../CHECKLIST.md) for remaining template verification steps
