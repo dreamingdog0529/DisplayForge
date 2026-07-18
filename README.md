@@ -25,12 +25,25 @@ Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool
 | Item | Details |
 |------|---------|
 | OS | Windows 10 / 11 (x64) |
-| Package | **Setup.exe** bootstrapper (installs [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) if missing, then the app) |
-| Also available | MSI only (requires Desktop Runtime already installed) |
-| Example file names | `DisplayForge-0.1.1-win-x64-en-US-Setup.exe`, `…-ja-JP-Setup.exe` (installer language; app UI has [31 languages](#supported-languages)) |
+| Recommended | **`…-Setup.exe`** (installs everything you need) |
+| Also available | **`….msi`** (app only; see below) |
+| Example file names | `DisplayForge-0.1.1-win-x64-en-US-Setup.exe`, `…-ja-JP-Setup.exe` |
 | Settings location | `%AppData%\DisplayForge\` (kept after uninstall) |
 
-Pick the **Setup.exe** that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
+### Which file should I download? (Setup.exe vs MSI)
+
+Releases include two kinds of installer. **They install the same app** — pick based on how you want to install:
+
+| File | Who it’s for | What it does |
+|------|----------------|--------------|
+| **`…-Setup.exe`** (recommended) | Most people | Installs DisplayForge. If [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) is missing, it installs that first automatically. |
+| **`….msi`** | Advanced / IT use | Installs DisplayForge only. You must already have the Desktop Runtime, or the app will not run. Handy for company deployment or silent install with `msiexec`. |
+
+**Simple rule:** if you’re not sure, download **Setup.exe**.
+
+- Prefer **ja-JP** or **en-US** in the file name for the *installer wizard* language (Japanese or English). The app itself supports [31 UI languages](#supported-languages) either way.
+- Run the installer as administrator when Windows asks.
+- If a release is not available yet, you can [build from source](docs/building.md).
 
 ## Features
 
