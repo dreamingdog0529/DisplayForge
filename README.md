@@ -1,56 +1,57 @@
 # DisplayForge
 
+English | [日本語](./README_ja.md)
+
 [![GitHub release](https://img.shields.io/github/v/release/dreamingdog0529/DisplayForge?include_prereleases)](https://github.com/dreamingdog0529/DisplayForge/releases/latest)
 [![CI](https://github.com/dreamingdog0529/DisplayForge/actions/workflows/ci.yml/badge.svg)](https://github.com/dreamingdog0529/DisplayForge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Windows 向けマルチモニター **プロファイル切替** アプリです。  
-NirSoft MultiMonitorTool の「構成の保存・復元」をベースに、**プロファイルごとのグローバルホットキー** と **トレイ常駐** を第一級機能として備えています。
+Windows multi-monitor **profile switcher**. Inspired by NirSoft MultiMonitorTool’s save/restore workflow, with **per-profile global hotkeys** and **system tray residency** as first-class features.
 
-## ダウンロード
+## Download
 
-**[最新リリースを開く](https://github.com/dreamingdog0529/DisplayForge/releases/latest)**
+**[Open the latest release](https://github.com/dreamingdog0529/DisplayForge/releases/latest)**
 
-| 項目 | 内容 |
-|------|------|
-| 対応 OS | Windows 10 / 11（x64） |
-| 配布形式 | MSI インストーラー（自己完結・.NET ランタイム同梱） |
-| ファイル名例 | `DisplayForge-1.0.0-win-x64-ja-JP.msi` / `…-en-US.msi` など言語別 |
-| 設定の保存先 | `%AppData%\DisplayForge\`（アンインストール後も残ります） |
+| Item | Details |
+|------|---------|
+| OS | Windows 10 / 11 (x64) |
+| Package | MSI installer (self-contained; .NET runtime included) |
+| Example file names | `DisplayForge-0.1.0-win-x64-en-US.msi`, `…-ja-JP.msi`, etc. (per UI culture) |
+| Settings location | `%AppData%\DisplayForge\` (kept after uninstall) |
 
-言語に合う MSI を選び、管理者権限で実行してください。リリース一覧に無い場合はソースから [ビルド](docs/building.md) できます。
+Pick the MSI that matches your preferred installer language and run it elevated. If a release is not available yet, you can [build from source](docs/building.md).
 
-## 機能
+## Features
 
-- 現在のモニター構成をプロファイルとして保存
-  - 有効 / 無効、主モニター、解像度、リフレッシュレート、向き、配置
-- プロファイルの適用・複製・削除・名前変更
-- プロファイルごとにグローバルホットキーを割り当てて即切替
-- システムトレイ常駐（右クリックメニューから適用）
-- UI の多言語対応（英語・日本語・中国語・韓国語・欧州言語など 30+ 言語、システム言語に自動追従）
-- 設定・プロファイルは `%AppData%\DisplayForge\` に JSON で保存
+- Save the current monitor layout as a profile
+  - Enabled / disabled, primary monitor, resolution, refresh rate, orientation, position
+- Apply, duplicate, delete, and rename profiles
+- Assign a global hotkey per profile for instant switching
+- System tray residency (apply from the context menu)
+- UI localization (30+ languages including English, Japanese, Chinese, Korean, and many European languages; follows the system language by default)
+- Settings and profiles stored as JSON under `%AppData%\DisplayForge\`
 
-## 使い方
+## Usage
 
-1. アプリを起動（既定ではトレイに格納）
-2. トレイアイコンをダブルクリックしてメイン画面を開く
-3. **現在の構成から新規** でプロファイルを作成
-4. ホットキー欄をクリックし、例: `Ctrl+Alt+1` を押して割り当て
-5. Windows のディスプレイ設定で構成を変えたら、別プロファイルを同様に保存
-6. ホットキーまたはトレイメニューで切替
+1. Start the app (by default it lives in the tray)
+2. Double-click the tray icon to open the main window
+3. Create a profile with **New from current layout**
+4. Click the hotkey field and press a chord such as `Ctrl+Alt+1`
+5. Change the Windows display layout, then save another profile the same way
+6. Switch with the hotkey or the tray menu
 
-通常起動では、ウィンドウを閉じてもトレイに残ります。終了はトレイメニューの **終了** から。
+In a normal launch, closing the window keeps the app in the tray. Use **Exit** on the tray menu to quit.
 
-## データ配置
+## Data locations
 
-| ファイル | 内容 |
-|----------|------|
-| `%AppData%\DisplayForge\profiles.json` | プロファイル一覧 |
-| `%AppData%\DisplayForge\settings.json` | 言語・通知・ホットキー有効など |
+| File | Contents |
+|------|----------|
+| `%AppData%\DisplayForge\profiles.json` | Profile list |
+| `%AppData%\DisplayForge\settings.json` | Language, notifications, hotkey enablement, etc. |
 
-## 開発者向け（クイック）
+## Developers (quick start)
 
-必要環境: Windows 10/11 x64、[.NET 10 SDK](https://dotnet.microsoft.com/download)
+Requirements: Windows 10/11 x64, [.NET 10 SDK](https://dotnet.microsoft.com/download)
 
 ```powershell
 dotnet build
@@ -58,48 +59,48 @@ dotnet test
 dotnet run --project src/DisplayForge
 ```
 
-MSI をローカル生成:
+Build an MSI locally:
 
 ```powershell
 .\build-msi.ps1
 ```
 
-詳細なビルド手順・サイレントインストール・CI/リリース: **[docs/building.md](docs/building.md)**  
-コントリビュート手順: **[CONTRIBUTING.md](CONTRIBUTING.md)**
+Full build, silent install, CI/release notes: **[docs/building.md](docs/building.md)**  
+How to contribute: **[CONTRIBUTING.md](CONTRIBUTING.md)**
 
-### アーキテクチャ概要
+### Architecture overview
 
 ```
-src/DisplayForge          WPF UI / トレイ / ホットキー
-src/DisplayForge.Core     ディスプレイ API・プロファイル・マッチング
+src/DisplayForge                 WPF UI / tray / hotkeys
+src/DisplayForge.Core            Display API, profiles, matching
 tests/DisplayForge.Core.Tests
-installer/DisplayForge.Installer   WiX MSI
+installer/DisplayForge.Installer WiX MSI
 ```
 
-ディスプレイ操作は Windows **CCD** API（`QueryDisplayConfig` / `SetDisplayConfig`）を使用します。  
-主モニターは仮想デスクトップ座標の原点 `(0,0)` として扱います。
+Display changes use the Windows **CCD** API (`QueryDisplayConfig` / `SetDisplayConfig`).  
+The primary monitor is treated as the virtual-desktop origin `(0,0)`.
 
-`dotnet run` で起動した場合は、ウィンドウを閉じるとプロセスも終了します（シェルがブロックされないようにするため）。トレイ常駐のまま試したいときは:
+With `dotnet run`, closing the window also exits the process (so the shell is not left blocked). To keep tray residency while developing:
 
 ```powershell
 dotnet run --project src/DisplayForge -- --tray-on-close
 ```
 
-逆に、通常起動でも閉じたら終了させたい場合は `--exit-on-close` を付けます。
+To exit on close even in a normal launch, pass `--exit-on-close`.
 
-## 既知の制限
+## Known limitations
 
-- 拡張デスクトップ（Extend）前提。クローン専用の高度編集は未対応
-- モニター未接続時は該当エントリをスキップして部分適用
-- Windows 11 の一部環境では `SetDisplayConfig` が不安定なことがあります。失敗時は Windows のディスプレイ設定を一度触ってから再試行してください
-- DPI スケーリング / HDR / ウィンドウ位置の復元は今後の拡張候補
+- Aimed at extended desktop (Extend). Advanced clone-only editing is not supported
+- When a monitor is disconnected, that profile entry is skipped (partial apply)
+- On some Windows 11 setups `SetDisplayConfig` can be flaky; if apply fails, open Windows Display Settings once and try again
+- DPI scaling / HDR / window position restore are candidates for future work
 
-## ライセンス
+## License
 
 [MIT License](LICENSE)
 
-### サードパーティ
+### Third-party
 
-- アプリアイコンは [Lucide](https://lucide.dev/) の `monitor-cog` アイコンに基づきます（[ISC License](https://lucide.dev/license)）。
-  - 出典 SVG: `src/DisplayForge/Assets/monitor-cog.svg`
-  - ライセンス全文: `src/DisplayForge/Assets/LICENSES/lucide-LICENSE.txt`
+- The app icon is based on the [Lucide](https://lucide.dev/) `monitor-cog` icon ([ISC License](https://lucide.dev/license)).
+  - Source SVG: `src/DisplayForge/Assets/monitor-cog.svg`
+  - Full license text: `src/DisplayForge/Assets/LICENSES/lucide-LICENSE.txt`

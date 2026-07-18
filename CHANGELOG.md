@@ -7,11 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- GitHub community health files, CI, and release automation for public distribution
-
-## [1.0.0] - 2026-07-18
+## [0.1.0] - 2026-07-18
 
 ### Added
 
@@ -21,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - UI localization (30+ languages)
 - Self-contained win-x64 MSI installer (WiX), multi-culture builds
 - Settings and profiles stored under `%AppData%\DisplayForge\`
+- GitHub community health files, CI, and release automation for public distribution
+- Bilingual README (English / Japanese)
 
-[Unreleased]: https://github.com/dreamingdog0529/DisplayForge/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/dreamingdog0529/DisplayForge/releases/tag/v1.0.0
+[Unreleased]: https://github.com/dreamingdog0529/DisplayForge/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/dreamingdog0529/DisplayForge/releases/tag/v0.1.0
