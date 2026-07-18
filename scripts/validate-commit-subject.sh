@@ -53,5 +53,5 @@ echo "  feat: add monitor identify overlay" >&2
 echo "  chore: update WiX localization" >&2
 echo "  ci: tighten MSI release workflow" >&2
 echo "" >&2
-echo "See CONTRIBUTING.md. Format: type(optional-scope): description" >&2
+echo "See .github/CONTRIBUTING.md. Format: type(optional-scope): description" >&2
 exit 1

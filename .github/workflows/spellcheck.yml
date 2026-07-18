@@ -24,21 +24,21 @@ jobs:
   typos:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       # Limit to human-written docs/config. Source/locale strings and regex
       # character classes in shell scripts produce false positives.
       - name: Check spelling
-        uses: crate-ci/typos@v1.48.0
+        uses: crate-ci/typos@bee27e3a4fd1ea2111cf90ab89cd076c870fce14 # v1.48.0
         with:
           config: .typos.toml
           files: |
             README.md
             README_ja.md
-            CONTRIBUTING.md
-            CODE_OF_CONDUCT.md
-            SECURITY.md
-            SUPPORT.md
             ROADMAP.md
             CHECKLIST.md
+            .github/CONTRIBUTING.md
+            .github/CODE_OF_CONDUCT.md
+            .github/SECURITY.md
+            .github/SUPPORT.md
             docs

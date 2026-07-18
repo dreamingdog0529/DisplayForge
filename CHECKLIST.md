@@ -5,7 +5,7 @@ Based on [container-registry/oss-project-template](https://github.com/container-
 ## Done in-repo
 
 - [x] Copy `.github/` workflows and configs (adapted for .NET)
-- [x] Community files: `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `ROADMAP.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `SECURITY.md` (contributors list lives in `README.md`)
+- [x] Community files under `.github/`: `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `CONTRIBUTING.md`, `SECURITY.md`; plus root `ROADMAP.md`, `CHANGELOG.md` (contributors list lives in `README.md`)
 - [x] `.typos.toml`, `lefthook.yml`, `Taskfile.yml`
 - [x] `release-please-config.json` (`simple` + csproj/WiX version bumps)
 - [x] `release-assets.yml` builds MSI + Setup.exe (instead of Go binaries)

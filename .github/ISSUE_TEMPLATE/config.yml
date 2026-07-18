@@ -5,10 +5,10 @@ contact_links:
     url: https://github.com/dreamingdog0529/DisplayForge/discussions
     about: Ask questions and discuss with the community
   - name: Documentation
-    url: https://github.com/dreamingdog0529/DisplayForge/blob/main/docs/building.md
+    url: https://github.com/dreamingdog0529/DisplayForge/blob/main/docs/development.md
     about: Check our documentation for build, install, and release guides
   - name: Support
-    url: https://github.com/dreamingdog0529/DisplayForge/blob/main/SUPPORT.md
+    url: https://github.com/dreamingdog0529/DisplayForge/blob/main/.github/SUPPORT.md
     about: How to get help
   - name: Security Vulnerability
     url: https://github.com/dreamingdog0529/DisplayForge/security/advisories/new
