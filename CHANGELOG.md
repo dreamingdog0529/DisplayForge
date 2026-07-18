@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Release Please automation: Conventional Commits drive SemVer, CHANGELOG, tags, and MSI attachment on GitHub Releases
+- CI enforcement of Conventional Commits for PR titles and commit messages
 
 ## [0.1.0] - 2026-07-18
 
