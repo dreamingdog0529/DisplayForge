@@ -1,0 +1,91 @@
+name: License Check
+
+# Adapted from oss-project-template (Go go-licenses) for .NET / NuGet packages.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.csproj"
+      - "**/packages.lock.json"
+      - "Directory.Packages.props"
+      - "nuget.config"
+      - ".github/workflows/license-check.yml"
+  pull_request:
+    paths:
+      - "**/*.csproj"
+      - "**/packages.lock.json"
+      - "Directory.Packages.props"
+      - "nuget.config"
+      - ".github/workflows/license-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  license-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore DisplayForge.sln
+
+      - name: Install nuget-license
+        run: dotnet tool install --global nuget-license
+
+      - name: Check licenses
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$PATH:$HOME/.dotnet/tools"
+
+          # Allowed SPDX-ish / common NuGet license identifiers (OSS-friendly set).
+          # Fail the job if any package reports a disallowed license string.
+          nuget-license -i DisplayForge.sln -o JsonPretty > licenses.json
+
+          echo "## License Report" >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          head -c 20000 licenses.json >> "$GITHUB_STEP_SUMMARY" || true
+          echo >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+          python3 - <<'PY'
+          import json, re, sys
+          from pathlib import Path
+
+          data = json.loads(Path("licenses.json").read_text(encoding="utf-8"))
+          # nuget-license JSON shapes vary by version; normalize to a list of packages.
+          packages = data if isinstance(data, list) else data.get("packages") or data.get("Packages") or []
+          if isinstance(data, dict) and not packages:
+              # flat map package -> info
+              packages = [{"PackageId": k, **(v if isinstance(v, dict) else {"License": v})} for k, v in data.items()]
+
+          denied = re.compile(r"\b(GPL-3\.0|AGPL-3\.0|SSPL|BUSL)\b", re.I)
+          problems = []
+          for p in packages:
+              if not isinstance(p, dict):
+                  continue
+              name = p.get("PackageId") or p.get("Package") or p.get("Id") or p.get("Name") or "?"
+              lic = str(
+                  p.get("License")
+                  or p.get("LicenseExpression")
+                  or p.get("license")
+                  or p.get("Licenses")
+                  or ""
+              )
+              if denied.search(lic):
+                  problems.append(f"{name}: {lic}")
+
+          if problems:
+              print("Disallowed licenses detected:")
+              for line in problems:
+                  print(f"  - {line}")
+              sys.exit(1)
+          print(f"OK: scanned {len(packages)} package entries; no denied licenses.")
+          PY

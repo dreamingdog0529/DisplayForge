@@ -1,10 +1,25 @@
-# Contributing to DisplayForge
+# Contributing Guide For DisplayForge
 
-Thanks for your interest in contributing. This document covers how to develop, test, and propose changes.
+Thanks for contributing. This project follows the same principles as
+[container-registry/oss-project-template](https://github.com/container-registry/oss-project-template):
+
+| Principle | Implementation |
+|-----------|----------------|
+| **Conventional Commits** | PR titles (and commits) use `type: description` |
+| **Squash merge only** | One commit per PR on `main` |
+| **PR-based workflow** | All changes via pull requests |
+| **DCO sign-off** | `git commit -s` (`Signed-off-by`) |
+| **Automated releases** | Release Please from commit types |
+| **Local-first** | Lefthook / Task / git hooks before push |
+| **GitHub-native** | Labels, settings, Scorecard, dependency review |
 
 ## Code of conduct
 
 Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Getting help
+
+See [SUPPORT.md](SUPPORT.md). Roadmap notes: [ROADMAP.md](ROADMAP.md).
 
 ## Development environment
 
@@ -12,43 +27,45 @@ Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
 |-------------|--------|
 | OS | Windows 10 / 11 (x64) |
 | SDK | [.NET 10 SDK](https://dotnet.microsoft.com/download) |
-| IDE (optional) | Visual Studio 2022+ or VS Code / Cursor with C# support |
-| Git hooks (optional) | `pwsh ./scripts/install-git-hooks.ps1` — Conventional Commits on `commit-msg` |
+| Optional | [typos](https://github.com/crate-ci/typos), [lefthook](https://github.com/evilmartians/lefthook), [Task](https://taskfile.dev/) |
+| Git hooks | `pwsh ./scripts/install-git-hooks.ps1` or `task setup` |
 
-WiX Toolset packages are restored via NuGet when you build the installer projects; no separate WiX install is required.
+WiX packages restore via NuGet when building installer projects.
 
-## Build, run, test
+### Build, run, test
 
 ```powershell
-# From repository root
 dotnet build
 dotnet test
 dotnet run --project src/DisplayForge
 ```
 
-Tray-style close behavior while developing:
+Or with Task:
+
+```bash
+task build
+task test
+task check
+```
+
+Tray-style close while developing:
 
 ```powershell
 dotnet run --project src/DisplayForge -- --tray-on-close
 ```
 
-## Installers (local)
+### Installers (local)
 
 ```powershell
 .\build-msi.ps1
 .\build-msi.ps1 -Version 1.2.0
-.\build-msi.ps1 -Cultures "ja-JP;en-US"   # faster subset
-.\build-msi.ps1 -SkipPublish              # reuse existing publish output
+.\build-msi.ps1 -Cultures "ja-JP;en-US"
+.\build-msi.ps1 -SkipPublish
 ```
 
-Outputs land under `artifacts/msi/` (gitignored). Naming:
+Outputs under `artifacts/msi/` (gitignored). Details: [docs/building.md](docs/building.md).
 
-- `DisplayForge-{version}-win-x64-{culture}-Setup.exe` (recommended; installs .NET 10 Desktop Runtime if missing)
-- `DisplayForge-{version}-win-x64-{culture}.msi` (app only)
-
-More detail: [docs/building.md](docs/building.md).
-
-## Project layout
+### Project layout
 
 ```
 src/DisplayForge                  WPF UI, tray, hotkeys
@@ -57,86 +74,111 @@ tests/DisplayForge.Core.Tests
 installer/DisplayForge.Installer  WiX MSI
 installer/DisplayForge.Bootstrapper  WiX Bundle (Setup.exe + runtime)
 tools/                            Dev utilities (icons, locales)
+.github/                          Workflows, issue/PR templates, settings
 ```
 
-## Pull requests
+## Issues, requests & ideas
 
-1. Fork (if external) or branch from `main`.
-2. Keep changes focused; prefer small PRs.
-3. Run `dotnet build` and `dotnet test` before opening the PR.
-4. Update `CHANGELOG.md` under `[Unreleased]` when the change is user-visible.
-5. Fill in the PR template checklist.
+Use [GitHub Issues](https://github.com/dreamingdog0529/DisplayForge/issues) with the YAML forms:
 
-### Commit messages (required)
+- Bug Report
+- Feature Request
+- Proposal (larger design changes)
 
-Use [Conventional Commits](https://www.conventionalcommits.org/). CI rejects PRs whose **title** or **commit subjects** do not match (workflow: `.github/workflows/conventional-commits.yml`). Release Please uses the same prefixes to choose the next SemVer automatically.
+Labels such as `bug`, `enhancement`, `proposal`, and `needs-triage` are applied by the forms.
 
-| Prefix | Effect | Example |
-|--------|--------|---------|
-| `fix:` | patch | `fix: tray icon not restoring window` |
-| `feat:` | minor | `feat: add monitor identify overlay` |
-| `feat!:` / `fix!:` / `BREAKING CHANGE:` | major | `feat!: drop Windows 10 1809 support` |
-| `docs:`, `chore:`, `ci:`, `refactor:`, `test:`, `build:`, `perf:`, `style:`, `revert:` | no version bump (unless breaking) | `ci: require conventional PR titles` |
+## Contribution checklist
 
-Rules of thumb:
+- [ ] Clean, simple, well-styled code
+- [ ] Conventional Commits (`type: description`); related issues referenced by number
+- [ ] DCO sign-off on every commit (`git commit -s`)
+- [ ] Tests pass (`dotnet test` / `task test`)
+- [ ] Minimize dependencies; prefer Apache-2.0, BSD-3, MIT, ISC, MPL
+- [ ] No secrets or build artifacts (`bin/`, `obj/`, `artifacts/`, `*.msi`)
 
-- Format: `type(optional-scope): description` (description required; prefer lowercase start).
-- **Squash merge:** the **PR title** becomes the commit on `main` — keep it Conventional.
-- **Bots exempt from this CI check:** Dependabot (`chore(deps):` via `dependabot.yml`) and Release Please (`github-actions[bot]` / `release-please--*` branches; title is usually `chore(main): release X.Y.Z`).
-- Local hook also accepts release subjects such as `chore(main): release 1.2.3` and `Release 1.2.3` so release commits are not blocked by mistake.
+## Creating a pull request
 
-#### Local commit-msg hook (recommended)
+1. Search Issues; open one if needed.
+2. Fork/clone and create a focused branch.
+3. Commit with **Conventional Commits** and **DCO**:
 
-CI and the local hook share the same rules (`scripts/validate-commit-subject.sh`). Enable once per clone so invalid subjects fail **before** the commit is created:
+   ```bash
+   git commit -s -m "fix: tray icon not restoring window"
+   ```
+
+4. Push and open a PR against `main`. Fill in the PR template.
+5. Ensure CI is green (build/test, PR title, spellcheck, dependency review, etc.).
+
+> Sync your fork before opening the PR if you forked.
+
+### Commit message format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+Signed-off-by: Name <email>
+```
+
+**Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
+
+| Prefix | Version impact |
+|--------|----------------|
+| `feat:` | minor |
+| `fix:` and most others | patch |
+| `feat!:` / `fix!:` / `BREAKING CHANGE:` | major |
+
+Before `1.0.0`, `feat:` still bumps **minor** (`bump-minor-pre-major`).
+
+**Squash merge:** the **PR title** becomes the commit on `main` — keep it Conventional (CI: `pr-title.yml`).
+
+### Local hooks
 
 ```powershell
 pwsh ./scripts/install-git-hooks.ps1
-# equivalent: git config core.hooksPath .githooks
+# or: task setup
 ```
 
-After that, a bad subject is rejected immediately:
+- **pre-commit** (lefthook): spellcheck staged markdown/yaml
+- **commit-msg**: Conventional Commits + DCO
 
-```text
-Commit message is not Conventional Commits: fixed tray icon
-Use Conventional Commits, for example:
-  fix: tray icon not restoring window
-  ...
-```
+## DCO
 
-To bypass in an emergency only: `git commit --no-verify` (CI will still reject the PR).
-## Release process (maintainers)
+This project uses the [Developer Certificate of Origin](https://developercertificate.org/).
+Sign off every commit with `-s`. Maintainers may enable the [dco2](https://github.com/apps/dco2) GitHub App (see `.github/dco.yml`).
 
-Releases are automated with **[Release Please](https://github.com/googleapis/release-please)** (GitHub Actions).
+## Automation
 
-1. Merge feature/fix PRs to `main` using Conventional Commits.
-2. Release Please opens or updates a **Release PR** (`chore(main): release X.Y.Z`) that:
-   - bumps `version.txt`, csproj `<Version>`, WiX default `ProductVersion`
-   - updates `CHANGELOG.md` and `.release-please-manifest.json`
-3. When you are ready to ship, **merge the Release PR**.
-4. Release Please creates tag `vX.Y.Z` and a GitHub Release; the same workflow then builds multi-culture MSIs and attaches them.
+| Area | Workflow / config |
+|------|-------------------|
+| Build & test | `ci.yml` |
+| PR title (Conventional Commits) | `pr-title.yml` |
+| PR labels (paths) | `labeler.yml` + `.github/labeler.yml` |
+| PR size labels | `pr-size-labeler.yml` |
+| Welcome first-timers | `welcome.yml` |
+| Spell check | `spellcheck.yml` + `.typos.toml` |
+| License check (NuGet) | `license-check.yml` |
+| Dependency review | `dependency-review.yml` |
+| OpenSSF Scorecard | `scorecard.yml` |
+| Repo settings / labels | `settings.yml` + `apply-settings.yml` |
+| Contributors | `contributors.yml` → `README.md` (Contributors section) |
+| Version & changelog | `release-please.yml` + `release-please-config.json` |
+| Release assets (MSI / Setup) | `release-assets.yml` |
 
-### Repository settings (one-time)
+### Release process (maintainers)
 
-- **Settings → Actions → General → Workflow permissions**: allow read/write, and enable **Allow GitHub Actions to create and approve pull requests**.
+1. Merge PRs to `main` with Conventional Commits (squash).
+2. Release Please opens/updates a release PR.
+3. Merge the release PR → tag + GitHub Release.
+4. `release-assets.yml` builds multi-culture installers and uploads them.
 
-### Manual / emergency release
-
-Still works without Release Please:
-
-```powershell
-# After bumping version files yourself
-git tag v1.2.0
-git push origin v1.2.0
-```
-
-Tag push runs `.github/workflows/release.yml` (MSI + GitHub Release assets).
-
-Semantic versioning: `MAJOR.MINOR.PATCH` (breaking / features / fixes). Before `1.0.0`, `feat:` bumps **minor** (`bump-minor-pre-major`).
+One-time: Actions read/write + allow Actions to create PRs. Optional: `SETTINGS_TOKEN` (repo PAT) for full `settings.yml` apply; install dco2 for DCO checks on PRs.
 
 ## Security
 
 Do not file public issues for vulnerabilities. See [SECURITY.md](SECURITY.md).
 
-## Questions
+## License
 
-Open a GitHub Discussion or Issue (question / feature request templates) after the repository is published.
+By contributing, you agree that your contributions are licensed under the project [MIT License](LICENSE) and that you have the right to submit them under the DCO.

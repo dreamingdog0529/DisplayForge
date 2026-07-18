@@ -151,11 +151,31 @@ To exit on close even in a normal launch, pass `--exit-on-close`.
 - On some Windows 11 setups `SetDisplayConfig` can be flaky; if apply fails, open Windows Display Settings once and try again
 - DPI scaling / HDR / window position restore are candidates for future work
 
-## License
+## Community & project docs
 
-[MIT License](LICENSE)
+Repository automation and community files follow
+[container-registry/oss-project-template](https://github.com/container-registry/oss-project-template)
+(adapted for .NET / Windows installers).
 
-### Third-party
+| Document | Purpose |
+|----------|---------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Develop, test, PRs, DCO, CI/CD, releases |
+| [SUPPORT.md](SUPPORT.md) | How to get help |
+| [ROADMAP.md](ROADMAP.md) | Direction and how to propose work |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
+| [SECURITY.md](SECURITY.md) | Private vulnerability reporting |
+| [CODEOWNERS](CODEOWNERS) | Default code review owners |
+| [CHANGELOG.md](CHANGELOG.md) | Release history |
+| [LICENSE](LICENSE) | MIT license text |
+
+## Contributors
+
+Thanks to everyone who has contributed to DisplayForge. This list is updated automatically from git history.
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
+
+## Third-party
 
 - Icons are based on [Lucide](https://lucide.dev/) ([ISC License](https://lucide.dev/license)):
   - App / tray indicator: `monitor-cog` (source SVG under `src/DisplayForge/Assets/lucide/`; packaged as `Assets/app.ico`)

@@ -20,6 +20,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+dist/
+build/
+artifacts/
 
 ## NuGet
 *.nupkg
@@ -27,13 +30,15 @@ bld/
 !**/[Pp]ackages/build/
 project.lock.json
 project.fragment.lock.json
-artifacts/
 
 ## Installer (WiX)
 *.msi
 *.wixpdb
 installer/**/bin/
 installer/**/obj/
+
+## Node (tooling only)
+node_modules/
 
 ## Crash / debug dumps (local)
 crash_*.txt
@@ -49,3 +54,8 @@ Desktop.ini
 .idea/
 *.swp
 *~
+*.code-workspace
+
+## Local tool caches
+.lefthook/
+.task/

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Validate a single commit subject against Conventional Commits.
-# Kept in sync with .github/workflows/conventional-commits.yml and .githooks/commit-msg.
+# Kept in sync with lefthook.yml / .githooks/commit-msg and PR title rules (pr-title.yml).
 #
 # Usage: validate-commit-subject.sh <subject>
 # Exit 0 if valid (or skipped), 1 if invalid, 2 on usage error.

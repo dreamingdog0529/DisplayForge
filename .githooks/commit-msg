@@ -1,33 +1,33 @@
 #!/usr/bin/env bash
-# Local Conventional Commits check (same rules as CI).
-# Enable once per clone:  git config core.hooksPath .githooks
-#   or:  pwsh ./scripts/install-git-hooks.ps1
+# Fallback hooks when lefthook is not installed.
+# Prefer: task setup  (installs lefthook)
+# Or:     pwsh ./scripts/install-git-hooks.ps1
 
 set -euo pipefail
 
 msg_file=$1
-if [[ ! -f "$msg_file" ]]; then
-  echo "commit-msg: missing message file: $msg_file" >&2
-  exit 1
-fi
+subject=$(head -1 "$msg_file" | tr -d '\r')
 
-# First non-comment, non-empty line is the subject
-subject=""
-while IFS= read -r line || [[ -n "$line" ]]; do
-  line=${line//$'\r'/}
-  # Git commit template comments
-  [[ "$line" =~ ^# ]] && continue
-  [[ -z "${line// }" ]] && continue
-  subject=$line
-  break
-done <"$msg_file"
+# Skip merge commits (also when MERGE_HEAD exists)
+if [[ -n "${GIT_DIR:-}" && -f "${GIT_DIR}/MERGE_HEAD" ]] || [[ -f "$(git rev-parse --git-path MERGE_HEAD 2>/dev/null || true)" ]]; then
+  exit 0
+fi
+if [[ "$subject" =~ ^Merge\  ]]; then
+  exit 0
+fi
 
 root=$(git rev-parse --show-toplevel)
-validator="$root/scripts/validate-commit-subject.sh"
-
-if [[ ! -f "$validator" ]]; then
-  echo "commit-msg: validator not found: $validator" >&2
-  exit 1
+if [[ -x "$root/scripts/validate-commit-subject.sh" ]] || [[ -f "$root/scripts/validate-commit-subject.sh" ]]; then
+  bash "$root/scripts/validate-commit-subject.sh" "$subject"
+else
+  pattern='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-zA-Z0-9._/-]+\))?(!)?: .+'
+  if ! [[ "$subject" =~ $pattern ]]; then
+    echo "Commit message is not Conventional Commits: $subject" >&2
+    exit 1
+  fi
 fi
 
-exec bash "$validator" "$subject"
+if ! grep -q "^Signed-off-by:" "$msg_file"; then
+  echo "ERROR: Missing DCO sign-off. Use 'git commit -s'" >&2
+  exit 1
+fi

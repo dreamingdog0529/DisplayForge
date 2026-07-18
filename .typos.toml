@@ -1,0 +1,80 @@
+# Configuration for typos spell checker
+# https://github.com/crate-ci/typos
+
+[default]
+extend-ignore-identifiers-re = [
+    # Base64 / long tokens
+    "[A-Za-z0-9+/]{20,}",
+]
+
+[default.extend-words]
+# Project / product
+DisplayForge = "DisplayForge"
+MultiMonitorTool = "MultiMonitorTool"
+NirSoft = "NirSoft"
+WiX = "WiX"
+wixproj = "wixproj"
+csproj = "csproj"
+resx = "resx"
+wxl = "wxl"
+msiexec = "msiexec"
+AppData = "AppData"
+SemVer = "SemVer"
+
+# Common tech abbreviations
+cfg = "cfg"
+ctx = "ctx"
+req = "req"
+resp = "resp"
+impl = "impl"
+init = "init"
+hotkey = "hotkey"
+hotkeys = "hotkeys"
+tray = "tray"
+x64 = "x64"
+x86 = "x86"
+enUS = "enUS"
+jaJP = "jaJP"
+zhHans = "zhHans"
+zhHant = "zhHant"
+ptBR = "ptBR"
+ptPT = "ptPT"
+arSA = "arSA"
+
+[files]
+extend-exclude = [
+    "*.pem",
+    "*.crt",
+    "*.cer",
+    "*.key",
+    "*.p12",
+    "*.pfx",
+    "*.csr",
+    "CHANGELOG.md",
+    "vendor/",
+    "node_modules/",
+    "dist/",
+    "build/",
+    "artifacts/",
+    "bin/",
+    "obj/",
+    "go.sum",
+    "package-lock.json",
+    "yarn.lock",
+    "Cargo.lock",
+    "**/testdata/",
+    "**/__snapshots__/",
+    # Localized / generated UI strings (high noise for spellcheck)
+    "**/*.resx",
+    "**/*.Designer.cs",
+    "**/Loc/*.wxl",
+    "**/bin/**",
+    "**/obj/**",
+]
+
+[type.md]
+extend-ignore-re = [
+    "https?://[^\\s]+",
+    "```[\\s\\S]*?```",
+    "`[^`]+`",
+]

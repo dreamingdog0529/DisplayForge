@@ -1,31 +1,84 @@
 ## Summary
 
-<!-- What does this PR change and why? -->
+<!-- Provide a brief description of what this PR does -->
 
-## PR title (required)
+## Related Issues
 
-Must be a [Conventional Commit](https://www.conventionalcommits.org/) subject (CI fails otherwise), e.g.:
+<!-- Link to related issues: Fixes #123, Relates to #456 -->
 
-- `fix: …` / `feat: …` / `docs: …` / `chore: …` / `ci: …`
+## Type of Change
 
-## Type of change
+<!-- Check all that apply -->
 
-- [ ] Bug fix (`fix:`)
-- [ ] New feature (`feat:`)
-- [ ] Refactor / chore (`refactor:` / `chore:`)
-- [ ] Documentation (`docs:`)
-- [ ] Build / CI / installer (`build:` / `ci:`)
+- [ ] Bug fix (non-breaking change that fixes an issue)
+- [ ] New feature (non-breaking change that adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Documentation update
+- [ ] Refactoring (no functional changes)
+- [ ] CI/CD or build changes
+- [ ] Dependencies update
+
+## Conventional Commit
+
+<!--
+Your PR title should follow Conventional Commits format:
+- feat: add new feature
+- fix: resolve bug
+- docs: update documentation
+- refactor: code refactoring
+- test: add tests
+- chore: maintenance tasks
+- ci: CI/CD changes
+
+For breaking changes, add ! after the type: feat!: breaking change
+
+With squash merge, the PR title becomes the commit on main.
+-->
+
+## Testing
+
+<!-- Describe how you tested your changes -->
+
+- [ ] `dotnet build` succeeds
+- [ ] `dotnet test` succeeds (or N/A for docs-only)
+- [ ] Unit tests added/updated
+- [ ] Manual testing performed (multi-monitor / tray / hotkeys if applicable)
+
+<details>
+<summary>Test details</summary>
+
+<!-- Describe your test cases here -->
+
+</details>
+
+## Documentation
+
+- [ ] README updated (if applicable)
+- [ ] User documentation updated (if applicable)
+- [ ] User-facing changes noted in `CHANGELOG.md` under `[Unreleased]` (or N/A)
+- [ ] No documentation changes needed
+
+## Security
+
+- [ ] No security implications
+- [ ] Security implications considered and addressed
+- [ ] Security review requested
+
+## Breaking Changes
+
+<!-- If this is a breaking change, describe the impact and migration path -->
 
 ## Checklist
 
-- [ ] PR title matches Conventional Commits
-- [ ] `dotnet build` succeeds
-- [ ] `dotnet test` succeeds (or N/A for docs-only)
-- [ ] User-facing changes noted in `CHANGELOG.md` under `[Unreleased]` (or N/A)
+- [ ] My code follows the project's style guidelines
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or my feature works
+- [ ] New and existing unit tests pass locally with my changes
 - [ ] No secrets, credentials, or build artifacts (`bin/`, `obj/`, `artifacts/`, `*.msi`) included
+- [ ] I have signed off my commits (DCO) — `git commit -s`
 
-## Test plan
+## Screenshots
 
-<!-- How did you verify the change? Manual steps, UI paths, etc. -->
-
--
+<!-- If applicable, add screenshots to help explain your changes -->

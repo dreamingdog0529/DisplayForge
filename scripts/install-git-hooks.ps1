@@ -1,11 +1,11 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  Point this clone at the shared Git hooks under .githooks/ (Conventional Commits on commit-msg).
+  Install local git hooks (Conventional Commits + DCO).
 
 .DESCRIPTION
-  Sets local (not global) core.hooksPath so commit subjects are checked before the commit is created.
-  Same rules as .github/workflows/conventional-commits.yml.
+  Prefers lefthook when available (same as oss-project-template / `task setup`).
+  Falls back to core.hooksPath = .githooks for environments without lefthook.
 
 .EXAMPLE
   pwsh ./scripts/install-git-hooks.ps1
@@ -19,19 +19,28 @@ if (-not $root) {
     exit 1
 }
 
-$hooksPath = Join-Path $root '.githooks'
-if (-not (Test-Path -LiteralPath (Join-Path $hooksPath 'commit-msg'))) {
-    Write-Error "Expected hook not found: $hooksPath\commit-msg"
-    exit 1
-}
-
 Push-Location $root
 try {
+    $lefthook = Get-Command lefthook -ErrorAction SilentlyContinue
+    if ($lefthook) {
+        & lefthook install
+        Write-Host "lefthook installed (pre-commit spellcheck, commit-msg conventional + DCO)."
+        Write-Host 'Example:  git commit -s -m "fix: tray icon not restoring window"'
+        return
+    }
+
+    $hooksPath = Join-Path $root '.githooks'
+    if (-not (Test-Path -LiteralPath (Join-Path $hooksPath 'commit-msg'))) {
+        Write-Error "Expected hook not found: $hooksPath\commit-msg"
+        exit 1
+    }
+
     git config core.hooksPath .githooks
     $current = git config --get core.hooksPath
-    Write-Host "core.hooksPath = $current"
-    Write-Host "Local commit-msg hook enabled (Conventional Commits)."
-    Write-Host "Example:  git commit -m `"fix: tray icon not restoring window`""
+    Write-Host "lefthook not found; using core.hooksPath = $current"
+    Write-Host "Local commit-msg hook enabled (Conventional Commits + DCO)."
+    Write-Host 'Example:  git commit -s -m "fix: tray icon not restoring window"'
+    Write-Host "Optional: install lefthook and re-run this script, or run: task setup"
 }
 finally {
     Pop-Location

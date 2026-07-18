@@ -1,4 +1,8 @@
-name: Release
+name: Release Assets
+
+# Template counterpart of release-assets.yml (Go binaries there; MSI + Setup.exe here).
+# Prefer workflow_call from release-please: events created with GITHUB_TOKEN do not
+# start other workflows, so a pure "release: published" trigger is unreliable.
 
 on:
   workflow_call:
@@ -25,12 +29,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: release-${{ github.workflow }}-${{ github.ref }}-${{ inputs.tag_name || github.ref }}
+  group: release-assets-${{ github.workflow }}-${{ github.ref }}-${{ inputs.tag_name || github.ref }}
   cancel-in-progress: false
 
 jobs:
-  build-msi:
-    name: Build MSI and publish release
+  build-and-upload:
+    name: Build installers and upload release assets
     runs-on: windows-latest
     steps:
       - name: Checkout
