@@ -8,7 +8,7 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>DisplayForge</AssemblyName>
     <RootNamespace>DisplayForge</RootNamespace>
-    <Version>0.2.1</Version>
+    <Version>0.2.2</Version>
     <Product>DisplayForge</Product>
     <Description>Multi-monitor profile switcher with global hotkeys</Description>
     <ApplicationManifest>app.manifest</ApplicationManifest>
