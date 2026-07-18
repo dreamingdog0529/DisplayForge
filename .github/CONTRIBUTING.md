@@ -153,7 +153,7 @@ pwsh ./scripts/install-git-hooks.ps1
 ## DCO
 
 This project uses the [Developer Certificate of Origin](https://developercertificate.org/).
-Sign off every commit with `-s`. Maintainers may enable the [dco2](https://github.com/apps/dco2) GitHub App (see `.github/dco.yml`).
+Sign off every commit with `-s`. Maintainers may enable the [dco2](https://github.com/apps/dco-2) GitHub App (see `.github/dco.yml`).
 
 ## Automation
 
