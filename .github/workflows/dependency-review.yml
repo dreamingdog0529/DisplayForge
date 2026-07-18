@@ -21,5 +21,7 @@ jobs:
         uses: actions/dependency-review-action@v5
         with:
           fail-on-severity: high
-          deny-licenses: GPL-3.0, AGPL-3.0
           comment-summary-in-pr: always
+          # License enforcement is handled by license-check.yml (nuget-license),
+          # the authoritative gate for this project's NuGet dependencies.
+          # The deny-licenses option is deprecated upstream (actions/dependency-review-action#997).
