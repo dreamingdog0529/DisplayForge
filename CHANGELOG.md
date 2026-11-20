@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.5](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.4...v0.2.5) (2026-11-20)
+
+
+### Miscellaneous
+
+* Bump coverlet.collector from 10.0.1 to 10.1.1 ([#58](https://github.com/dreamingdog0529/DisplayForge/issues/58)) ([4b9b785](https://github.com/dreamingdog0529/DisplayForge/commit/4b9b785aec5d005d8aa5077f423d1e525e553601))
+* Bump Microsoft.Extensions.DependencyInjection from 10.0.10 to 11.0.0 ([#53](https://github.com/dreamingdog0529/DisplayForge/issues/53)) ([0884930](https://github.com/dreamingdog0529/DisplayForge/commit/088493060e080a96ffd456933f95459f7fe334d4))
+* Bump Microsoft.NET.Test.Sdk from 18.8.1 to 18.12.0 ([#54](https://github.com/dreamingdog0529/DisplayForge/issues/54)) ([78c3283](https://github.com/dreamingdog0529/DisplayForge/commit/78c3283004aff61e813f4d8c13394573e608d403))
+* Bump xunit.runner.visualstudio from 3.1.5 to 4.0.1 ([#49](https://github.com/dreamingdog0529/DisplayForge/issues/49)) ([e2f40d7](https://github.com/dreamingdog0529/DisplayForge/commit/e2f40d757302dc3c79bab30e78af30223a091b7e))
+* **deps:** bump actions/checkout from 7.0.0 to 7.0.1 ([#37](https://github.com/dreamingdog0529/DisplayForge/issues/37)) ([390295c](https://github.com/dreamingdog0529/DisplayForge/commit/390295c7e9ca3d402e805103751066a73dd4c031))
+* **deps:** bump actions/labeler from 6.2.0 to 7.0.0 ([#40](https://github.com/dreamingdog0529/DisplayForge/issues/40)) ([799d04a](https://github.com/dreamingdog0529/DisplayForge/commit/799d04acbbb7df47681ea7468b2748936863d41e))
+* **deps:** bump github/codeql-action to 4.37.3 (init + analyze) ([#56](https://github.com/dreamingdog0529/DisplayForge/issues/56)) ([c569aa9](https://github.com/dreamingdog0529/DisplayForge/commit/c569aa9ce04b3fcd2bd67259b34c755666083d16))
+* **deps:** bump github/codeql-action/upload-sarif from 4.37.1 to 4.37.3 ([#38](https://github.com/dreamingdog0529/DisplayForge/issues/38)) ([b9aa80f](https://github.com/dreamingdog0529/DisplayForge/commit/b9aa80f38fb579b0996a75dee4baa57a6e8697d5))
+* **deps:** bump ossf/scorecard-action from 2.4.3 to 2.4.4 ([#39](https://github.com/dreamingdog0529/DisplayForge/issues/39)) ([29a2ff7](https://github.com/dreamingdog0529/DisplayForge/commit/29a2ff7616162f719d3ddeae4c9c2f40eae443e8))
+
 ## [0.2.4](https://github.com/dreamingdog0529/DisplayForge/compare/v0.2.3...v0.2.4) (2026-07-18)
 
 
